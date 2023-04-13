@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// body > * {
+//   outline: 1px solid palevioletred;
+// }
+
+// !DEV
+
+// ol, ul, li {
+//   display: block;
+//   margin: 0;
+//   padding: 0;
+//   list-style-type: none;
+// }
+
+// ! DEV - END
+
+// body > * > * {
+//   outline: 1px dotted slateblue;
+//   outline-offset: -2px;
+// }
+
+// body > * > * > * {
+//   outline: 1px dotted limegreen;
+//   outline-offset: -4px;
+// }
+
+
+// Disable arrows from input[type="number"]
+
+// input[type="number"]::-webkit-outer-spin-button,
+// input[type="number"]::-webkit-inner-spin-button {
+//   appearance: none;
+// }
+
+// input[type="number"],
+// input[type="number"]:hover,
+// input[type="number"]:focus {
+//   appearance: none;
+//   appearance: textfield;
+// }
+
+
+// @media (max-width: $width-max-mobile) {
+// }
+
+// @media (min-width: $width-tablet) {
+// }
+
+// @media (min-width: $width-pre-desktop) {
+// }
+
+// url("data:image/svg+xml;utf8,<svg> … </svg>");

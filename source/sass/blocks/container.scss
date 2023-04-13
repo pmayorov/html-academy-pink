@@ -1,0 +1,9 @@
+.container {
+  width: calc(100vw - 2 * $width-mobile-padding);
+  max-width: $width-pre-desktop - 2 * $width-desktop-padding;
+  margin: 0 auto;
+
+  @media (min-width: $width-tablet) {
+    width: calc(100vw - 2 * $width-tablet-padding);
+  }
+}

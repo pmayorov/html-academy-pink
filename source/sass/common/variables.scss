@@ -1,0 +1,70 @@
+/// Брекпоинты
+$width-mobile: 320px;
+$width-tablet: 768px;
+$width-pre-desktop: 1200px;
+$width-desktop: 1280px;
+
+/// Отступы от края вьюпорта
+$width-mobile-padding: 20px;
+$width-tablet-padding: 60px;
+$width-desktop-padding: 120px;
+
+/// Ширины контентных контейнеров
+/// Мобильный контент
+$width-mobile-content: (
+  $width-mobile - 2 * $width-mobile-padding
+);
+/// Планшетный контент
+$width-tablet-content: (
+  $width-tablet - 2 * $width-tablet-padding
+);
+/// Десктопный контент
+$width-desktop-content: (
+  $width-desktop - 2 * $width-desktop-padding
+);
+
+/// Ширина при которой УЖЕ отключаться некоторые классы в мобильной версии
+$width-max-mobile: (
+  $width-tablet - 1
+);
+
+/// Ширина при которой УЖЕ можно включать десктопную раскладку (т.к. боковые паддинги довольно широкие)
+// $width-pre-desktop: (
+//   $width-desktop-content + 100px
+// );
+
+
+/// Шрифты
+$font-title: "PT Sans", "Arial", sans-serif;
+$font-body: "PT Sans", "Arial", sans-serif;
+
+/// Цвета
+$color-black: #000000;
+$color-white: #ffffff;
+$color-basic: #81b3d2;
+$color-btn-hover: #669ec0;
+$color-btn-active: #5496bd;
+$color-lnk-current: #766357;
+$color-icon-video-panel: #5c6870;
+$color-focus: #dd890c;
+$opacity-lnk-active: 0.3;
+$color-gray-f2: #f2f2f2;
+$color-gray-d6: #d6d6d6;
+$color-gray-ee: #eeeeee;
+$color-gray-ea: #eaeaea;
+$color-gray-e5: #e5e5e5;
+$color-gray-ba: #bababa;
+$color-gray-33: #333333;
+$status-error: #ff5d5d;
+
+// Оттенки серого
+// $color-gray-008: #ebebeb;
+// $color-gray-010: #e6e6e6;
+// $color-gray-014: #dbdbdb;
+// $color-gray-015: #d9d9d9;
+// $color-gray-020: #cccccc;
+// $color-gray-060: #666666;
+// $color-gray-073: #454545;
+// $color-gray-080: #333333;
+// $color-gray-087: #212121;
+// $color-gray-093: #121212;

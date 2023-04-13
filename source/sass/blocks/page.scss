@@ -1,0 +1,18 @@
+.page {
+  min-width: 320px;
+  height: 100%;
+  font-family: $font-body;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.page__body {
+  margin: 0;
+}
+
+.page__header,
+.page__main,
+.page__footer {
+  margin: 0 auto;
+}
