@@ -1,21 +1,34 @@
 // Шрифты проекта
 
+// open-sans-light
 @font-face {
   font-display: swap;
-  font-family: "PT Sans";
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("../fonts/open-sans-300.woff2") format("woff2"),
+    url("../fonts/open-sans-300.woff") format("woff");
+}
+
+// open-sans-regular
+@font-face {
+  font-display: swap;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   src:
-    url("../fonts/pt-sans-v17-cyrillic-regular.woff2") format("woff2"),
-    url("../fonts/pt-sans-v17-cyrillic-regular.woff") format("woff");
+    url("../fonts/open-sans-regular.woff2") format("woff2"),
+    url("../fonts/open-sans-regular.woff") format("woff");
 }
 
+// open-sans-bold
 @font-face {
   font-display: swap;
-  font-family: "PT Sans";
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
   src:
-    url("../fonts/pt-sans-v17-cyrillic-700.woff2") format("woff2"),
-    url("../fonts/pt-sans-v17-cyrillic-700.woff") format("woff");
+    url("../fonts/open-sans-700.woff2") format("woff2"),
+    url("../fonts/open-sans-700.woff") format("woff");
 }

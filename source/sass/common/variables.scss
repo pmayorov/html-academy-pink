@@ -1,29 +1,9 @@
 /// Брекпоинты
 $width-mobile: 320px;
-$width-tablet: 768px;
-$width-pre-desktop: 1200px;
-$width-desktop: 1280px;
+$width-tablet: 660px;
+$width-desktop: 1200px;
 
-/// Отступы от края вьюпорта
-$width-mobile-padding: 20px;
-$width-tablet-padding: 60px;
-$width-desktop-padding: 120px;
-
-/// Ширины контентных контейнеров
-/// Мобильный контент
-$width-mobile-content: (
-  $width-mobile - 2 * $width-mobile-padding
-);
-/// Планшетный контент
-$width-tablet-content: (
-  $width-tablet - 2 * $width-tablet-padding
-);
-/// Десктопный контент
-$width-desktop-content: (
-  $width-desktop - 2 * $width-desktop-padding
-);
-
-/// Ширина при которой УЖЕ отключаться некоторые классы в мобильной версии
+/// Ширина вьюпорта, при которой отключаем некоторые правила в мобильной версии
 $width-max-mobile: (
   $width-tablet - 1
 );
@@ -33,28 +13,46 @@ $width-max-mobile: (
 //   $width-desktop-content + 100px
 // );
 
+/// Отступы от краев вьюпорта
+$width-mobile-padding: 20px;
+$width-tablet-padding: 20px;
+$width-desktop-padding: 130px;
+
+/// Ширина контентных контейнеров
+/// Мобильный контент = 280px
+$width-mobile-content: (
+  $width-mobile - 2 * $width-mobile-padding
+);
+/// Планшетный контент = 620px [Сетка: 2 * 300px + 20px]
+$width-tablet-content: (
+  $width-tablet - 2 * $width-tablet-padding
+);
+/// Десктопный контент = 940px [Сетка: 3 * 300px + 2 * 20px]
+$width-desktop-content: (
+  $width-desktop - 2 * $width-desktop-padding
+);
 
 /// Шрифты
-$font-title: "PT Sans", "Arial", sans-serif;
-$font-body: "PT Sans", "Arial", sans-serif;
+$font-title: "Open Sans", "Verdana", sans-serif;
+$font-body: "Open Sans", "Verdana", sans-serif;
 
 /// Цвета
+
+$color-gray--de: #dedede;
+$color-gray--e5: #e5e5e5;
+$color-gray--f2: #f2f2f2;
+
 $color-black: #000000;
 $color-white: #ffffff;
-$color-basic: #81b3d2;
-$color-btn-hover: #669ec0;
-$color-btn-active: #5496bd;
-$color-lnk-current: #766357;
-$color-icon-video-panel: #5c6870;
-$color-focus: #dd890c;
-$opacity-lnk-active: 0.3;
-$color-gray-f2: #f2f2f2;
-$color-gray-d6: #d6d6d6;
-$color-gray-ee: #eeeeee;
-$color-gray-ea: #eaeaea;
-$color-gray-e5: #e5e5e5;
-$color-gray-ba: #bababa;
-$color-gray-33: #333333;
+$color-primary: #283645;
+$color-secondary: #d22856;
+$color-canvas: $color-gray--f2;
+
+$color-form_button: #2aab6d;
+$color-form_button--hover: #1c9b5e;
+
+
+
 $status-error: #ff5d5d;
 
 // Оттенки серого

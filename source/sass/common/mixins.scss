@@ -1,16 +1,5 @@
 // @include outline();
 
-// Линия над малыми блоками с преимуществами
-@mixin advantages__line-divider () {
-  display: block;
-  content: "";
-  width: calc(100% - $width-mobile-padding * 2);
-  margin: 0 auto;
-  height: 1px;
-  background-color: $color-gray-d6;
-}
-
-
 // !DEV
 //* Бордер для орієнтування!
 @mixin outline ($width: 1px, $style: dotted, $color: #0f99da) {
