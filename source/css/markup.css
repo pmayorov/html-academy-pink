@@ -1,5 +1,5 @@
 * {
-  font-family: 'Verdana', 'Arial', sans-serif;
+  font-family: 'Roboto', 'Verdana', sans-serif;
   padding: 0;
   margin: 0;
   color: #000000;
@@ -17,8 +17,18 @@
 }
 
 body {
-  font-size: 16px;
-  padding: 20px;
+  display: grid;
+  row-gap: 30px;
+  font-size: 14px;
+  padding: 40px;
+  outline: 3px solid #d87093;
+  outline-offset: -3px;
+}
+
+body::before {
+  content: "body";
+  color: #ffffff;
+  background-color: #d87093;
 }
 
 header,
@@ -27,14 +37,10 @@ aside,
 footer {
   position: relative;
   padding: 35px;
-  margin-bottom: 40px;
-  border: 3px solid #b0e0e6;
+  outline: 3px solid #b0e0e6;
 }
 
-header::before,
-main::before,
-aside::before,
-footer::before {
+:where(header, main, aside, footer)::before {
   background-color: #b0e0e6;
 }
 
@@ -60,12 +66,10 @@ article {
   position: relative;
   padding: 35px;
   margin: 30px 0;
-  border: 3px solid #dda0dd;
+  outline: 3px solid #dda0dd;
 }
 
-nav::before,
-section::before,
-article::before {
+:where(nav, section, article)::before {
   background-color: #dda0dd;
 }
 
@@ -85,7 +89,7 @@ div {
   position: relative;
   padding: 20px 50px;
   margin: 20px 0;
-  border: 3px solid #d3d3d3;
+  outline: 3px solid #d3d3d3;
 }
 
 div::before {
@@ -102,13 +106,10 @@ h4 {
   margin: 30px 0;
   padding-bottom: 10pt;
   background-color: #f8f8ff;
-  border: 1px solid #9370db;
+  outline: 1px solid #9370db;
 }
 
-h1::before,
-h2::before,
-h3::before,
-h4::before {
+:where(h1, h2, h3, h4)::before {
   background-color: #9370db;
   color: #ffffff;
 }
@@ -129,14 +130,15 @@ h4::before {
   content: "h4";
 }
 
-li h2,
-li h3 {
+li :is(h2, h3) {
   margin-top: 10px;
   margin-bottom: 0;
 }
 
 p,
 blockquote,
+figure,
+figcaption,
 cite,
 address,
 b {
@@ -145,14 +147,16 @@ b {
   padding: 20px 50px;
   margin: 15px 0;
   background-color: #f5f5f5;
-  border: 1px solid #708090;
+  outline: 1px solid #708090;
 }
 
-p::before,
-blockquote::before,
-cite::before,
-address::before,
-b::before {
+:where(p,
+  blockquote,
+  figure,
+  figcaption,
+  cite,
+  address,
+  b)::before {
   background-color: #708090;
   color: #ffffff;
 }
@@ -163,6 +167,14 @@ blockquote::before {
 
 cite::before {
   content: "cite";
+}
+
+figure::before {
+  content: "figure";
+}
+
+figcaption::before {
+  content: "figcaption";
 }
 
 p::before {
@@ -184,7 +196,7 @@ dl {
   padding: 20px 50px;
   margin: 30px 0;
   background-color: #fff8dc;
-  border: 1px solid #cd853f;
+  outline: 1px solid #cd853f;
 }
 
 li,
@@ -194,19 +206,19 @@ dd {
   position: relative;
   margin-bottom: 5px;
   padding: 5px 12px 5px 45px;
-  border: 1px solid #cd853f;
+  outline: 1px solid #cd853f;
 }
 
 dd:not(:last-child) {
   margin-bottom: 15px;
 }
 
-ul::before,
-ol::before,
-li::before,
-dl::before,
-dt::before,
-dd::before {
+:where(ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd)::before {
   background-color: #cd853f;
   color: #ffffff;
 }
@@ -241,7 +253,7 @@ img {
   max-height: 200px;
   padding: 20px;
   background-color: #f0f8ff;
-  border: 1px solid #708090;
+  outline: 1px solid #708090;
 }
 
 span {
@@ -249,7 +261,7 @@ span {
   position: relative;
   padding: 5px 10px 5px 60px;
   background-color: #f5f5f5;
-  border: 1px solid #708090;
+  outline: 1px solid #708090;
   margin: 0 10px;
 }
 
@@ -258,7 +270,7 @@ a {
   position: relative;
   padding: 5px 10px 5px 55px;
   background-color: #f5f5f5;
-  border: 1px solid #5fa5eb;
+  outline: 1px solid #5fa5eb;
 }
 
 
@@ -289,20 +301,20 @@ fieldset {
   padding: 20px 70px;
   margin-bottom: 10px;
   background-color: #f0f8ff;
-  border: 1px solid #708090;
+  outline: 1px solid #708090;
 }
 
-form::before,
-fieldset::before {
+:where(form,
+  fieldset)::before {
   background-color: #708090;
   color: #ffffff;
 }
 
-  form::before {
+form::before {
   content: "form";
 }
 
-  fieldset::before {
+fieldset::before {
   position: absolute;
   left: initial;
   top: -9px;

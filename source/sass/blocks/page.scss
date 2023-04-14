@@ -1,13 +1,16 @@
+// <html class="page">
+
 .page {
   min-width: 320px;
   height: 100%;
   font-family: $font-body;
-  font-size: 14px;
-  line-height: 21px;
-  text-transform: uppercase;
 }
 
 .page__body {
+  //* Sticky footer
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100%;
   margin: 0;
 }
 

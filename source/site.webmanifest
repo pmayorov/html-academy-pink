@@ -1,0 +1,26 @@
+{
+  "name": "Мобильное приложение \"Pink\"",
+  "short_name": "PINK",
+  "icons": [
+    {
+      "src": "img/favicon/favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x22"
+    },
+    {
+      "src": "img/favicon/favicon-152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "img/favicon/favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/favicon/favicon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

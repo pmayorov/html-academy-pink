@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
+import sourcemap from 'gulp-sourcemaps';
 import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
@@ -39,15 +40,16 @@ const server = (done) => {
 // SASS to CSS
 
 export const styles = () => {
-  // return gulp.src('source/sass/style.scss', { sourcemaps: true })
-  return gulp.src('source/sass/**/styles.scss')
+  return gulp.src('source/sass/style.scss')
     .pipe(plumber())
+    .pipe(sourcemap.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
       autoprefixer(),
-      // cssmin()
+      cssmin()
     ]))
-    // .pipe(rename('style.min.css'))
+    .pipe(rename('style.min.css'))
+    .pipe(sourcemap.write("."))
     .pipe(gulp.dest('build/css'))
     .pipe(gulp.dest('source/css'));
   // .pipe(browser.stream());
@@ -60,9 +62,12 @@ export const mincss = () => {
     .pipe(gulp.dest('source/css/_clean'));
 };
 
-// PostCSS Plugins
+// #region PostCSS Plugins
+
+//* PostCSS Plugins - START
 // https://github.com/postcss/postcss/blob/main/docs/plugins.md#optimizations
-// Combine duplicated selectors'
+
+//* Combine duplicated selectors'
 // https://github.com/ChristianMurphy/postcss-combine-duplicated-selectors
 
 export const combSel = () => {
@@ -71,7 +76,7 @@ export const combSel = () => {
     .pipe(gulp.dest('source/css/output'));
 };
 
-// CSS Media Query Packer
+//* CSS Media Query Packer
 // https://github.com/hail2u/node-css-mqpacker
 
 export const cssRebase = () => {
@@ -79,6 +84,8 @@ export const cssRebase = () => {
     .pipe(postcss([mqPacker()]))
     .pipe(gulp.dest('source/css/output'));
 };
+
+// #endregion
 
 // Minify *.html
 
@@ -152,13 +159,12 @@ export const makeSprite = () => {
 }
 
 // Minify sprite.svg
-// export const minsprite = () => {
-//   return gulp.src('source/img/**/sprite.svg')
-//     .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
-//     .pipe(gulp.dest('build/img'));
-// };
 
-
+export const minsprite = () => {
+  return gulp.src('source/img/**/sprite.svg')
+    .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+    .pipe(gulp.dest('build/img'));
+};
 
 // Copy files to /build
 
