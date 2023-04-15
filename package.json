@@ -28,13 +28,13 @@
     "postcss": "^8.4.21",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-csso": "^6.0.1",
-    "stylelint": "^15.4.0",
-    "stylelint-config-recommended-scss": "^10.0.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-htmlacademy": "^1.1.4",
     "stylelint-config-standard-scss": "^8.0.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --custom-syntax postcss-scss",
+    "lint": "stylelint \"source/sass/**/*.scss\" --custom-syntax postcss-scss",
     "test": "npm run editorconfig && npm run stylelint",
     "start": "gulp",
     "dev": "gulp dev",
@@ -56,7 +56,7 @@
     "source/sass/**/*.scss"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=16"
   },
   "type": "module"
 }
