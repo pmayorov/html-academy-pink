@@ -58,11 +58,120 @@
   <!--* FORM - MAIN -->
   <main class="page_main main">
 
-    <h1 class="visually-hidden">Форма обратой связи участника конкурса</h1>
+    <!-- СЕКЦИЯ HERO -->
+    <section class="hero">
+      <h1 class="">Конкурс на самое безбашенное путешествие с Пинк</h1>
+    </section>
 
-    <header class="">
-      <h2 class="">Конкурс на самое безбашенное путешествие с Пинк</h2>
-    </header>
+    <!-- СЕКЦИЯ ФОРМЫ -->
+    <section class="">
+
+      <h2 class="visually-hidden">Форма обратной связи</h2>
+      <p class="">Поделитесь своей историей и получите шанс выиграть ценный приз – 1000 миль на вашу бонусную карту!<span><br>Пожалуйста, заполните форму ниже:</span></p>
+
+      <!-- Тело формы -->
+      <form class="form-body" id="form" action="https://echo.htmlacademy.ru" name="challenge-form" method="post">
+
+        <!-- Ф.И.О. -->
+        <fieldset class="form-body__fieldset fieldset">
+          <legend class="visually-hidden">Представьтесь</legend>
+          <ul class="fieldset__list">
+            <li class="fieldset_item field field--input">
+              <label class="field__name" for="surname">Фамилия:</label>
+              <input class="field__input" type="text" name="surname" placeholder="Укажите фамилию *" id="surname" required>
+            </li>
+            <li class="fieldset_item field field--input">
+              <label class="field__name" for="name">Имя:</label>
+              <input class="field__input" type="text" name="name" placeholder="Введите ваше имя *" id="name" required>
+            </li>
+            <li class="fieldset_item field field--input">
+              <label class="field__name" for="patronymic">Отчество:</label>
+              <input class="field__input" type="text" name="patronymic" placeholder="Ну и отчество тоже" id="patronymic">
+            </li>
+          </ul>
+        </fieldset>
+
+        <!-- Достижения -->
+        <fieldset class="form-body__fieldset fieldset">
+          <legend class="fieldset__topic">Ваши безбашенные достижения в путешествии</legend>
+          <ul class="fieldset__list">
+            <li class="fieldset__item field field--select">
+              <input class="field__checkbox" type="checkbox" name="achieve" value="shark" id="check01" checked>
+              <label class="field__name" for="check01">Сделал селфи с акулой</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__checkbox" type="checkbox" name="achieve" value="tan" id="check02" checked>
+              <label class="field__name" for="check02">Обгорел на пляже</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__checkbox" type="checkbox" name="achieve" value="сhuck" id="check03">
+              <label class="field__name" for="check03">Видел Чака Норриса</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__checkbox" type="checkbox" name="achieve" value="souvenir" id="check04">
+              <label class="field__name" for="check04">Накупил сувениров</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__checkbox" type="checkbox" name="achieve" value="force" id="check05" checked>
+              <label class="field__name" for="check05">Удержал башню</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__checkbox" type="checkbox" name="achieve" value="idiot" id="check06">
+              <label class="field__name" for="check06">Разгромил отель</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <!-- Контактные данные -->
+        <fieldset class="form-body__fieldset fieldset">
+          <legend class="fieldset__topic">Контактная информация</legend>
+          <ul class="fieldset__list">
+            <li class="fieldset__item field field--input">
+              <label class="field__name" for="phone">Номер телефона</label>
+              <input class="field__input" type="tel" placeholder="Номер, пожалуйста" name="phone" id="phone">
+            </li>
+            <li class="fieldset__item field field--input">
+              <label class="field__name" for="email">Адрес почты</label>
+              <input class="field__input" type="email" placeholder="Введите почту *" name="email" id="email">
+            </li>
+          </ul>
+        </fieldset>
+
+        <!-- Выбор приложения -->
+        <fieldset class="form-body__fieldset fieldset">
+          <legend class="fieldset__topic">С каким приложением путешествовали?</legend>
+          <ul class="fieldset__list">
+            <li class="fieldset__item field field--select">
+              <input class="field__radio" type="radio" name="app" value="app-apple" id="radio01">
+              <label class="field__name" for="radio01">Pink для iOS</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__radio" type="radio" name="app" value="app-android" id="radio02">
+              <label class="field__name" for="radio02">Pink на Android</label>
+            </li>
+            <li class="fieldset__item field field--select">
+              <input class="field__radio" type="radio" name="app" value="app-win" id="radio03">
+              <label class="field__name" for="radio03">Windows Phone</label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <!-- Отзыв -->
+        <div class="form-body__fieldset fieldset fieldset--comments">
+          <h3 class="fieldset__topic">Опишите свои эмоции</h3>
+          <div class="field">
+            <label class="visually-hidden" for="review">Отзыв</label>
+            <textarea class="field__input field__textarea" name="review" id="review" cols="30" rows="10" placeholder="Можно прям в красках, не стесняясь в выражениях"></textarea>
+          </div>
+        </div>
+
+        <!-- Отправить отзыв -->
+        <p class="form-body__submit">
+          <button class="form-body__button button" type="submit">Отправить форму</button>
+          <span>* — обязательные поля</span>
+        </p>
+      </form>
+    </section>
 
   </main>
 
