@@ -36,6 +36,7 @@
     <!-- Логотип -->
     <a class="header__logo logo">
       <picture>
+        <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
         <source media="(min-width: 660px)" srcset="./img/logos/pink-tablet-white.svg">
         <img class="logo__image" width="74" height="23" src="./img/logos/pink-mobile-white.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
       </picture>
@@ -70,7 +71,7 @@
       <p class="">Поделитесь своей историей и получите шанс выиграть ценный приз – 1000 миль на вашу бонусную карту!<span><br>Пожалуйста, заполните форму ниже:</span></p>
 
       <!-- Тело формы -->
-      <form class="form-body" id="form" action="https://echo.htmlacademy.ru" name="challenge-form" method="post">
+      <form class="form-body" id="challenge-form" action="https://echo.htmlacademy.ru" name="challenge-form" method="post">
 
         <!-- Ф.И.О. -->
         <fieldset class="form-body__fieldset fieldset">
@@ -167,7 +168,7 @@
 
         <!-- Отправить отзыв -->
         <p class="form-body__submit">
-          <button class="form-body__button button" type="submit">Отправить форму</button>
+          <button class="form-body__button button-form" id="challenge-form-btn" type="submit">Отправить форму</button>
           <span>* — обязательные поля</span>
         </p>
       </form>

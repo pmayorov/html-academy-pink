@@ -154,19 +154,14 @@ b {
   blockquote,
   figure,
   figcaption,
-  cite,
   address,
-  b)::before {
+  )::before {
   background-color: #708090;
   color: #ffffff;
 }
 
 blockquote::before {
   content: "blockquote";
-}
-
-cite::before {
-  content: "cite";
 }
 
 figure::before {
@@ -183,10 +178,6 @@ p::before {
 
 address::before {
   content: "address";
-}
-
-b::before {
-  content: "b";
 }
 
 ul,
@@ -256,10 +247,13 @@ img {
   outline: 1px solid #708090;
 }
 
-span {
+span,
+time,
+b,
+cite {
   display: inline-block;
   position: relative;
-  padding: 5px 10px 5px 60px;
+  padding: 8px 10px 5px 60px;
   background-color: #f5f5f5;
   outline: 1px solid #708090;
   margin: 0 10px;
@@ -268,18 +262,32 @@ span {
 a {
   display: inline-block;
   position: relative;
-  padding: 5px 10px 5px 55px;
+  padding: 7px 10px 5px 55px;
   background-color: #f5f5f5;
   outline: 1px solid #5fa5eb;
 }
 
-
-span::before {
-  background-color: #708090;
+:where(span, time, b, cite)::before {
+  background-color: #888888;
   color: #ffffff;
-  content: "span";
   top: 4px;
   left: 5px;
+}
+
+cite::before {
+  content: "cite";
+}
+
+span::before {
+  content: "span";
+}
+
+time::before {
+  content: "time";
+}
+
+b::before {
+  content: "b";
 }
 
 a::before {

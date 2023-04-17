@@ -23,14 +23,14 @@
     "gulp-svgstore": "^9.0.0",
     "gulp-terser": "^2.1.0",
     "gulp-webp": "^4.0.1",
-    "linthtml-config-htmlacademy": "^1.0.3",
     "pixel-glass": "^1.0.13",
     "postcss": "^8.4.21",
     "postcss-combine-duplicated-selectors": "^10.0.3",
     "postcss-csso": "^6.0.1",
     "stylelint": "^14.16.1",
+    "stylelint-config-standard-scss": "^6.1.0",
     "stylelint-config-htmlacademy": "^1.1.4",
-    "stylelint-config-standard-scss": "^8.0.0"
+    "linthtml-config-htmlacademy": "^1.0.3"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",

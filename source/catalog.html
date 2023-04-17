@@ -36,6 +36,7 @@
     <!-- Логотип -->
     <a class="header__logo logo">
       <picture>
+        <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
         <source media="(min-width: 660px)" srcset="./img/logos/pink-tablet-white.svg">
         <img class="logo__image" width="74" height="23" src="./img/logos/pink-mobile-white.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
       </picture>
@@ -125,7 +126,7 @@
         <picture>
           <source media="(min-width: 1200px)" srcset="./img/catalog/photo-3-desktop@1x.jpg 1x, ./img/catalog/photo-3-desktop@2x.jpg 2x">
           <source media="(min-width: 660px)" srcset="./img/catalog/photo-3-tablet@1x.jpg 1x, ./img/catalog/photo-3-tablet@2x.jpg 2x">
-          <img class="" width="280" height="180" src="./img/catalog/photo-3-mobile@1x.jpg" srcset="./img/catalog/photo-3-mobile@2x.jpg 2x" alt="Машина вдалеке и штатив на переднем плане">
+          <img class="" width="280" height="180" src="./img/catalog/photo-3-mobile@1x.jpg" srcset="./img/catalog/photo-3-mobile@2x.jpg 2x" alt="Ударная установка">
         </picture>
         <!-- Автор -->
         <footer class="" itemscope>
@@ -150,7 +151,7 @@
         <picture>
           <source media="(min-width: 1200px)" srcset="./img/catalog/photo-4-desktop@1x.jpg 1x, ./img/catalog/photo-4-desktop@2x.jpg 2x">
           <source media="(min-width: 660px)" srcset="./img/catalog/photo-4-tablet@1x.jpg 1x, ./img/catalog/photo-4-tablet@2x.jpg 2x">
-          <img class="" width="280" height="180" src="./img/catalog/photo-4-mobile@1x.jpg" srcset="./img/catalog/photo-4-mobile@2x.jpg 2x" alt="Машина вдалеке и штатив на переднем плане">
+          <img class="" width="280" height="180" src="./img/catalog/photo-4-mobile@1x.jpg" srcset="./img/catalog/photo-4-mobile@2x.jpg 2x" alt="Небоскребы на фоне неба">
         </picture>
         <!-- Автор -->
         <footer class="" itemscope>
@@ -175,7 +176,7 @@
         <picture>
           <source media="(min-width: 1200px)" srcset="./img/catalog/photo-5-desktop@1x.jpg 1x, ./img/catalog/photo-5-desktop@2x.jpg 2x">
           <source media="(min-width: 660px)" srcset="./img/catalog/photo-5-tablet@1x.jpg 1x, ./img/catalog/photo-5-tablet@2x.jpg 2x">
-          <img class="" width="280" height="180" src="./img/catalog/photo-5-mobile@1x.jpg" srcset="./img/catalog/photo-5-mobile@2x.jpg 2x" alt="Машина вдалеке и штатив на переднем плане">
+          <img class="" width="280" height="180" src="./img/catalog/photo-5-mobile@1x.jpg" srcset="./img/catalog/photo-5-mobile@2x.jpg 2x" alt="Бахчевый рынок">
         </picture>
         <!-- Автор -->
         <footer class="" itemscope>
@@ -200,7 +201,7 @@
         <picture>
           <source media="(min-width: 1200px)" srcset="./img/catalog/photo-6-desktop@1x.jpg 1x, ./img/catalog/photo-6-desktop@2x.jpg 2x">
           <source media="(min-width: 660px)" srcset="./img/catalog/photo-6-tablet@1x.jpg 1x, ./img/catalog/photo-6-tablet@2x.jpg 2x">
-          <img class="" width="280" height="180" src="./img/catalog/photo-6-mobile@1x.jpg" srcset="./img/catalog/photo-6-mobile@2x.jpg 2x" alt="Машина вдалеке и штатив на переднем плане">
+          <img class="" width="280" height="180" src="./img/catalog/photo-6-mobile@1x.jpg" srcset="./img/catalog/photo-6-mobile@2x.jpg 2x" alt="Ноги в шортах и санадлиях на фоне гор">
         </picture>
         <!-- Автор -->
         <footer class="" itemscope>
@@ -225,7 +226,7 @@
         <picture>
           <source media="(min-width: 1200px)" srcset="./img/catalog/photo-7-desktop@1x.jpg 1x, ./img/catalog/photo-7-desktop@2x.jpg 2x">
           <source media="(min-width: 660px)" srcset="./img/catalog/photo-7-tablet@1x.jpg 1x, ./img/catalog/photo-7-tablet@2x.jpg 2x">
-          <img class="" width="280" height="180" src="./img/catalog/photo-7-mobile@1x.jpg" srcset="./img/catalog/photo-7-mobile@2x.jpg 2x" alt="Машина вдалеке и штатив на переднем плане">
+          <img class="" width="280" height="180" src="./img/catalog/photo-7-mobile@1x.jpg" srcset="./img/catalog/photo-7-mobile@2x.jpg 2x" alt="Вид из иллюминатора на крыло самолета, небо и восход солнца">
         </picture>
         <!-- Автор -->
         <footer class="" itemscope>
@@ -248,6 +249,45 @@
     <section class="">
       <h2 class="visually-hidden">Отправьте свое фото!</h2>
       <p class="">Затмите их всех! Выкладывайте все, что накопилось в телефоне!</p>
+
+      <!-- Артикл – фото и форма с полями редактирования -->
+      <article class="">
+        <h2 class="visually-hidden">Форма редактирования и загрузки фото</h2>
+
+        <!-- Фотоиллюстрация -->
+        <picture>
+          <img class="" width="280" height="374" src="./img/catalog/photo-8-tablet@1x.jpg" srcset="./img/catalog/photo-8-tablet@2x.jpg 2x" alt="Зимняя дорога">
+        </picture>
+
+        <!-- Форма редактирования -->
+        <form class="" id="photo-form" action="https://echo.htmlacademy.ru" name="photo-form" method="post">
+          <fieldset class="">
+            <legend class="visually-hidden">Поля редактирования фото</legend>
+            <ul class="">
+              <!-- Кадрирование -->
+              <li class="">
+                <label class="" for="crop-value"><span class="visually-hidden">Кадрирование</span></label>
+                <input class="" type="range" id="crop-value" name="edit-img">
+              </li>
+              <!-- Заливка -->
+              <li class="">
+                <label class="" for="fill-value"><span class="visually-hidden">Заливка</span></label>
+                <input class="" type="range" id="fill-value" name="edit-img">
+              </li>
+              <!-- Контраст -->
+              <li class="">
+                <label class="" for="contrast-value"><span class="visually-hidden">Контраст</span></label>
+                <input class="" type="range" id="contrast-value" name="edit-img">
+              </li>
+            </ul>
+          </fieldset>
+          <!-- Кнопки -->
+          <p class="">
+            <button class="" type="submit" id="">Запостить</button>
+            <button class="" type="submit" id="">Отмена</button>
+          </p>
+        </form>
+      </article>
     </section>
 
   </main>
