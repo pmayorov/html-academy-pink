@@ -1,0 +1,62 @@
+// .advantages {}
+
+// .advantages__title {}
+
+.advantages__list-wrapper {
+  background-color: $color-gray--f2;
+}
+
+.advantages__list {
+  list-style-type: none;
+
+  // width: $width-mobile;
+
+  // @media (min-width: $width-tablet) {
+  //   width: $width-tablet;
+  // }
+
+  // @media (min-width: $width-desktop) {
+  //   width: $width-tablet;
+  // }
+}
+
+
+.advantages__item {
+
+  &--add {
+    display: none;
+
+    @media (min-width: $width-tablet) {
+      display: inherit;
+    }
+  }
+}
+
+.advantages__name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+
+  @media (min-width: $width-desktop) {
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  &--add {
+    font-size: 30px;
+    line-height: 1;
+  }
+}
+
+
+// .advantages__desc {}
+
+.advantages__additional {
+  @media (min-width: $width-desktop) {
+    background-color: $color-gray--f2;
+  }
+}
+
+// .advantages__title--add {}
+
+// .advantages__link {}

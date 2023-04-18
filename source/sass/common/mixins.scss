@@ -2,12 +2,12 @@
 
 // !DEV
 //* Бордер для орієнтування!
-@mixin outline ($width: 1px, $style: dotted, $color: #0f99da) {
+@mixin outline ($width: 1px, $style: dotted, $color: #0f99da, $offset: 0) {
   outline: {
     color: $color;
     width: $width;
     style: $style;
-    offset: -1px;
+    offset: $offset;
   }
 }
 

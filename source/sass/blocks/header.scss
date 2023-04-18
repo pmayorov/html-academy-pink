@@ -1,1 +1,71 @@
-// .header{}
+.header {
+  // !DEV
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr $width-mobile-content 1fr;
+  column-gap: $width-mobile-padding;
+  width: 100vw;
+  background-color: rgba($color-black, 0.3);
+  @include outline(2px, solid, pink, -2px);
+
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 1fr $width-tablet-content 1fr;
+    column-gap: $width-tablet-padding;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-template-columns: 1fr $width-desktop-content 1fr;
+    column-gap: $width-desktop-padding;
+  }
+
+  &--active {
+    background-color: $color-primary;
+  }
+}
+
+// Чтобы выдержать макетное выравнивание логотипа и кнопки
+// по нижнему краю с необходимыми отступами:
+// 1. Обертке назначил display: flex и hight: const.
+// 2. Установил обертке необходимый нижний паддинг.
+// 3. Флекс-выравниванием посадил элементы на нижний край.
+
+.header__top {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  // Компенсируем высоту меню. Расчет высоты грид строки с учетом нижнего паддинга.
+  // В данном случае грид-ячейке паддинг изменяет высоту родительского блока
+  grid-template-rows: calc(66px - 21px) 1fr;
+  grid-column: 2/3;
+  width: 100%;
+  align-items: end;
+  padding-bottom: 21px;
+
+  @media (min-width: $width-tablet) {
+    grid-template-rows: calc(110px - 43px) 1fr;
+    padding-bottom: 43px;
+  }
+}
+
+// .header__nav {}
+
+.header__toggler {
+  border: none;
+  padding: 0;
+  width: 50px;
+  height: 24px;
+  background-color: $color-white;
+  mask: url("../../img/ico/btn-menu-close.svg") no-repeat right;
+
+  @media (min-width: $width-desktop) {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-secondary;
+  }
+
+  &:active {
+    background-color: rgba($color-secondary, $opacity);
+  }
+}

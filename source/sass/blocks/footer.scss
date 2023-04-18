@@ -1,1 +1,3 @@
-// .footer {}
+.footer {
+  @include outline(2px, solid, pink, -2px);
+}

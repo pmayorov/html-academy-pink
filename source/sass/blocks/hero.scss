@@ -1,0 +1,61 @@
+.hero {
+  color: $color-white;
+  background-color: $color-primary-dark;
+}
+
+.hero__button {
+  width: 100%;
+  // 12px - компенсация верхних паддингов в ссылках нижнего списка маркетов
+  margin-bottom: calc(32px - 12px);
+}
+
+.hero__list {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.hero__item {
+  display: block;
+  // padding: 18px;
+}
+
+.hero__link {
+  display: block;
+  outline: 1px dotted violet;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--apple {
+    width: 83px;
+    height: 80px;
+    background-image: url("../../img/logos/apple.svg");
+  }
+
+  &--google {
+    width: 79px;
+    height: 80px;
+    background-image: url("../../img/logos/android.svg");
+  }
+
+  &--ms {
+    width: 80px;
+    height: 80px;
+    background-image: url("../../img/logos/microsoft.svg");
+  }
+
+}
+
+.hero__note {
+  font-weight: 300;
+  // 12px - компенсация нижних паддингов в ссылках верхнего списка маркетов;
+  margin: calc(28px - 12px) 0 0;
+  text-align: center;
+
+  @media (min-width: $width-tablet) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}

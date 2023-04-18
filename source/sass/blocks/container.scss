@@ -1,9 +1,18 @@
 .container {
-  width: calc(100vw - 2 * $width-mobile-padding);
-  max-width: $width-pre-desktop - 2 * $width-desktop-padding;
-  margin: 0 auto;
+  @include outline(3px, dotted, rgb(108, 18, 224));
+  width: $width-mobile;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $width-mobile-padding;
+  padding-left: $width-mobile-padding;
 
   @media (min-width: $width-tablet) {
-    width: calc(100vw - 2 * $width-tablet-padding);
+    width: $width-tablet;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop;
+    padding-right: $width-desktop-padding;
+    padding-left: $width-desktop-padding;
   }
 }

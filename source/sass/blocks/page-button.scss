@@ -1,0 +1,25 @@
+.page-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 30px;
+  outline-width: 3px;
+  outline-style: solid;
+  outline-offset: -3px;
+
+  // &:hover {}
+  // &:active {}
+
+  &--hero {
+    color: $color-white;
+    outline-color: $color-white;
+  }
+
+
+}

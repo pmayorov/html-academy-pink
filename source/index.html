@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>&laquo;ПИНК&raquo; | Главная страница </title>
   <!-- Подключение стилей проекта -->
-  <!-- <link rel="stylesheet" href="./css/style.min.css"> -->
+  <link rel="stylesheet" href="./css/style.min.css">
   <!-- Фавиконки -->
   <link rel="icon" href="./favicon.ico">
   <link rel="icon" href="./img/favicon/favicon-32.svg" type="image/svg+xml">
@@ -19,33 +19,38 @@
 
   <!--* DEV - Визуализация разметки -->
   <!-- <link rel="stylesheet" href="./css/outline.css"> -->
-  <link rel="stylesheet" href="./css/markup.css">
+  <!-- <link rel="stylesheet" href="./css/markup.css"> -->
 
   <!--* DEV - PixelGlass -->
   <!-- <link rel="stylesheet" href="./css/pixel-index.css">
       <link href="./pixelglass/styles.css" rel="stylesheet">
       <script src="./pixelglass/script.js"></script> -->
   <!-- DEV - END -->
+
 </head>
 
 <body class="page__body body">
 
   <!--* INDEX - HEADER -->
-  <header class="page__header header">
+  <header class="page__header header header--active">
 
-    <!-- Логотип -->
-    <a class="header__logo logo">
-      <picture>
-        <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
-        <source media="(min-width: 660px)" srcset="./img/logos/pink-tablet-white.svg">
-        <img class="logo__image" width="74" height="23" src="./img/logos/pink-mobile-white.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
-      </picture>
-    </a>
-
-    <button class="header__toggler" type="button"><span class="visually-hidden">Открыть меню</span></button>
-
-    <!-- Главное меню -->
     <nav class="header__nav nav">
+
+      <!-- Логотип / Кнопка-->
+      <div class="header__top">
+        <a class="logo">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
+            <source media="(min-width: 660px)" srcset="./img/logos/pink-tablet-white.svg">
+            <img class="logo__image" width="74" height="23" src="./img/logos/pink-mobile-white.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
+          </picture>
+        </a>
+        <button class="header__toggler" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+      </div>
+
+      <!-- Главное меню -->
       <ul class="nav__list">
         <li class="nav__item"><a class="nav__link nav__link--current">Главная</a></li>
         <li class="nav__item"><a class="nav__link" href="./catalog.html">Фотографии</a></li>
@@ -57,234 +62,267 @@
   </header>
 
   <!--* INDEX - MAIN -->
-  <main class="page_main main">
+  <main class="page__main main">
 
-    <h1 class="visually-hidden">Мобильное приложение &laquo;Pink&raquo;&nbsp;!</h1>
+    <h1 class="visually-hidden">Мобильное приложение &laquo;Pink&raquo;!</h1>
 
     <!-- СЕКЦИЯ HERO -->
-    <section class="hero">
-      <h2 class="">Взгляните на жизнь иначе!</h2>
-      <a class="" href="#">Скачать приложение</a>
-
-      <aside class="">
-        <h3 class="">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</h3>
-        <ul class="">
-          <li class="">
-            <a class="" href="https://www.apple.com/app-store/">
+    <section class="hero hero-index">
+      <h2 class="visually-hidden">Ссылки на приложение</h2>
+      <!-- Заголовок  -->
+      <p class="hero-index__title page__title">Взгляните на&nbsp;жизнь иначе!</p>
+      <!-- Список маркетов  -->
+      <div class="hero-index__content">
+        <!-- download button-->
+        <a class="hero__button page-button page-button--hero" href="#">Скачать приложение</a>
+        <ul class="hero__list">
+          <li class="hero__item">
+            <!-- apple ico -->
+            <a class="hero__link hero__link--apple" href="https://www.apple.com/app-store/">
               <span class="visually-hidden" lang="en">App Store</span>
             </a>
           </li>
-          <li class="">
-            <a class="" href="https://play.google.com/">
+          <!-- android ico -->
+          <li class="hero__item">
+            <a class="hero__link hero__link--google" href="https://play.google.com/">
               <span class="visually-hidden" lang="en">Android Market</span>
             </a>
           </li>
-          <li class="">
-            <a class="" href="https://www.microsoft.com/en-ws/store/b/home">
+          <!-- microsoft ico -->
+          <li class="hero__item">
+            <a class="hero__link hero__link--ms" href="https://www.microsoft.com/en-ws/store/b/home">
               <span class="visually-hidden" lang="en">Microsoft Store</span>
             </a>
           </li>
         </ul>
-      </aside>
+        <p class="hero__note">Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8</p>
+      </div>
     </section>
 
     <!-- ПРЕИМУЩЕСТВА -->
-    <section class="">
-      <h2 class="">
-        <span>Устали от серости мегаполиса?</span>
-        <span>Нам есть, что вам предложить!</span>
-      </h2>
+    <section class="advantages">
 
-      <article class="">
-        <h3 class="visually-hidden">Преимущества нашего мобильного приложения</h3>
-        <ul class="">
-          <li class="">
-            <h4 class="">Поднимает настроение</h4>
-            <p class="">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+      <h2 class="visually-hidden">Преимущества приложения</h2>
+
+      <div class="advantages__title-wrapper container">
+        <p class="advantages__title page__title">Устали от серости мегаполиса?</p>
+        <p class="advantages__title page__title"> Нам есть, что вам <br> предложить!</p>
+      </div>
+
+      <!-- Основное - преимущества -->
+      <div class="advantages__list-wrapper">
+        <ul class="advantages__list container">
+          <li class="advantages__item">
+            <h3 class="advantages__name">Поднимает настроение</h3>
+            <p class="advantages__desc">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
           </li>
-          <li class="">
-            <h4 class="">Меняет мир вокруг</h4>
-            <p class="">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+          <li class="advantages__item">
+            <h3 class="advantages__name">Меняет мир вокруг</h3>
+            <p class="advantages__desc">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
           </li>
-          <li class="">
-            <h4 class="">Заводит новых друзей</h4>
-            <p class="">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
+          <li class="advantages__item">
+            <h3 class="advantages__name">Заводит новых друзей</h3>
+            <p class="advantages__desc">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
+          </li>
+          <li class="advantages__item advantages__item--add">
+            <h3 class="advantages__name advantages__name--add">Эффект на 24 часа!</h3>
+            <p class="advantages__desc">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
+            <a class="advantages__link" href="#">Узнать больше об исследовании</a>
           </li>
         </ul>
-      </article>
-
-      <aside class="">
-        <h3 class="">Эффект на 24 часа!</h3>
-        <p class="">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
-        <a class="" href="">Узнать больше об исследовании</a>
-      </aside>
+      </div>
     </section>
 
     <!-- ОТЗЫВЫ -->
-    <section class="">
+    <section class="reviews container">
       <h2 class="visually-hidden">Отзывы пользователей</h2>
       <!-- #1 -->
-      <ul class="">
-        <li class="">
-          <article class="">
+      <ul class="reviews__list">
+        <li class="reviews__item">
+          <article class="reviews__content">
             <h3 class="visually-hidden">Отзыв №1</h3>
-            <p class="">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+            <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
               привычные серые вещи! А еще я познакомился со своей будущей женой в
               комментариях к выложенной фотографии!»</p>
-            <footer class="">
-              <span class="">Николай Петров</span>
-              <span class="">25 лет, водитель трамвая</span>
+            <footer class="reviews__author">
+              <span class="reviews__name">Николай Петров</span>
+              <span class="reviews__details">25 лет, водитель трамвая</span>
             </footer>
           </article>
         </li>
         <!-- #2 -->
-        <li class="">
-          <article class="">
+        <li class="reviews__item">
+          <article class="reviews__content">
             <h3 class="visually-hidden">Отзыв №2</h3>
-            <p class="">«Превосходная программа для обработки фотографий! Я использую ее для своей творческой работы, и она меня не разочаровала. Функции редактирования, такие как ретушь, наложение эффектов и регулировка яркости/контраста, работают на высоком уровне. Мне также нравится возможность сохранять пресеты и быстро применять их к другим фотографиям. Пинк - это мощный инструмент для творческих задач, и я рекомендую его всем дизайнерам и фотографам!»</p>
-            <footer class="">
-              <span class="">Иван Козлов</span>
-              <span class="">30 лет, дизайнер</span>
+            <p class="reviews__text">«Превосходная программа для обработки фотографий! Я использую ее для своей творческой работы, и она меня не разочаровала. Функции редактирования, такие как ретушь, наложение эффектов и регулировка яркости/контраста, работают на высоком уровне. Мне также нравится возможность сохранять пресеты и быстро применять их к другим фотографиям. Пинк - это мощный инструмент для творческих задач, и я рекомендую его всем дизайнерам и фотографам!»</p>
+            <footer class="reviews__author">
+              <span class="reviews__name">Иван Козлов</span>
+              <span class="reviews__details">30 лет, дизайнер</span>
             </footer>
           </article>
         </li>
         <!-- #3 -->
-        <li class="">
-          <article class="">
+        <li class="reviews__item">
+          <article class="reviews__content">
             <h3 class="visually-hidden">Отзыв №3</h3>
-            <p class="">«Пинк - это удивительная программа для обработки фотографий! Я в восторге от ее функциональности и удобства использования. С ее помощью я могу легко редактировать фотографии, добавлять фильтры, корректировать цвета и контраст, а также выполнять другие креативные манипуляции. Мне особенно понравился интерфейс программы, который интуитивно понятен и удобен в работе. Пинк стал незаменимым инструментом в моей работе, и я рекомендую его всем фотографам!»</p>
-            <footer class="">
-              <span class="">Ольга Смирнова</span>
-              <span class="">29 лет, фотограф</span>
+            <p class="reviews__text">«Пинк - это удивительная программа для обработки фотографий! Я в восторге от ее функциональности и удобства использования. С ее помощью я могу легко редактировать фотографии, добавлять фильтры, корректировать цвета и контраст, а также выполнять другие креативные манипуляции. Мне особенно понравился интерфейс программы, который интуитивно понятен и удобен в работе. Пинк стал незаменимым инструментом в моей работе, и я рекомендую его всем фотографам!»</p>
+            <footer class="reviews__author">
+              <span class="reviews__name">Ольга Смирнова</span>
+              <span class="reviews__details">29 лет, фотограф</span>
             </footer>
           </article>
         </li>
         <!-- #4 -->
-        <li class="">
-          <article class="">
+        <li class="reviews__item">
+          <article class="reviews__content">
             <h3 class="visually-hidden">Отзыв №4</h3>
-            <p class="">«Я попробовала программу Пинк и осталась разочарована. Несмотря на некоторые функции обработки фотографий, я нашла ее интерфейс сложным и запутанным. Она также не всегда стабильно работает и иногда выдает ошибки. Кроме того, я ожидала большего выбора фильтров и эффектов. В целом, мне пришлось потратить много времени на освоение программы, и она не соответствовала моим ожиданиям.»</p>
-            <footer class="">
-              <span class="">Анна Сидорова</span>
-              <span class="">31 год, маркетолог</span>
+            <p class="reviews__text">«Я попробовала программу Пинк и осталась разочарована. Несмотря на некоторые функции обработки фотографий, я нашла ее интерфейс сложным и запутанным. Она также не всегда стабильно работает и иногда выдает ошибки. Кроме того, я ожидала большего выбора фильтров и эффектов. В целом, мне пришлось потратить много времени на освоение программы, и она не соответствовала моим ожиданиям.»</p>
+            <footer class="reviews__author">
+              <span class="reviews__name">Анна Сидорова</span>
+              <span class="reviews__details">31 год, маркетолог</span>
             </footer>
           </article>
         </li>
       </ul>
+      <!-- Кнопки -->
+      <ul class="reviews__togglers togglers">
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#1</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#2</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#3</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#4</span></button></li>
+      </ul>
+      <!-- Стрелки -->
+      <div class="reviews__arrows arrows">
+        <button class="arrows__btn arrows__btn--prev"><span class="visually-hidden">Предыдущий</span></button>
+        <button class="arrows__btn arrows__btn--next"><span class="visually-hidden">Следующий</span></button>
+      </div>
     </section>
 
     <!-- ТАРИФЫ -->
-    <section class="">
+    <section class="rates">
       <h2 class="visually-hidden">Тарифы на подписку</h2>
-      <table class="">
-        <tr class="">
-          <th class=""></th>
-          <th class="">
-            <dl class="">
-              <dt class="">База</dt>
-              <dd class="">1,99 USD</dd>
-            </dl>
-          </th>
-          <th class="">
-            <dl class="">
-              <dt class="">Стандарт</dt>
-              <dd class="">3,99 USD</dd>
-            </dl>
-          </th>
-          <th class="">
-            <dl class="">
-              <dt class="">Анлим</dt>
-              <dd class="">9,99 USD</dd>
-            </dl>
-          </th>
-        </tr>
-        <tr class="">
-          <!-- <th class="" rowspan="2">Розовый фильтр</th> -->
-          <th class="">Розовый фильтр</th>
-          <td class="">есть</td>
-          <td class="">есть</td>
-          <td class="">есть</td>
-        </tr>
-        <tr class="">
-          <th class="">Смайлики</th>
-          <td class="">нет</td>
-          <td class="">есть</td>
-          <td class="">есть</td>
-        </tr>
-        <tr class="">
-          <th class="">Комментарии</th>
-          <td class="">нет</td>
-          <td class="">нет</td>
-          <td class="">есть</td>
-        </tr>
-      </table>
+      <div class="container">
+        <table class="rates__table">
+          <tr class="rates__row">
+            <th class="rates__header-cell"></th>
+            <th class="rates__header-cell">
+              <dl class="rates__term-list">
+                <dt class="rates__term">База</dt>
+                <dd class="rates__desc">1,99 USD</dd>
+              </dl>
+            </th>
+            <th class="rates__header-cell">
+              <dl class="rates__term-list">
+                <dt class="rates__term">Стандарт</dt>
+                <dd class="rates__desc">3,99 USD</dd>
+              </dl>
+            </th>
+            <th class="rates__header-cell">
+              <dl class="rates__term-list">
+                <dt class="rates__term">Анлим</dt>
+                <dd class="rates__desc">9,99 USD</dd>
+              </dl>
+            </th>
+          </tr>
+          <tr class="rates__row">
+            <th class="rates__header-cell">Розовый фильтр</th>
+            <td class="rates__cell">есть</td>
+            <td class="rates__cell">есть</td>
+            <td class="rates__cell">есть</td>
+          </tr>
+          <tr class="rates__row">
+            <th class="rates__header-cell">Смайлики</th>
+            <td class="rates__cell">нет</td>
+            <td class="rates__cell">есть</td>
+            <td class="rates__cell">есть</td>
+          </tr>
+          <tr class="rates__row">
+            <th class="rates__header-cell">Комментарии</th>
+            <td class="rates__cell">нет</td>
+            <td class="rates__cell">нет</td>
+            <td class="rates__cell">есть</td>
+          </tr>
+        </table>
+      </div>
+      <!-- Кнопки -->
+      <ul class="rates__togglers togglers container ">
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#1</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#2</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#3</span></button></li>
+      </ul>
     </section>
 
     <!-- ОБРАТНАЯ СВЯЗЬ -->
-    <footer class="">
-      <h2 class="">
-        <span>Остались вопросы?</span>
-        <span>Свяжитесь с нами!</span>
-      </h2>
-      <ul class="">
-        <li class="">
-          <p class="">
-            <b class="">Звоните:</b>
-            <span class="">+7 (812) 555-66-66</span>
+    <footer class="contacts">
+      <h2 class="visually-hidden">Контактная информация</h2>
+      <div class="contacts__title-wrapper container">
+        <p class="contacts__title page__title">Остались вопросы?</p>
+        <p class="contacts__title page__title">Свяжитесь с нами!</p>
+      </div>
+      <!-- Список контактов -->
+      <ul class="contacts__list container">
+        <li class="contacts__item">
+          <p class="contacts__text">
+            <b class="contacts__name">Звоните:</b>
+            <span class="contacts__info">+7 (812) 555-66-66</span>
           </p>
         </li>
-        <li class="">
-          <p class="">
-            <b class="">Пишите:</b>
-            <span class="">mail@htmlacademy.ru</span>
+        <li class="contacts__item">
+          <p class="contacts__text">
+            <b class="contacts__name">Пишите:</b>
+            <span class="contacts__info">mail@htmlacademy.ru</span>
           </p>
         </li>
-        <li class="">
-          <p class="">
-            <b class="">Приезжайте в гости:</b>
-            <span class="">ул. Большая Конюшенная, 19/8</span>
+        <li class="contacts__item">
+          <p class="contacts__text">
+            <b class="contacts__name">Приезжайте в гости:</b>
+            <span class="contacts__info">ул. Большая Конюшенная, 19/8</span>
           </p>
         </li>
       </ul>
-      <picture>
-        <source media="(min-width: 1200px)" srcset="./img/map/map-desktop.jpg">
-        <source media="(min-width: 660px)" srcset="./img/map/map-tablet.jpg">
-        <img class="" width="320" height="200" src="./img/map/map-mobile.jpg" alt="Карта проезда">
-      </picture>
+      <!-- Карта -->
+      <div class="map">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="./img/map/map-desktop.jpg">
+          <source media="(min-width: 660px)" srcset="./img/map/map-tablet.jpg">
+          <img class="map__image" width="320" height="200" src="./img/map/map-mobile.jpg" alt="Карта проезда">
+        </picture>
+      </div>
     </footer>
 
   </main>
 
   <!--* INDEX - FOOTER -->
-  <footer class="page_footer footer">
+  <footer class="page__footer footer container">
 
-    <a class="" href="#">
+    <!-- Логотип Пинк -->
+    <a class="logo logo--footer" href="#">
       <picture>
         <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-color.svg">
-        <img class="" width="145" height="40" src="./img/logos/pink-tablet-color.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
+        <img class="logo__image" width="145" height="40" src="./img/logos/pink-tablet-color.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
       </picture>
     </a>
 
     <!-- Ссылки на социальные сети -->
-    <ul class="">
-      <li class="">
-        <a class="" href="#">
+    <ul class="footer__list socials">
+      <li class="socials__item">
+        <a class="socials__link" href="#">
           <span class="visually-hidden">Twitter</span>
           <svg width="18" height="14" role="img" aria-hidden="true">
             <use xlink:href="./img/sprite.svg#ico-twitter"></use>
           </svg>
         </a>
       </li>
-      <li class="">
-        <a class="" href="#">
+      <li class="socials__item">
+        <a class="socials__link" href="#">
           <span class="visually-hidden">Facebook</span>
           <svg width="9" height="18" role="img" aria-hidden="true">
             <use xlink:href="./img/sprite.svg#ico-facebook"></use>
           </svg>
         </a>
       </li>
-      <li class="">
-        <a class="" href="#">
+      <li class="socials__item">
+        <a class="socials__link" href="#">
           <span class="visually-hidden">Youtube</span>
           <svg width="15" height="13" role="img" aria-hidden="true">
             <use xlink:href="./img/sprite.svg#ico-youtube"></use>
@@ -300,7 +338,6 @@
         <use xlink:href="./img/sprite.svg#ico-htmlacademy"></use>
       </svg>
     </a>
-
   </footer>
 
 </body>

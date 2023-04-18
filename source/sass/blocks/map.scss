@@ -1,0 +1,17 @@
+.map {
+  height: 200px;
+  overflow: hidden;
+
+  @media (min-width: $width-tablet) {
+    height: 374px;
+  }
+
+  @media (min-width: $width-desktop) {
+    height: 502px;
+  }
+}
+
+.map__image {
+  width: 100%;
+  background-size: cover;
+}

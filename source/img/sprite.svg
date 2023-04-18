@@ -1,6 +1,12 @@
 <!-- SVG Sprite start -->
 <!-- <svg style="display: none"> -->
 <!-- <symbol viewBox="" id="facebook"></symbol> -->
+
+<!-- How use in html -->
+<!-- <svg class="htmlacademy__logo" width="27" height="34" role="img" aria-hidden="true"> -->
+<!-- <use xlink:href="./img/sprite.svg#ico-htmlacademy"></use> -->
+<!-- </svg> -->
+
 <svg xmlns="http://www.w3.org/2000/svg">
 
 <!-- html-academy -->

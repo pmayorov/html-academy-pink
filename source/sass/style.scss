@@ -1,16 +1,17 @@
 /// Общие
 @import "./common/global.scss";
-// @import "./common/visually-hidden.scss";
+@import "./common/visually-hidden.scss";
 
 /// Шрифты. Переменные
 @import "./common/fonts.scss";
 @import "./common/variables.scss";
 
 /// Миксины
-// @import "./common/mixins.scss";
+@import "./common/mixins.scss";
 
 /// Блоки
 // Структурные
+@import "./blocks/container.scss";
 @import "./blocks/page.scss";
 @import "./blocks/header.scss";
 @import "./blocks/body.scss";
@@ -18,15 +19,17 @@
 @import "./blocks/footer.scss";
 
 // Главная
+@import "./blocks/logo.scss";
+@import "./blocks/hero.scss";
+@import "./blocks/hero-index.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/rates.scss";
+@import "./blocks/map.scss";
+@import "./blocks/page-button.scss";
 // @import "./blocks/title.scss";
-// @import "./blocks/button.scss";
-// @import "./blocks/container.scss";
-// @import "./blocks/hero.scss";
-// @import "./blocks/nav.scss";
-// @import "./blocks/logo.scss";
 // @import "./blocks/nav-button.scss";
 // @import "./blocks/site-menu.scss";
-// @import "./blocks/advantages.scss";
 // @import "./blocks/bonuses.scss";
 // @import "./blocks/hotel-search.scss";
 // @import "./blocks/map.scss";

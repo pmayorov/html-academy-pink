@@ -8,11 +8,6 @@ $width-max-mobile: (
   $width-tablet - 1
 );
 
-/// Ширина при которой УЖЕ можно включать десктопную раскладку (т.к. боковые паддинги довольно широкие)
-// $width-pre-desktop: (
-//   $width-desktop-content + 100px
-// );
-
 /// Отступы от краев вьюпорта
 $width-mobile-padding: 20px;
 $width-tablet-padding: 20px;
@@ -23,13 +18,21 @@ $width-desktop-padding: 130px;
 $width-mobile-content: (
   $width-mobile - 2 * $width-mobile-padding
 );
+
 /// Планшетный контент = 620px [Сетка: 2 * 300px + 20px]
 $width-tablet-content: (
   $width-tablet - 2 * $width-tablet-padding
 );
+
 /// Десктопный контент = 940px [Сетка: 3 * 300px + 2 * 20px]
 $width-desktop-content: (
   $width-desktop - 2 * $width-desktop-padding
+);
+
+/// Ширина при которой УЖЕ можно включать десктопную раскладку
+/// (т.к. боковые паддинги довольно широкие)
+$width-pre-desktop: (
+  $width-desktop-content + 100px
 );
 
 /// Шрифты
@@ -45,6 +48,7 @@ $color-gray--f2: #f2f2f2;
 $color-black: #000000;
 $color-white: #ffffff;
 $color-primary: #283645;
+$color-primary-dark: #1d2631;
 $color-secondary: #d22856;
 $color-canvas: $color-gray--f2;
 
@@ -53,14 +57,4 @@ $color-form_button--hover: #1c9b5e;
 
 $status-error: #ff5d5d;
 
-// Оттенки серого
-// $color-gray-008: #ebebeb;
-// $color-gray-010: #e6e6e6;
-// $color-gray-014: #dbdbdb;
-// $color-gray-015: #d9d9d9;
-// $color-gray-020: #cccccc;
-// $color-gray-060: #666666;
-// $color-gray-073: #454545;
-// $color-gray-080: #333333;
-// $color-gray-087: #212121;
-// $color-gray-093: #121212;
+$opacity: 0.3;
