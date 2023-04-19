@@ -1,41 +1,199 @@
 .nav {
-  // display: none;
-  grid-column: 1 / -1;
-  // !DEV
-  @include outline(1px, solid, lime);
-  width: 100%;
-
-  // @media (min-width: $width-desktop) {
-  //   width: fit-content;
-  // }
-}
-
-.nav__list {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  width: 100%;
 
   @media (min-width: $width-desktop) {
+    justify-content: space-between;
     flex-direction: row;
   }
 }
 
+.nav__top {
+  display: flex;
+  justify-content: space-between;
+
+  // #region DEVNOTE
+  //* grid-template-columns: 1fr min-content;
+  //* Компенсируем высоту меню. Расчет высоты грид строки с учетом нижнего паддинга.
+  //* В данном случае грид-ячейке паддинг изменяет высоту родительского блока
+  //* grid-column: 2/3;
+  // #endregion
+
+  width: 100%;
+  height: 66px;
+  align-items: center;
+
+  @media (min-width: $width-tablet) {
+    height: 110px;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: fit-content;
+  }
+}
+
+// #region DEVNOTE
+//* В мобильной и планшетной версии позиционируем абсолютно,
+//* чтобы пункты меню растягивались
+//* на всю ширину вьюпорта и вся область пункта была кликабельна.
+// #endregion
+
+.nav__list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  // 66px - мобильная высота nav__top (верхний навбар)
+  top: 66px;
+  display: none;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-color: $color-primary;
+  list-style-type: none;
+
+
+  @media (min-width: $width-tablet) {
+    // 110px - планшетная высота nav__top (верхний навбар)
+    top: 110px;
+  }
+
+  @media (min-width: $width-desktop) {
+    position: unset;
+    display: flex;
+    flex-direction: row;
+    margin-right: -40px;
+    background-color: transparent;
+  }
+}
+
+.nav__toggler {
+  border: none;
+  padding: 0;
+  height: 66px;
+  margin-right: -20px;
+  background-color: $color-white;
+
+  @media (min-width: $width-desktop) {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-secondary;
+  }
+
+  &:active {
+    background-color: rgba($color-secondary, $opacity);
+  }
+
+  &--close {
+    width: 63px;
+    mask: url("../../img/ico/btn-menu-close.svg") no-repeat center;
+  }
+
+  &--open {
+    width: 90px;
+    mask: url("../../img/ico/btn-menu-open.svg") no-repeat center;
+  }
+}
+
+// #region DEVNOTE
+//* Преобразование во flex li-пункта и дочерней ссылки <a>
+//* растягивает кликабельность пунктов меню на всю высоту ul-a.
+// #endregion
+
 .nav__item {
   display: flex;
+  position: relative;
+
+  // #region - DEVNOTE
+  //* Две линии над пунктами меню оформляем 2-мя псевдоэлементами
+  //* 3-ю линию подчеркивающую последний пункт оформляем свойством "box-shadow"
+  // #endregion
+
+  @media (max-width: ($width-desktop - 1)) {
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+    }
+
+    &::before {
+      top: 1px;
+      background-color: rgba($color-white, 0.15);
+    }
+
+    &::after {
+      background-color: $color-black;
+    }
+
+    &:last-of-type {
+      box-shadow: 0 1px 0 $color-black
+    }
+  }
+
 }
 
 .nav__link {
-  // !DEV
-  @include outline(1px, solid, yellow);
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 18px;
   font-weight: 700;
   line-height: 32px;
   padding: 16px;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: $color-white;
+
+  @media (min-width: $width-desktop) {
+    font-weight: 400;
+    padding: 0 40px;
+    text-transform: initial;
+  }
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &:active {
+    color: rgba($color-white, $opacity);
+  }
+
+  // Правила для активной (текущей) страницы:
+  // Ссылки не вырезаем и все такое прочее, а просто отключаем событи при наведении мыши
+
+  &--current {
+    position: relative;
+    pointer-events: none;
+
+    // Выделение активного пункта меню мобилке-планшете.
+    @media (max-width: ($width-desktop - 1)) {
+      color: rgba($color-white, 0.3);
+    }
+
+    // #region - DEVNOTE
+    //* Подчеркивваем активный пункт меню в десктопе псевдоэлементом.
+    //* Ширина подчеркивания должна == ширине наименования пункта,
+    //* но поскольку у нас есть боковые паддинги расчитываем ширину
+    //* подчеркивания, как 100% ширины пункта минус сумма боковых паддингов
+    // #endregion
+
+    @media (min-width: ($width-desktop)) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 26px;
+        width: calc(100% - 80px);
+        height: 2px;
+        background-color: $color-white;
+      }
+    }
+  }
 }

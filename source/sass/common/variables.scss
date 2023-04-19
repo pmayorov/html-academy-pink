@@ -35,6 +35,11 @@ $width-pre-desktop: (
   $width-desktop-content + 100px
 );
 
+// Расчет адаптивной ширины
+$width-adaptive: calc(100vw - 2 * 130px);
+$width-mobile-adaptive: calc(100vw - 2 * $width-mobile-padding);
+$width-tablet-adaptive: calc(100vw - 2 * $width-tablet-padding);
+
 /// Шрифты
 $font-title: "Open Sans", "Verdana", sans-serif;
 $font-body: "Open Sans", "Verdana", sans-serif;
@@ -44,17 +49,13 @@ $font-body: "Open Sans", "Verdana", sans-serif;
 $color-gray--de: #dedede;
 $color-gray--e5: #e5e5e5;
 $color-gray--f2: #f2f2f2;
-
 $color-black: #000000;
 $color-white: #ffffff;
 $color-primary: #283645;
 $color-primary-dark: #1d2631;
 $color-secondary: #d22856;
 $color-canvas: $color-gray--f2;
-
 $color-form_button: #2aab6d;
 $color-form_button--hover: #1c9b5e;
-
 $status-error: #ff5d5d;
-
 $opacity: 0.3;

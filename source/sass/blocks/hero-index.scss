@@ -50,13 +50,25 @@
   align-items: center;
   padding-top: 28px;
   padding-bottom: 31px;
+
+  @media (min-width: $width-desktop) {
+    // Отступ кнопки от HERO заголовка, который находится в другой секции
+    padding-top: 51px;
+  }
 }
 
 .hero-index__title {
   grid-column: 2/3;
   padding-top: 95px;
+  overflow-y: hidden;
 
   @media (min-width: $width-tablet) {
+    overflow-y: initial;
+    line-height: 48px;
     padding-top: 200px;
+  }
+
+  @media (min-width: $width-desktop) {
+    line-height: 68px;
   }
 }

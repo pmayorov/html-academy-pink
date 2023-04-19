@@ -34,10 +34,9 @@
   <!--* INDEX - HEADER -->
   <header class="page__header header header--active">
 
-    <nav class="header__nav nav">
-
+    <nav class="header__nav nav nav--active">
       <!-- Логотип / Кнопка-->
-      <div class="header__top">
+      <div class="nav__top">
         <a class="logo">
           <picture>
             <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
@@ -45,14 +44,13 @@
             <img class="logo__image" width="74" height="23" src="./img/logos/pink-mobile-white.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
           </picture>
         </a>
-        <button class="header__toggler" type="button">
+        <button class="nav__toggler nav__toggler--open" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
       </div>
-
       <!-- Главное меню -->
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link nav__link--current">Главная</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--current" href="./index.html">Главная</a></li>
         <li class="nav__item"><a class="nav__link" href="./catalog.html">Фотографии</a></li>
         <li class="nav__item"><a class="nav__link" href="./form.html">Конкурс</a></li>
         <li class="nav__item"><a class="nav__link" href="#">HTML Academy</a></li>

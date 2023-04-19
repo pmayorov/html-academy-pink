@@ -7,6 +7,14 @@
   width: 100%;
   // 12px - компенсация верхних паддингов в ссылках нижнего списка маркетов
   margin-bottom: calc(32px - 12px);
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: calc(46px - 12px);
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-bottom: calc(67px - 12px);
+  }
 }
 
 .hero__list {
@@ -24,7 +32,6 @@
 
 .hero__link {
   display: block;
-  outline: 1px dotted violet;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -55,7 +62,12 @@
   text-align: center;
 
   @media (min-width: $width-tablet) {
+    margin: calc(38px - 12px) 0 0;
     font-size: 18px;
     line-height: 24px;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin: calc(58px - 12px) 0 0;
   }
 }

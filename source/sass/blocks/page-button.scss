@@ -13,13 +13,17 @@
   outline-style: solid;
   outline-offset: -3px;
 
-  // &:hover {}
-  // &:active {}
-
   &--hero {
     color: $color-white;
     outline-color: $color-white;
+
+    &:hover {
+      color: $color-secondary;
+      background-color: $color-white;
+    }
+
+    &:active {
+      color: rgba($color-secondary, 0.3);
+    }
   }
-
-
 }
