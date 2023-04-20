@@ -107,12 +107,12 @@
   display: flex;
   position: relative;
 
-  // #region - DEVNOTE
-  //* Две линии над пунктами меню оформляем 2-мя псевдоэлементами
-  //* 3-ю линию подчеркивающую последний пункт оформляем свойством "box-shadow"
-  // #endregion
-
   @media (max-width: ($width-desktop - 1)) {
+
+    // #region - DEVNOTE
+    //* Двойную линию над пунктами меню оформляем 2-мя псевдоэлементами
+    //* 3-ю линию, подчеркивающую последний пункт, оформляем свойством "box-shadow"
+    // #endregion
 
     &::before,
     &::after {
@@ -133,10 +133,9 @@
     }
 
     &:last-of-type {
-      box-shadow: 0 1px 0 $color-black
+      box-shadow: 0 1px 0 $color-black;
     }
   }
-
 }
 
 .nav__link {

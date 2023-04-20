@@ -20,11 +20,11 @@
 
   &--active {
     @media (max-width: ($width-desktop - 1)) {
-        background-color: $color-primary;
-      }
+      background-color: $color-primary;
     }
   }
+}
 
-  .header__nav {
-    grid-column: 2/3;
-  }
+.header__nav {
+  grid-column: 2/3;
+}
