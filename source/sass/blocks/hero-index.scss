@@ -4,8 +4,8 @@
   grid-template-rows: 462px 1fr;
   column-gap: $width-mobile-padding;
   background-image:
-    url("../../img/index/promo-hand-mobile@1x.png"),
-    url("../../img/index/promo-back-mobile@1x.jpg");
+    url("../img/index/promo-hand-mobile@1x.png"),
+    url("../img/index/promo-back-mobile@1x.jpg");
   background-repeat:
     no-repeat,
     no-repeat;
@@ -21,8 +21,8 @@
     grid-template-rows: min-content;
     min-height: 729px;
     background-image:
-      url("../../img/index/promo-hand-tablet@1x.png"),
-      url("../../img/index/promo-back-tablet@1x.jpg");
+      url("../img/index/promo-hand-tablet@1x.png"),
+      url("../img/index/promo-back-tablet@1x.jpg");
     background-position:
       50% bottom,
       center 0;
@@ -35,8 +35,8 @@
     grid-template-columns: 1fr repeat(3, 300px) 1fr;
     min-height: 853px;
     background-image:
-      url("../../img/index/promo-hand-desktop@1x.png"),
-      url("../../img/index/promo-back-desktop@1x.jpg");
+      url("../img/index/promo-hand-desktop@1x.png"),
+      url("../img/index/promo-back-desktop@1x.jpg");
     background-position:
       calc(50% + 70px) bottom,
       center 0;
