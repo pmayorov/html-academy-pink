@@ -1,5 +1,5 @@
 .logo {
-  display: block;
+  display: flex;
 
   &:not(:link) {
     pointer-events: none;
