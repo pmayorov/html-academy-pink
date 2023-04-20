@@ -1,3 +1,65 @@
-.footer {
-  @include outline(2px, solid, pink, -2px);
+// .footer {}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+
+  @media (min-width: $width-tablet) {
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+    // flex-direction: row;
+    // justify-content: space-between;
+
+    // #region Как я считал паддинги :))))
+    //* Все расчеты из-за придуманной мною "кликабельности"
+    //*  Общая высота блока по макету == 127px, но имеем - 152px из-за [1] блока
+    //  Паддинги блока по макету (верх-низ) == 2 * 36px
+    //  Высоты элементов блока: [1 - 80px] - [2 - 54px] - [3 - 54px]
+    //  т.е. "лишние" 80px - 54px = 26px или 2 * 13px – мы их компенсируем
+    //*  Было h==152px > [padding: calc(36px - 13px)] > h==127px
+    //  но по макетному выравниванию нам надо блок [1] поднять вверх > margin-top: -14px,
+    //  т.е. "воруем" у общей высоты главного блока 14px
+    //*  Было h==152px > [padding: calc(36px - 13px) & margin-top: -14px] > h==112px
+    //  Чтобы выйти на макетную высоту 127px в расчете padding-ов "компенсируем" недостающее
+    // * Делаем h==152px > [padding: calc(36px - 6px) & margin-top: -14px] > h==126px
+    //  P.S. Арифметически расчеты неправильные, но я вписывал те результаты, которые мне давал браузер,
+    //  по идее нехватает 14px == (2 * 7px), но т.к. он что-то там "округляет" имеем 2 * 6px
+    //  #endregion
+
+    padding: calc(36px - 6px) 0;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding: calc(71px - 6px) 0;
+  }
+}
+
+.footer__logo {
+  // Компенсация макетных отступов и расстояний из-за "кликабельных" паддингов
+  // margin-top: -20px;
+  margin-bottom: calc(38px - 20px);
+
+  @media (min-width: $width-tablet) {
+    // Выравнивал верхний край логотипа по DevTools-у
+    margin-top: -14px;
+    margin-bottom: 0;
+    margin-left: -20px;
+  }
+}
+
+.footer__list {
+  margin: 0;
+}
+
+.footer__copyright {
+  // Компенсация макетных отступов и расстояний из-за "кликабельных" паддингов
+  margin-top: calc(38px - 11px);
+  margin-bottom: -9px;
+
+  @media (min-width: $width-tablet) {
+    margin: 0;
+    margin-right: -11px;
+  }
 }

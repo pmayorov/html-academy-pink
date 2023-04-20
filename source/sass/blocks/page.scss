@@ -7,8 +7,25 @@
   font-size: 14px;
 }
 
+// Оформляю секцию как грид-сетку [ 1fr $width 1fr ] с адативной центральной ячейкой
+.page__header,
+.page__footer {
+  @include adaptiveframe();
+}
+
+// По макету меню хедера полупрозрачное и под ним HERO блок
+.page__header {
+  position: absolute;
+}
+
+// Позиционирование контентых блоков хедера и футера в центральной ячейке родительских секций.
+.page__nav,
+.page__footer-content {
+  grid-column: 2/3;
+}
+
+// as sticky footer
 .page__body {
-  //* Sticky footer
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   min-height: 100%;
@@ -32,9 +49,3 @@
     line-height: 68px;
   }
 }
-
-// .page__header,
-// .page__main,
-// .page__footer {
-//   margin: 0 auto;
-// }

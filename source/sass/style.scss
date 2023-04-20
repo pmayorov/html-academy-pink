@@ -9,6 +9,9 @@
 /// Миксины
 @import "./common/mixins.scss";
 
+///* DEV
+@import "./common/dev-outlines.scss";
+
 /// Блоки
 // Структурные
 @import "./blocks/container.scss";
@@ -47,6 +50,6 @@
 // @import "./blocks/control-panel.scss";
 
 // Футер
-// @import "./blocks/socials.scss";
-// @import "./blocks/html-academy.scss";
+@import "./blocks/social-networks.scss";
+@import "./blocks/copyright.scss";
 // @import "./blocks/modal.scss";

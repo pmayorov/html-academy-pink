@@ -1,5 +1,4 @@
 .container {
-  @include outline(3px, dotted, rgb(108, 18, 224));
   width: $width-mobile;
   margin-right: auto;
   margin-left: auto;

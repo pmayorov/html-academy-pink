@@ -2,10 +2,14 @@
 <html class="page" lang="ru">
 
 <head>
+
+  <!-- #region Метатеги -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- #endregion -->
   <title>&laquo;ПИНК&raquo; | Главная страница </title>
-  <!-- Подключение стилей проекта -->
+  <!-- #region Подключения ресурсов -->
+  <!-- Стили -->
   <link rel="stylesheet" href="./css/style.min.css">
   <!-- Фавиконки -->
   <link rel="icon" href="./favicon.ico">
@@ -20,12 +24,11 @@
   <!--* DEV - Визуализация разметки -->
   <!-- <link rel="stylesheet" href="./css/outline.css"> -->
   <!-- <link rel="stylesheet" href="./css/markup.css"> -->
-
   <!--* DEV - PixelGlass -->
-  <!-- <link rel="stylesheet" href="./css/pixel-index.css">
-      <link href="./pixelglass/styles.css" rel="stylesheet">
-      <script src="./pixelglass/script.js"></script> -->
-  <!-- DEV - END -->
+  <!-- <link rel="stylesheet" href="./css/pixel-index.css"> -->
+  <!-- <link href="./pixelglass/styles.css" rel="stylesheet"> -->
+  <!-- <script src="./pixelglass/script.js"></script> -->
+  <!-- #endregion -->
 
 </head>
 
@@ -34,10 +37,11 @@
   <!--* INDEX - HEADER -->
   <header class="page__header header header--active">
 
-    <nav class="header__nav nav nav--active">
-      <!-- Логотип / Кнопка-->
-      <div class="nav__top">
-        <a class="logo">
+    <!-- Навигация -->
+    <nav class="page__nav nav nav--active">
+      <!-- #1 Логотип & Кнопка-->
+      <div class="nav__top-bar">
+        <a class="nav__logo logo logo--header">
           <picture>
             <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
             <source media="(min-width: 660px)" srcset="./img/logos/pink-tablet-white.svg">
@@ -48,7 +52,7 @@
           <span class="visually-hidden">Открыть меню</span>
         </button>
       </div>
-      <!-- Главное меню -->
+      <!-- #2 Главное меню -->
       <ul class="nav__list">
         <li class="nav__item"><a class="nav__link nav__link--current" href="./index.html">Главная</a></li>
         <li class="nav__item"><a class="nav__link" href="./catalog.html">Фотографии</a></li>
@@ -291,51 +295,54 @@
   </main>
 
   <!--* INDEX - FOOTER -->
-  <footer class="page__footer footer container">
+  <footer class="page__footer footer">
 
-    <!-- Логотип Пинк -->
-    <a class="logo logo--footer" href="#">
-      <picture>
-        <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-color.svg">
-        <img class="logo__image" width="145" height="40" src="./img/logos/pink-tablet-color.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
-      </picture>
-    </a>
+    <div class="page__footer-content footer__content">
+      <!-- #1 Логотип Пинк -->
+      <a class="footer__logo logo logo--footer" href="#">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-color.svg">
+          <img class="logo__image" width="145" height="40" src="./img/logos/pink-tablet-color.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
+        </picture>
+      </a>
 
-    <!-- Ссылки на социальные сети -->
-    <ul class="footer__list socials">
-      <li class="socials__item">
-        <a class="socials__link" href="#">
-          <span class="visually-hidden">Twitter</span>
-          <svg width="18" height="14" role="img" aria-hidden="true">
-            <use xlink:href="./img/sprite.svg#ico-twitter"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="socials__item">
-        <a class="socials__link" href="#">
-          <span class="visually-hidden">Facebook</span>
-          <svg width="9" height="18" role="img" aria-hidden="true">
-            <use xlink:href="./img/sprite.svg#ico-facebook"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="socials__item">
-        <a class="socials__link" href="#">
-          <span class="visually-hidden">Youtube</span>
-          <svg width="15" height="13" role="img" aria-hidden="true">
-            <use xlink:href="./img/sprite.svg#ico-youtube"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
+      <!-- #2 Ссылки на социальные сети -->
+      <ul class="footer__list social-networks">
+        <li class="social-networks__item">
+          <a class="social-networks__link" href="#">
+            <span class="visually-hidden">Twitter</span>
+            <svg width="18" height="15" role="img" aria-hidden="true">
+              <use xlink:href="./img/sprite.svg#ico-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-networks__item">
+          <a class="social-networks__link" href="#">
+            <span class="visually-hidden">Facebook</span>
+            <svg width="9" height="18" role="img" aria-hidden="true">
+              <use xlink:href="./img/sprite.svg#ico-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-networks__item">
+          <a class="social-networks__link" href="#">
+            <span class="visually-hidden">Youtube</span>
+            <svg width="15" height="13" role="img" aria-hidden="true">
+              <use xlink:href="./img/sprite.svg#ico-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
 
-    <!-- Логотип академии -->
-    <a class="htmlacademy" href="https://htmlacademy.org/">
-      Разработано <span class="visually-hidden">в HTML Academy</span>
-      <svg class="htmlacademy__logo" width="27" height="34" role="img" aria-hidden="true">
-        <use xlink:href="./img/sprite.svg#ico-htmlacademy"></use>
-      </svg>
-    </a>
+      <!-- #3 Логотип академии -->
+      <a class="footer__copyright copyright" href="https://htmlacademy.org/">
+        Разработано <span class="visually-hidden">в HTML Academy</span>
+        <svg class="copyright__logo" width="27" height="34" role="img" aria-hidden="true">
+          <use xlink:href="./img/sprite.svg#ico-htmlacademy"></use>
+        </svg>
+      </a>
+    </div>
+
   </footer>
 
 </body>

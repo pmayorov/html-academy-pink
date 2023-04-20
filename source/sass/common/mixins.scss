@@ -1,6 +1,25 @@
 // @include outline();
 
-// !DEV
+// Смена ширины контентной области в зависимости от ширины вьюпорпта
+@mixin adaptiveframe() {
+  display: grid;
+  grid-template-columns: 1fr $width-mobile-content 1fr;
+  column-gap: $width-mobile-padding;
+
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 1fr $width-tablet-content 1fr;
+    // grid-template-columns: 1fr $width-tablet-adaptive 1fr;
+    column-gap: $width-tablet-padding;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-template-columns: 1fr $width-desktop-content 1fr;
+    column-gap: $width-desktop-padding;
+  }
+}
+
+
+//* DEV
 //* Бордер для орієнтування!
 @mixin outline ($width: 1px, $style: dotted, $color: #0f99da, $offset: 0) {
   outline: {
@@ -11,7 +30,8 @@
   }
 }
 
-// * Оставляю на будущее, чтобы знать как вариант!
+
+// * MY_PATTERN
 // Оформление иконки с передачей цвета
 // и прозрачности в качестве параметров
 

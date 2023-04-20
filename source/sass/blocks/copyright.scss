@@ -1,0 +1,34 @@
+.copyright {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  // Ситуативно – "кликабельный" паддинг вокруг лого.
+  // Размеры (вверх-низ) подбираю так, чтобы суммарная высота == высоте иконок соцсетей
+  padding: 11px 11px 9px;
+  line-height: 18px;
+  text-decoration: none;
+  word-break: break-word;
+  color: $color-primary;
+
+  @media (min-width: $width-desktop) {
+    font-size: 18px;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $status-focus;
+  }
+}
+
+.copyright__logo {
+  color: $color-secondary;
+  flex-shrink: inherit;
+  margin-left: 15px;
+
+  .copyright:hover & {
+    color: $color-primary;
+  }
+
+  .copyright:active & {
+    color: rgba($color-primary, $opacity);
+  }
+}

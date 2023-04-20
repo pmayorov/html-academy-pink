@@ -1,0 +1,13 @@
+.page__footer-content {
+  @include outline(1px, dotted, #1b3aebe5);
+}
+
+.logo--footer,
+.social-networks,
+.copyright {
+  @include outline(1px, dotted, #2c9c00e5);
+}
+
+.container {
+  @include outline(2px, dotted, #6c12e0);
+}

@@ -1,33 +1,8 @@
 .logo {
   display: block;
-  padding: 20px;
-  margin-left: -20px;
-
-  @media (min-width: $width-tablet) {
-    // #region -- DEVNOTE
-    // Поскольку размеры планшетного и десктопного логотипов отличаются
-    // от мобильного, то при установленном вертикальном центрировании
-    // он смещается относительно кнопки (в планшете) и меню (на десктопе).
-    // А по макету у нас позиция нижнего края логотипа остается стационарной.
-    // Отрицательным врехним отступом выравниванием нижний край лого.
-    // #endregion
-    margin-top: -9px;
-  }
 
   &:not(:link) {
     pointer-events: none;
-  }
-}
-
-.logo__image {
-  display: block;
-
-  @media (min-width: $width-tablet) {
-    width: 145px;
-  }
-
-  @media (min-width: $width-desktop) {
-    width: 147px;
   }
 
   // #region - DEVNOTE!
@@ -42,7 +17,27 @@
     filter: brightness(0) saturate(100%) invert(24%) sepia(48%) saturate(4325%) hue-rotate(328deg) brightness(86%) contrast(91%);
   }
 
-  &:active {
+  &--header {
+    padding: 20px;
+  }
+
+  &--header:active {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(116deg) brightness(103%) contrast(105%) opacity(30%);
+  }
+
+  &--footer:active {
+    filter: opacity(30%);
+  }
+}
+
+.logo__image {
+  display: block;
+
+  @media (min-width: $width-tablet) {
+    width: 145px;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: 147px;
   }
 }

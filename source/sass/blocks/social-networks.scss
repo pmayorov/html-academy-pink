@@ -1,0 +1,37 @@
+.social-networks {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  padding: 0;
+  list-style-type: none;
+}
+
+// .social-networks__item {}
+
+.social-networks__link {
+  display: flex;
+  width: 54px;
+  height: 54px;
+  align-items: center;
+  justify-content: center;
+  color: $color-secondary;
+  border-radius: 50%;
+  outline: 3px solid rgba($color-primary, 0.1);
+  outline-offset: -3px;
+
+  & svg {
+    color: $color-secondary;
+  }
+
+  &:hover {
+    outline-color: $color-primary;
+  }
+
+  &:active {
+    outline-color: rgba($color-primary, 0.1);
+
+    & svg {
+      color: rgba($color-secondary, 0.3);
+    }
+  }
+}
