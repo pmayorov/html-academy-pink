@@ -1,11 +1,5 @@
-.logo--header {
-  // @include outline(1px, dotted, #b2f744e5);
-}
-
-.logo--footer,
-.social-networks,
-.copyright {
-  // @include outline(1px, dotted, #2c9c00e5);
+.map {
+  @include outline(1px, dotted, #1ac404e5);
 }
 
 .container {

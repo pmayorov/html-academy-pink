@@ -54,7 +54,6 @@
   // 66px - мобильная высота nav__top (верхний навбар)
   top: 66px;
   display: none;
-  // display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
@@ -76,6 +75,29 @@
     margin-right: -40px;
     padding: 22px 0 16px;
     background-color: transparent;
+  }
+
+  &--active {
+    display: flex;
+  }
+
+  &--nojs {
+    @media (max-width: ($width-desktop - 1)) {
+      display: flex;
+      position: initial;
+
+      // Растягиваю разделительные линии на всю ширину вьюпорта
+      & .nav__item::before,
+      & .nav__item::after {
+        left: -30vw;
+        right: -30vw;
+      }
+
+      // Убираю в последнем пункте меню нератягиваемое подчеркивание
+      & .nav__item:last-of-type {
+        box-shadow: none;
+      }
+    }
   }
 }
 
@@ -172,9 +194,11 @@
 .nav__toggler {
   border: none;
   padding: 0;
+  width: 90px;
   height: 66px;
   margin-right: -20px;
   background-color: $color-white;
+  mask: url("../img/ico/btn-menu-open.svg") no-repeat center;
 
   @media (min-width: $width-desktop) {
     display: none;
@@ -189,13 +213,8 @@
     background-color: rgba($color-secondary, $opacity);
   }
 
-  &--close {
+  &--active {
     width: 63px;
     mask: url("../img/ico/btn-menu-close.svg") no-repeat center;
-  }
-
-  &--open {
-    width: 90px;
-    mask: url("../img/ico/btn-menu-open.svg") no-repeat center;
   }
 }

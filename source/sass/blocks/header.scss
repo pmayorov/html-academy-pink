@@ -7,4 +7,11 @@
       background-color: $color-primary;
     }
   }
+
+  &--nojs {
+    @media (max-width: ($width-desktop - 1)) {
+      position: initial;
+      background-color: $color-primary;
+    }
+  }
 }
