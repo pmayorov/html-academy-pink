@@ -10,12 +10,13 @@
 
   @media (min-width: $width-tablet) {
     display: grid;
-    grid-template-columns: 150px 1fr 150px;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: initial;
+    padding: 36px 0;
   }
 
   @media (min-width: $width-desktop) {
-    // padding: calc(71px - 6px) 0;
+    padding: 71px 0;
   }
 }
 
@@ -27,6 +28,11 @@
 }
 
 .footer__logo {
+
+  //
+  @media (max-width: $width-max-mobile) {
+    margin-bottom: 38px;
+  }
 
   @media (min-width: $width-tablet) {
     // Подравниваю логотип по базовой линии
@@ -41,6 +47,9 @@
 }
 
 .footer__copyright {
+  @media (max-width: $width-max-mobile) {
+    margin-top: 38px;
+  }
 
   @media (min-width: $width-tablet) {
     justify-content: right;

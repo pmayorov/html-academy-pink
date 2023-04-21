@@ -20,7 +20,7 @@
 
 .copyright__logo {
   color: $color-secondary;
-  flex-shrink: inherit;
+  flex-shrink: 0;
   margin-left: 15px;
 
   .copyright:hover & {

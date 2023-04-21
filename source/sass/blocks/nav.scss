@@ -12,14 +12,6 @@
 .nav__top-bar {
   display: flex;
   justify-content: space-between;
-
-  // #region DEVNOTE
-  //* grid-template-columns: 1fr min-content;
-  //* Компенсируем высоту меню. Расчет высоты грид строки с учетом нижнего паддинга.
-  //* В данном случае грид-ячейке паддинг изменяет высоту родительского блока
-  //* grid-column: 2/3;
-  // #endregion
-
   width: 100%;
   height: 66px;
   align-items: center;
@@ -30,28 +22,29 @@
 
   @media (min-width: $width-desktop) {
     width: fit-content;
+    // Чтобы лого слева не сужалось при переполнении меню справа.
+    flex-shrink: 0;
   }
 }
 
 .nav__logo {
-  margin-left: -20px;
 
+  // #region -- DEVNOTE
+  // Поскольку размеры планшетного и десктопного логотипов отличаются
+  // от мобильного, то при установленном вертикальном центрировании
+  // он смещается относительно кнопки (в планшете) и меню (на десктопе).
+  // А по макету у нас позиция нижнего края логотипа остается стационарной.
+  // Отрицательным врехним отступом выравниванием нижний край лого.
+  // #endregion
   @media (min-width: $width-tablet) {
-    // #region -- DEVNOTE
-    // Поскольку размеры планшетного и десктопного логотипов отличаются
-    // от мобильного, то при установленном вертикальном центрировании
-    // он смещается относительно кнопки (в планшете) и меню (на десктопе).
-    // А по макету у нас позиция нижнего края логотипа остается стационарной.
-    // Отрицательным врехним отступом выравниванием нижний край лого.
-    // #endregion
     margin-top: -9px;
   }
 }
 
 // #region DEVNOTE
 //* В мобильной и планшетной версии позиционируем абсолютно,
-//* чтобы пункты меню растягивались
-//* на всю ширину вьюпорта и вся область пункта была кликабельна.
+//* чтобы пункты меню растягивались на всю ширину вьюпорта
+//* и вся область пункта была кликабельна.
 // #endregion
 
 .nav__list {
@@ -61,6 +54,7 @@
   // 66px - мобильная высота nav__top (верхний навбар)
   top: 66px;
   display: none;
+  // display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
@@ -77,50 +71,18 @@
     position: unset;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: end;
     margin-right: -40px;
+    padding: 22px 0 16px;
     background-color: transparent;
   }
 }
 
-.nav__toggler {
-  border: none;
-  padding: 0;
-  height: 66px;
-  margin-right: -20px;
-  background-color: $color-white;
-
-  @media (min-width: $width-desktop) {
-    display: none;
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: $color-secondary;
-  }
-
-  &:active {
-    background-color: rgba($color-secondary, $opacity);
-  }
-
-  &--close {
-    width: 63px;
-    mask: url("../img/ico/btn-menu-close.svg") no-repeat center;
-  }
-
-  &--open {
-    width: 90px;
-    mask: url("../img/ico/btn-menu-open.svg") no-repeat center;
-  }
-}
-
-// #region DEVNOTE
-//* Преобразование во flex li-пункта и дочерней ссылки <a>
-//* растягивает кликабельность пунктов меню на всю высоту ul-a.
-// #endregion
-
 .nav__item {
-  display: flex;
   position: relative;
+  display: flex;
+  align-items: flex-start;
 
   @media (max-width: ($width-desktop - 1)) {
 
@@ -155,20 +117,18 @@
 
 .nav__link {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 18px;
   font-weight: 700;
   line-height: 32px;
   padding: 16px;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   color: $color-white;
 
   @media (min-width: $width-desktop) {
     font-weight: 400;
-    padding: 0 40px;
+    padding: 20px 40px;
     text-transform: initial;
   }
 
@@ -192,22 +152,50 @@
       color: rgba($color-white, 0.3);
     }
 
-    // #region - DEVNOTE
-    //* Подчеркивваем активный пункт меню в десктопе псевдоэлементом.
-    //* Ширина подчеркивания должна == ширине наименования пункта,
-    //* но поскольку у нас есть боковые паддинги расчитываем ширину
-    //* подчеркивания, как 100% ширины пункта минус сумма боковых паддингов
-    // #endregion
-
+    // Выделение активного пункта меню в десктопе.
     @media (min-width: ($width-desktop)) {
       &::after {
         content: "";
         position: absolute;
-        bottom: 26px;
-        width: calc(100% - 80px);
+        bottom: 7px;
+        left: 40px;
+        right: 40px;
         height: 2px;
         background-color: $color-white;
       }
     }
+  }
+}
+
+// "Бургер" меню
+
+.nav__toggler {
+  border: none;
+  padding: 0;
+  height: 66px;
+  margin-right: -20px;
+  background-color: $color-white;
+
+  @media (min-width: $width-desktop) {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-secondary;
+  }
+
+  &:active {
+    background-color: rgba($color-secondary, $opacity);
+  }
+
+  &--close {
+    width: 63px;
+    mask: url("../img/ico/btn-menu-close.svg") no-repeat center;
+  }
+
+  &--open {
+    width: 90px;
+    mask: url("../img/ico/btn-menu-open.svg") no-repeat center;
   }
 }

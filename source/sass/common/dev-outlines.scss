@@ -1,11 +1,11 @@
-.page__footer-content {
-  @include outline(1px, dotted, #1b3aebe5);
+.logo--header {
+  // @include outline(1px, dotted, #b2f744e5);
 }
 
 .logo--footer,
 .social-networks,
 .copyright {
-  @include outline(1px, dotted, #2c9c00e5);
+  // @include outline(1px, dotted, #2c9c00e5);
 }
 
 .container {
