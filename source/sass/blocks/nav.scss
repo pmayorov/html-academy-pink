@@ -49,6 +49,7 @@
 
 .nav__list {
   position: absolute;
+  z-index: 1;
   left: 0;
   right: 0;
   // 66px - мобильная высота nav__top (верхний навбар)

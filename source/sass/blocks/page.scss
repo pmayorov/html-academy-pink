@@ -33,6 +33,7 @@
 }
 
 .page__title {
+  max-width: $width-mobile-content;
   margin: 0;
   font-weight: 300;
   font-size: 24px;
@@ -40,11 +41,13 @@
   text-align: center;
 
   @media (min-width: $width-tablet) {
+    max-width: $width-tablet-content;
     font-size: 40px;
     line-height: 54px;
   }
 
   @media (min-width: $width-desktop) {
+    max-width: $width-desktop-content;
     font-size: 50px;
     line-height: 68px;
   }
