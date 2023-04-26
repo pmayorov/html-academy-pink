@@ -215,7 +215,8 @@ export const copyfiles = (done) => {
 
 // Watcher scripts and styles for DevMode
 const devWatcher = () => {
-  gulp.watch(paths.styles.src, gulp.series(styles, csso, delCss));
+  // gulp.watch(paths.styles.src, gulp.series(styles, csso, delCss));
+  gulp.watch(paths.styles.src, gulp.series(styles, csso));
   gulp.watch('source/scripts/**/!(*.min).js', gulp.series(minjs));
 };
 

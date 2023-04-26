@@ -1,7 +1,7 @@
 .map {
-  @include outline(1px, dotted, #1ac404e5);
+  // @include outline(1px, dotted, #1ac404e5);
 }
 
 .container {
-  @include outline(2px, dotted, #6c12e0);
+  @include outline(1px, dotted, #6c12e0);
 }

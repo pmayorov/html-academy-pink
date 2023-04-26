@@ -129,7 +129,7 @@
             <p class="advantages__desc">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
           </li>
           <li class="advantages__item advantages__item--add">
-            <h3 class="advantages__name advantages__name--add">Эффект на 24 часа!</h3>
+            <h3 class="advantages__name advantages__name--add">Эффект <br> на 24 часа!</h3>
             <p class="advantages__desc">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
             <a class="advantages__link" href="#">Узнать больше об исследовании</a>
           </li>
@@ -142,7 +142,7 @@
       <h2 class="visually-hidden">Отзывы пользователей</h2>
       <!-- #1 -->
       <ul class="reviews__list">
-        <li class="reviews__item">
+        <li class="reviews__item reviews__item--active">
           <article class="reviews__content">
             <h3 class="visually-hidden">Отзыв №1</h3>
             <p class="reviews__text">«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
@@ -190,7 +190,7 @@
       </ul>
       <!-- Кнопки -->
       <ul class="reviews__togglers togglers">
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#1</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn togglers__btn--active"><span class="visually-hidden">#1</span></button></li>
         <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#2</span></button></li>
         <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#3</span></button></li>
         <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#4</span></button></li>
@@ -251,7 +251,7 @@
       <!-- Кнопки -->
       <ul class="rates__togglers togglers container ">
         <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#1</span></button></li>
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#2</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn togglers__btn--active"><span class="visually-hidden">#2</span></button></li>
         <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#3</span></button></li>
       </ul>
     </section>
@@ -264,31 +264,26 @@
         <p class="contacts__title page__title">Свяжитесь с нами!</p>
       </div>
       <!-- Список контактов -->
-      <ul class="contacts__list container">
-        <li class="contacts__item">
-          <p class="contacts__text">
-            <b class="contacts__name">Звоните:</b>
-            <span class="contacts__info">+7 (812) 555-66-66</span>
-          </p>
-        </li>
-        <li class="contacts__item">
-          <p class="contacts__text">
-            <b class="contacts__name">Пишите:</b>
-            <span class="contacts__info">mail@htmlacademy.ru</span>
-          </p>
-        </li>
-        <li class="contacts__item">
-          <p class="contacts__text">
-            <b class="contacts__name">Приезжайте в гости:</b>
-            <span class="contacts__info">ул. Большая Конюшенная, 19/8</span>
-          </p>
-        </li>
-      </ul>
+      <address class="contacts__list container">
+        <p class="contacts__item contacts__item--call">
+          <b class="contacts__name">Звоните:</b>
+          <span class="contacts__info">+7 (812) 555-66-66</span>
+        </p>
+        <p class="contacts__item  contacts__item--mail">
+          <b class="contacts__name">Пишите:</b>
+          <span class="contacts__info">mail@htmlacademy.ru</span>
+        </p>
+        <p class="contacts__item contacts__item--visit">
+          <b class="contacts__name">Приезжайте в гости:</b>
+          <span class="contacts__info">ул. Большая Конюшенная,&nbsp;19/8</span>
+        </p>
+      </address>
       <!-- Карта -->
-      <div class="map">
+      <div class="contacts__map map">
+        <iframe class="map__iframe" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d706.7353910688644!2d30.32273502818475!3d59.93297930372769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2ssk!4v1682514951870!5m2!1suk!2ssk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <picture>
-          <source media="(min-width: 1200px)" srcset="./img/map/map-desktop.jpg">
-          <source media="(min-width: 660px)" srcset="./img/map/map-tablet.jpg">
+          <source media="(min-width: 885px)" srcset="./img/map/map-desktop.jpg">
+          <source media="(min-width: 598px)" srcset="./img/map/map-tablet.jpg">
           <img class="map__image" width="320" height="200" src="./img/map/map-mobile.jpg" alt="Карта проезда">
         </picture>
       </div>

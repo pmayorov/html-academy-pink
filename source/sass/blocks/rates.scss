@@ -1,5 +1,7 @@
 .rates {
   background-color: $color-gray--f2;
+  padding-top: 101px;
+  padding-bottom: 46px;
 }
 
 // .visually-hidden {}
@@ -18,4 +20,10 @@
 
 // .rates__cell {}
 
-// .rates__togglers {}
+.rates__togglers {
+  margin-top: 40px;
+
+  @media (min-width: $width-tablet) {
+    display: none;
+  }
+}

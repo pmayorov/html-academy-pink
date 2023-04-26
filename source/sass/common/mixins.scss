@@ -18,7 +18,6 @@
   }
 }
 
-
 //* DEV
 //* Бордер для орієнтування!
 @mixin outline ($width: 1px, $style: dotted, $color: #0f99da, $offset: 0) {
@@ -29,7 +28,6 @@
     offset: $offset;
   }
 }
-
 
 // * MY_PATTERN
 // Оформление иконки с передачей цвета

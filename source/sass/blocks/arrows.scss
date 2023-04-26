@@ -1,0 +1,37 @@
+.arrows {
+  display: none;
+
+  @media (min-width: $width-desktop) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.arrows__btn {
+  width: 21px;
+  height: 41px;
+  padding: 0;
+  border: 0;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  background-color: rgba($color-primary, $opacity);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color-primary, 0.6);
+  }
+
+  &:active {
+    background-color: rgba($color-primary, 0.1);
+  }
+
+  &--prev {
+    mask-image: url("../../img/ico/arrow.svg");
+    transform: scaleX(-1);
+  }
+
+  &--next {
+    mask-image: url("../../img/ico/arrow.svg");
+  }
+}

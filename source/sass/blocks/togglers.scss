@@ -1,5 +1,56 @@
-// .togglers {}
+.togglers {
+  display: flex;
+  height: 12px;
+  align-items: center;
+  justify-content: center;
+  column-gap: 13px;
+  padding: 0;
+  list-style-type: none;
+}
 
 // .togglers__item {}
 
-// .togglers__btn {}
+.togglers__btn {
+  position: relative;
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 25%;
+    left: 25%;
+    border-radius: 50%;
+    background-color: rgba($color-primary, $opacity);
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::after {
+      background-color: rgba($color-primary, 0.6);
+    }
+  }
+
+  &:active::after {
+    background-color: rgba($color-primary, 0.1);
+  }
+
+  &--active {
+    pointer-events: none;
+    background-color: $color-white;
+    outline: 3px solid $color-primary;
+    outline-offset: -3px;
+
+    &::after {
+      content: none;
+    }
+  }
+}

@@ -1,40 +1,116 @@
 // .advantages {}
 
-// .advantages__title {}
+.advantages__title-wrapper {
+  padding-top: 39px;
+  padding-bottom: 28px;
+
+  @media (min-width: $width-tablet) {
+    padding-top: 46px;
+    padding-bottom: 30px;
+  }
+}
+
+.advantages__title {
+  margin-left: auto;
+  margin-right: auto;
+
+  & + & {
+    @media (max-width: $width-max-mobile) {
+      margin-top: 25px;
+    }
+  }
+}
 
 .advantages__list-wrapper {
+  padding-top: 82px;
   background-color: $color-gray--f2;
+
+  @media (min-width: $width-tablet) {
+    padding-top: 76px;
+  }
 }
 
 .advantages__list {
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 31px;
   list-style-type: none;
 
-  // width: $width-mobile;
-
-  // @media (min-width: $width-tablet) {
-  //   width: $width-tablet;
-  // }
-
-  // @media (min-width: $width-desktop) {
-  //   width: $width-tablet;
-  // }
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 300px 1fr;
+    row-gap: 35px;
+  }
 }
 
 
 .advantages__item {
+  position: relative;
+
+  @media (min-width: $width-tablet) {
+    grid-column: 2 / 3;
+  }
+
+
   &--add {
     display: none;
 
     @media (min-width: $width-tablet) {
       display: inherit;
+      grid-column: 2 / 3;
+      padding-top: 58px;
+      padding-bottom: 67px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 276px;
+      bottom: 0;
+      left: -100%;
+      // background-image: url("../../img/logos/timer.svg");
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+  }
+
+  &:nth-of-type(3)::after {
+    content: "";
+    display: block;
+    width: 280px;
+    height: 277px;
+    margin-top: 41px;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    @media (max-width: $width-max-mobile) {
+      background-image: url("../../img/index/phone-mobile@1x.png");
+    }
+
+    @media (min-width: $width-tablet) {
+      position: absolute;
+      width: 300px;
+      height: 481px;
+      bottom: 0;
+      left: -100%;
+      // background-image: url("../../img/index/phone-tablet@1x.png");
+      background-position: top left;
     }
   }
 }
 
 .advantages__name {
+  margin: 0;
+  margin-bottom: 11px;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  text-align: center;
+  color: $color-black;
+
+  @media (min-width: $width-tablet) {
+    text-align: left;
+  }
 
   @media (min-width: $width-desktop) {
     font-size: 30px;
@@ -43,12 +119,31 @@
 
   &--add {
     font-size: 30px;
-    line-height: 1;
+    line-height: 36px;
+    margin-bottom: 8px;
+
+    @media (min-width: $width-desktop) {
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+  }
+
+  & > br {
+    @media (min-width: $width-desktop) {
+      display: none;
+    }
   }
 }
 
 
-// .advantages__desc {}
+.advantages__desc {
+  margin: 0;
+  text-align: center;
+
+  @media (min-width: $width-tablet) {
+    text-align: left;
+  }
+}
 
 .advantages__additional {
   @media (min-width: $width-desktop) {
@@ -56,6 +151,19 @@
   }
 }
 
-// .advantages__title--add {}
+.advantages__link {
+  margin-top: 11px;
+  color: $color-secondary;
 
-// .advantages__link {}
+  @media (min-width: $width-desktop) {
+    margin-top: 30px;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: rgba($color-primary, $opacity);
+  }
+}

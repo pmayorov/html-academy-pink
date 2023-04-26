@@ -22,6 +22,8 @@
 @import "./blocks/footer.scss";
 
 // Главная
+@import "./blocks/arrows.scss";
+@import "./blocks/togglers.scss";
 @import "./blocks/logo.scss";
 @import "./blocks/hero.scss";
 @import "./blocks/hero-index.scss";
@@ -31,12 +33,8 @@
 @import "./blocks/rates.scss";
 @import "./blocks/map.scss";
 @import "./blocks/page-button.scss";
-// @import "./blocks/title.scss";
-// @import "./blocks/nav-button.scss";
-// @import "./blocks/site-menu.scss";
-// @import "./blocks/bonuses.scss";
-// @import "./blocks/hotel-search.scss";
-// @import "./blocks/map.scss";
+@import "./blocks/reviews.scss";
+@import "./blocks/contacts.scss";
 
 // Форма
 // @import "./blocks/form-section.scss";

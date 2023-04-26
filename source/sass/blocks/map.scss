@@ -1,17 +1,50 @@
 .map {
-  height: 200px;
-  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 33px;
+    // Важно указывать размеры в самом SVG файле.
+    // Иначе он не масштабируется background-size.
+    background-image: url("../../img/ico/map-polygon.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    @media (min-width: $width-tablet) {
+      height: 68px;
+    }
+
+    @media (min-width: $width-desktop) {
+      height: 103px;
+    }
+  }
+}
+
+.map__iframe {
+  display: block;
+  width: 100%;
+  height: calc(200px + 100vw - $width-mobile);
+  max-height: 374px;
 
   @media (min-width: $width-tablet) {
-    height: 374px;
-  }
-
-  @media (min-width: $width-desktop) {
-    height: 502px;
+    height: calc(374px + 100vw - $width-tablet);
+    max-height: 502px;
   }
 }
 
 .map__image {
+  display: none;
   width: 100%;
-  background-size: cover;
+  object-fit: cover;
+  object-position: center center;
+  // Увеличение высоты скриншота карты при расширении вьюпорта
+  height: calc(200px + 100vw - $width-mobile);
+  max-height: 374px;
+
+  @media (min-width: $width-tablet) {
+    height: calc(374px + 100vw - $width-tablet);
+    max-height: 502px;
+  }
 }
