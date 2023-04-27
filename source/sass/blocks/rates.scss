@@ -1,7 +1,8 @@
 .rates {
-  background-color: $color-gray--f2;
+  @include slopedTopBorder(19px, 41px, 100px);
   padding-top: 101px;
   padding-bottom: 46px;
+  background-color: $color-gray--f2;
 }
 
 // .visually-hidden {}

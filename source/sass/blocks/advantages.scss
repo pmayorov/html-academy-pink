@@ -22,79 +22,179 @@
 }
 
 .advantages__list-wrapper {
+  @include slopedTopBorder(32px, 53px, 100px);
   padding-top: 82px;
   background-color: $color-gray--f2;
 
   @media (min-width: $width-tablet) {
     padding-top: 76px;
+    padding-bottom: 42px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-top: 307px;
+    padding-bottom: 67px;
   }
 }
 
 .advantages__list {
+  position: relative;
   display: grid;
-  grid-auto-flow: row;
+  // grid-template-columns: 1fr;
   row-gap: 31px;
   list-style-type: none;
 
   @media (min-width: $width-tablet) {
+    // Фикисирую высоту списка, чтобы при минимальном количестве текста
+    // не уменьшался блок и иллюстрация не наезжала на верхний заголовок.
+    min-height: 367px;
     grid-template-columns: 300px 1fr;
     row-gap: 35px;
   }
-}
 
+  @media (min-width: $width-desktop) {
+    min-height: initial;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 340px;
+  }
+}
 
 .advantages__item {
   position: relative;
 
   @media (min-width: $width-tablet) {
+    // Снимаем относительное позиционирование чтобы акцентная иллюстрация
+    // спозиционировалась относительно всего списка, а не его отдельного элемента.
+    position: initial;
     grid-column: 2 / 3;
   }
 
-
-  &--add {
-    display: none;
-
-    @media (min-width: $width-tablet) {
-      display: inherit;
-      grid-column: 2 / 3;
-      padding-top: 58px;
-      padding-bottom: 67px;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 276px;
-      bottom: 0;
-      left: -100%;
-      // background-image: url("../../img/logos/timer.svg");
-      background-repeat: no-repeat;
-      background-position: left;
-    }
+  @media (min-width: $width-desktop) {
+    // Возвращаем относительное позиционирование
+    // для размещения иллюстраций относительно элементов списка.
+    position: relative;
+    grid-column: initial;
+    padding-top: 50px;
   }
 
-  &:nth-of-type(3)::after {
+  &::after {
+
     content: "";
-    display: block;
-    width: 280px;
-    height: 277px;
-    margin-top: 41px;
+    position: absolute;
     background-repeat: no-repeat;
     background-position: top center;
 
+    @media (min-width: $width-desktop) {
+      @include outline();
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 186px;
+      height: 300px;
+    }
+  }
+
+  // * Акцентный модификатор для элемента списка
+  &--emphasis {
+
+    // Переносим весь акцентный пункт вниз списка в мобильной версии
     @media (max-width: $width-max-mobile) {
-      background-image: url("../../img/index/phone-mobile@1x.png");
+      order: 1;
     }
 
-    @media (min-width: $width-tablet) {
-      position: absolute;
-      width: 300px;
-      height: 481px;
-      bottom: 0;
-      left: -100%;
-      // background-image: url("../../img/index/phone-tablet@1x.png");
-      background-position: top left;
+    &::after {
+
+      // Фото в мобильном вьюпорте
+      // Относительное позиционирование с маргинами
+      @media (max-width: $width-max-mobile) {
+        position: relative;
+        display: block;
+        width: 280px;
+        height: 277px;
+        margin-top: 41px;
+        background-image: url("../../img/index/phone-mobile@1x.png");
+      }
+
+      // Фото в планшетном вьюпорте
+      // ... и далее абсолютное позиционирование
+      @media (min-width: $width-tablet) and (max-width: ($width-desktop - 1)) {
+        width: 300px;
+        height: 481px;
+        // Опускаем иллюстрацию на величину нижнего паддинга вниз
+        // и переносим влево (с учетом макетного отступа) к границам блока.
+        bottom: -42px;
+        left: $width-tablet-padding;
+        background-image: url("../../img/index/phone-tablet@1x.png");
+        background-position: top left;
+      }
+    }
+  }
+
+  &--01::after {
+    @media (min-width: $width-desktop) {
+      background-image: url("../../img/index/phone-desktop-01@1x.png");
+    }
+  }
+
+  &--02::after {
+    @media (min-width: $width-desktop) {
+      background-image: url("../../img/index/phone-desktop-02@1x.png");
+    }
+  }
+
+  &--03::after {
+    @media (min-width: $width-desktop) {
+      background-image: url("../../img/index/phone-desktop-03@1x.png");
+    }
+  }
+}
+
+.advantages__add-wrapper {
+  @media (min-width: $width-tablet) {
+    padding-top: 54px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-top: 0;
+    padding-bottom: 67px;
+    background-color: $color-gray--f2;
+  }
+}
+
+.advantages__add {
+  display: none;
+
+  @media (min-width: $width-tablet) {
+    display: block;
+    position: relative;
+    min-height: 276px;
+    padding-top: 39px;
+    padding-left: $width-tablet-padding + 310px;
+  }
+
+  @media (min-width: $width-desktop) {
+    min-height: 345px;
+    padding-top: 89px;
+    padding-left: $width-desktop-padding + 370px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 238px;
+    height: 276px;
+    top: 0;
+    left: $width-mobile-padding;
+    background-image: url("../../img/logos/timer.svg");
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+
+    @media (min-width: $width-desktop) {
+      width: 298px;
+      height: 345px;
+      left: $width-desktop-padding;
     }
   }
 }
@@ -115,6 +215,7 @@
   @media (min-width: $width-desktop) {
     font-size: 30px;
     line-height: 1;
+    text-align: center;
   }
 
   &--add {
@@ -125,6 +226,7 @@
     @media (min-width: $width-desktop) {
       margin-bottom: 20px;
       line-height: 1;
+      text-align: left;
     }
   }
 
@@ -135,13 +237,20 @@
   }
 }
 
-
 .advantages__desc {
   margin: 0;
   text-align: center;
 
   @media (min-width: $width-tablet) {
     text-align: left;
+  }
+
+  @media (min-width: $width-desktop) {
+    text-align: center;
+
+    .advantages__name--add + & {
+      text-align: left;
+    }
   }
 }
 
@@ -152,6 +261,7 @@
 }
 
 .advantages__link {
+  display: block;
   margin-top: 11px;
   color: $color-secondary;
 

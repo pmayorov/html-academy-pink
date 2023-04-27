@@ -4,7 +4,7 @@
   padding-bottom: 37px;
 
   @media (min-width: $width-tablet) {
-    padding-top: 35px;
+    padding-top: 101px;
     padding-bottom: 14px;
   }
 
@@ -65,6 +65,7 @@
   order: 2;
 
   @media (min-width: $width-tablet) {
+    font-size: 18px;
     order: initial;
   }
 }
@@ -80,6 +81,10 @@
   font-weight: 700;
   line-height: 30px;
   color: $color-black;
+
+  @media (min-width: $width-tablet) {
+    font-size: 20px;
+  }
 }
 
 .reviews__details {
