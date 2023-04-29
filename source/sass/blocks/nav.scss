@@ -1,7 +1,9 @@
 .nav {
   display: flex;
   flex-direction: column;
-  width: 100%;
+
+  //todo Проверить на что влияет!
+  //* width: 100%;
 
   @media (min-width: $width-desktop) {
     justify-content: space-between;

@@ -27,7 +27,8 @@
     content: "";
     position: absolute;
     top: 0;
-    width: 100vw;
+    left: 0;
+    right: 0;
     height: $height-mobile;
     background: linear-gradient(to right bottom, $color-white 50%, $color-gray--f2 50%);
 

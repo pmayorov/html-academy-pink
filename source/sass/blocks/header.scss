@@ -1,5 +1,6 @@
 .header {
-  width: 100vw;
+  // Если установитб 100vw - в браузере появляется горизонтальная прокрутка
+  width: 100%;
   background-color: rgba($color-black, 0.3);
 
   &--active {

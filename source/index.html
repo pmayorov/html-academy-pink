@@ -118,15 +118,15 @@
         <ul class="advantages__list container">
           <li class="advantages__item advantages__item--01">
             <h3 class="advantages__name">Поднимает настроение</h3>
-            <p class="advantages__desc">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
+            <p class="advantages__cost">Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!</p>
           </li>
           <li class="advantages__item advantages__item--02">
             <h3 class="advantages__name">Меняет мир вокруг</h3>
-            <p class="advantages__desc">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
+            <p class="advantages__cost">Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект</p>
           </li>
           <li class="advantages__item advantages__item--03 advantages__item--emphasis">
             <h3 class="advantages__name">Заводит новых&nbsp;друзей</h3>
-            <p class="advantages__desc">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
+            <p class="advantages__cost">Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых</p>
           </li>
         </ul>
       </div>
@@ -134,7 +134,7 @@
       <div class="advantages__add-wrapper">
         <aside class="advantages__add container">
           <h3 class="advantages__name advantages__name--add">Эффект <br> на 24 часа!</h3>
-          <p class="advantages__desc">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
+          <p class="advantages__cost">Британские ученые провели исследования и доказали, что положительный эффект от использования приложения длится целые сутки!</p>
           <a class="advantages__link" href="#">Узнать больше об исследовании</a>
         </aside>
       </div>
@@ -209,50 +209,52 @@
     <!-- ТАРИФЫ -->
     <section class="rates">
       <h2 class="visually-hidden">Тарифы на подписку</h2>
-      <div class="container" style="height: 281px; background-color: #fff; opacity: 0.5;">
-        <!--
+      <div class="rates__table-wrapper">
         <table class="rates__table">
-          <tr class="rates__row">
-            <th class="rates__header-cell"></th>
-            <th class="rates__header-cell">
-              <dl class="rates__term-list">
-                <dt class="rates__term">База</dt>
-                <dd class="rates__desc">1,99 USD</dd>
-              </dl>
-            </th>
-            <th class="rates__header-cell">
-              <dl class="rates__term-list">
-                <dt class="rates__term">Стандарт</dt>
-                <dd class="rates__desc">3,99 USD</dd>
-              </dl>
-            </th>
-            <th class="rates__header-cell">
-              <dl class="rates__term-list">
-                <dt class="rates__term">Анлим</dt>
-                <dd class="rates__desc">9,99 USD</dd>
-              </dl>
-            </th>
-          </tr>
-          <tr class="rates__row">
-            <th class="rates__header-cell">Розовый фильтр</th>
-            <td class="rates__cell">есть</td>
-            <td class="rates__cell">есть</td>
-            <td class="rates__cell">есть</td>
-          </tr>
-          <tr class="rates__row">
-            <th class="rates__header-cell">Смайлики</th>
-            <td class="rates__cell">нет</td>
-            <td class="rates__cell">есть</td>
-            <td class="rates__cell">есть</td>
-          </tr>
-          <tr class="rates__row">
-            <th class="rates__header-cell">Комментарии</th>
-            <td class="rates__cell">нет</td>
-            <td class="rates__cell">нет</td>
-            <td class="rates__cell">есть</td>
-          </tr>
+          <thead class="rates__thead">
+            <tr class="rates__row">
+              <th class="rates__empty-cell">&nbsp;</th>
+              <th scope="col" class="rates__head-col">
+                <dl class="rates__item">
+                  <dt class="rates__name">База</dt>
+                  <dd class="rates__cost">1,99 USD</dd>
+                </dl>
+              </th>
+              <th scope="col" class="rates__head-col">
+                <dl class="rates__item rates__item--best">
+                  <dt class="rates__name">Стандарт</dt>
+                  <dd class="rates__cost">3,99 USD</dd>
+                </dl>
+              </th>
+              <th scope="col" class="rates__head-col">
+                <dl class="rates__item">
+                  <dt class="rates__name">Анлим</dt>
+                  <dd class="rates__cost">9,99 USD</dd>
+                </dl>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="rates__tbody">
+            <tr class="rates__row">
+              <th scope="row" class="rates__head-row">Розовый фильтр</th>
+              <td class="rates__cell rates__cell--yes"><span class="visually-hidden">есть</span></td>
+              <td class="rates__cell rates__cell--yes"><span class="visually-hidden">есть</span></td>
+              <td class="rates__cell rates__cell--yes"><span class="visually-hidden">есть</span></td>
+            </tr>
+            <tr class="rates__row">
+              <th scope="row" class="rates__head-row">Смайлики</th>
+              <td class="rates__cell rates__cell--no"><span class="visually-hidden">нет</span></td>
+              <td class="rates__cell rates__cell--yes"><span class="visually-hidden">есть</span></td>
+              <td class="rates__cell rates__cell--yes"><span class="visually-hidden">есть</span></td>
+            </tr>
+            <tr class="rates__row">
+              <th scope="row" class="rates__head-row">Комментарии</th>
+              <td class="rates__cell rates__cell--no"><span class="visually-hidden">нет</span></td>
+              <td class="rates__cell rates__cell--no"><span class="visually-hidden">нет</span></td>
+              <td class="rates__cell rates__cell--yes"><span class="visually-hidden">есть</span></td>
+            </tr>
+          </tbody>
         </table>
-      -->
       </div>
       <!-- Кнопки -->
       <ul class="rates__togglers togglers container ">
