@@ -113,7 +113,7 @@
         width: 280px;
         height: 277px;
         margin-top: 41px;
-        background-image: url("../../img/index/phone-mobile@1x.png");
+        background-image: url("../img/index/phone-mobile@1x.png");
       }
 
       // Фото в планшетном вьюпорте
@@ -125,7 +125,7 @@
         // и переносим влево (с учетом макетного отступа) к границам блока.
         bottom: -42px;
         left: $width-tablet-padding;
-        background-image: url("../../img/index/phone-tablet@1x.png");
+        background-image: url("../img/index/phone-tablet@1x.png");
         background-position: top left;
       }
     }
@@ -133,19 +133,19 @@
 
   &--01::after {
     @media (min-width: $width-desktop) {
-      background-image: url("../../img/index/phone-desktop-01@1x.png");
+      background-image: url("../img/index/phone-desktop-01@1x.png");
     }
   }
 
   &--02::after {
     @media (min-width: $width-desktop) {
-      background-image: url("../../img/index/phone-desktop-02@1x.png");
+      background-image: url("../img/index/phone-desktop-02@1x.png");
     }
   }
 
   &--03::after {
     @media (min-width: $width-desktop) {
-      background-image: url("../../img/index/phone-desktop-03@1x.png");
+      background-image: url("../img/index/phone-desktop-03@1x.png");
     }
   }
 }
@@ -186,7 +186,7 @@
     height: 276px;
     top: 0;
     left: $width-mobile-padding;
-    background-image: url("../../img/logos/timer.svg");
+    background-image: url("../img/logos/timer.svg");
     background-repeat: no-repeat;
     background-position: left;
     background-size: cover;

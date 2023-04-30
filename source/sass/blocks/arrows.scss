@@ -27,11 +27,11 @@
   }
 
   &--prev {
-    mask-image: url("../../img/ico/arrow.svg");
+    mask-image: url("../img/ico/arrow.svg");
     transform: scaleX(-1);
   }
 
   &--next {
-    mask-image: url("../../img/ico/arrow.svg");
+    mask-image: url("../img/ico/arrow.svg");
   }
 }

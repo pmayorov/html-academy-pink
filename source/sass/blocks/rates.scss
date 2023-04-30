@@ -10,9 +10,12 @@
 }
 
 .rates__table-wrapper {
-  @include outline();
-  overflow: hidden;
-  width: 100%;
+  @media (max-width: $width-max-mobile) {
+    @include outline();
+    overflow: hidden;
+    margin: 0 auto;
+    width: 100vw;
+  }
 }
 
 .rates__table {
@@ -20,6 +23,19 @@
   line-height: 30px;
   margin: 0 auto;
   width: 100%;
+
+  // * Переменные для слайдера
+  // Всего (тарифных планов) колонок в таблице
+  --total-columns: 4;
+  // Текущая (активная) колонка в слайдере тарифов
+  --index-column: 2;
+
+  @media (max-width: $width-max-mobile) {
+    width: auto;
+    // Расчет величины маргина для смещения таблицы в сладйере
+    margin-left: calc(-1 * (280px * var(--index-column) - $width-mobile-padding));
+    transition: all 0.1s;
+  }
 
   @media (min-width: $width-tablet) {
     width: $width-tablet-content;
@@ -30,9 +46,30 @@
   }
 }
 
-.rates__thead {}
+// .rates__thead {}
 
-.rates__row {}
+.rates__tbody {
+  background-color: $color-white;
+}
+
+// Расчитываем ширины колонок в зависимости от их количества
+.rates__col {
+  @media (max-width: $width-max-mobile) {
+    min-width: $width-mobile-content;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: calc($width-tablet-content / var(--total-columns));
+    min-width: calc($width-tablet-content / var(--total-columns));
+  }
+
+  @media (min-width: $width-desktop) {
+    width: calc($width-desktop-content / var(--total-columns));
+    min-width: calc($width-desktop-content / var(--total-columns));
+  }
+}
+
+// .rates__row {}
 
 .rates__empty-cell {
   background-color: transparent;
@@ -41,19 +78,19 @@
 
 .rates__head-col {
   position: relative;
-  min-width: 155px;
+  padding: 12px 0 26px;
   background-color: $color-primary;
   border: 2px solid #283645;
 
   @media (min-width: $width-tablet) {
-    padding: 9px 12px 8px;
+    padding: 10px 12px 9px;
   }
 
   @media (min-width: $width-desktop) {
     padding: 19px 12px;
   }
 
-  &:not(:last-of-type):after {
+  &:not(:last-of-type)::after {
     content: "";
     position: absolute;
     top: -2px;
@@ -62,6 +99,36 @@
     right: -2px;
     z-index: 1;
     background-color: $color-gray--f2;
+  }
+
+  // Текущий тариф (колонка) в мобильном слайдере
+  &--active {
+    @media (max-width: $width-max-mobile) {
+      min-width: calc(100vw - 2 * $width-mobile-padding);
+    }
+  }
+}
+
+.rates__head-row {
+  padding: 0;
+  border: 2px solid $color-gray--e5;
+  font-weight: 400;
+  text-align: left;
+
+  @media (max-width: $width-max-mobile) {
+    position: relative;
+    left: calc($width-mobile-content * var(--index-column));
+    padding: 14px 61px 14px 15px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding: 8px 15px 7px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding: 14px 15px;
+    font-size: 18px;
   }
 }
 
@@ -72,24 +139,53 @@
   &--best::after {
     content: "";
     position: absolute;
-    width: 81px;
     height: 0;
-    left: -27px;
-    top: -5px;
     transform: rotate(-45deg);
-    border: 19px solid transparent;
+    border: 24px solid transparent;
     border-bottom-color: $color-secondary;
+    z-index: 1;
+
+    @media (max-width: $width-max-mobile) {
+      width: 104px;
+      left: -34px;
+      top: -7px;
+    }
+
+    @media (min-width: $width-tablet) {
+      width: 81px;
+      left: -29px;
+      top: -14px;
+    }
+
+    @media (min-width: $width-desktop) {
+      width: 111px;
+      left: -33px;
+      top: -2px;
+    }
   }
 
   &--best::before {
     content: "ХИТ";
     position: absolute;
-    left: 8px;
-    top: 3px;
-    z-index: 1;
     transform: rotate(-45deg);
     color: $color-white;
     font-weight: 400;
+    z-index: 2;
+
+    @media (max-width: $width-max-mobile) {
+      left: 12px;
+      top: 9px;
+    }
+
+    @media (min-width: $width-tablet) {
+      left: 6px;
+      top: 3px;
+    }
+
+    @media (min-width: $width-desktop) {
+      left: 16px;
+      top: 15px;
+    }
   }
 }
 
@@ -113,43 +209,24 @@
   }
 }
 
-.rates__head-row {
-  min-width: 155px;
-  padding: 8px 15px 7px;
-  background-color: $color-white;
-  border: 2px solid $color-gray--e5;
-  font-weight: 400;
-  text-align: left;
-
-  @media (max-width: $width-max-mobile) {
-    text-transform: uppercase;
-  }
-
-  @media (min-width: $width-desktop) {
-    padding: 14px 15px;
-    font-size: 18px;
-  }
-}
-
-.rates__tbody {}
-
 .rates__cell {
-  background-color: $color-white;
   border: 2px solid $color-gray--e5;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
 
+  @media (max-width: $width-max-mobile) {
+    background-position: calc(100% - 15px) center;
+  }
+
   &--yes {
-    background-image: url("../../img/ico/yes.svg");
+    background-image: url("../img/ico/yes.svg");
   }
 
   &--no {
-    background-image: url("../../img/ico/no.svg");
+    background-image: url("../img/ico/no.svg");
   }
 }
-
-
 
 .rates__togglers {
   margin-top: 40px;

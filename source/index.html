@@ -25,9 +25,9 @@
   <!-- <link rel="stylesheet" href="./css/outline.css"> -->
   <!-- <link rel="stylesheet" href="./css/markup.css"> -->
   <!--* DEV - PixelGlass -->
-  <!-- <link rel="stylesheet" href="./css/pixel-index.css"> -->
-  <!-- <link href="./pixelglass/styles.css" rel="stylesheet"> -->
-  <!-- <script src="./pixelglass/script.js"></script> -->
+  <!-- <link rel="stylesheet" href="./css/pixel-index.css">
+  <link href="./pixelglass/styles.css" rel="stylesheet">
+  <script src="./pixelglass/script.js"></script> -->
   <!-- #endregion -->
 
 </head>
@@ -194,10 +194,10 @@
       </ul>
       <!-- Кнопки -->
       <ul class="reviews__togglers togglers">
-        <li class="togglers__item"><button class="togglers__btn togglers__btn--active"><span class="visually-hidden">#1</span></button></li>
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#2</span></button></li>
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#3</span></button></li>
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#4</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn togglers__btn--active reviews__btn"><span class="visually-hidden">#1</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn reviews__btn"><span class="visually-hidden">#2</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn reviews__btn"><span class="visually-hidden">#3</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn reviews__btn"><span class="visually-hidden">#4</span></button></li>
       </ul>
       <!-- Стрелки -->
       <div class="reviews__arrows arrows">
@@ -211,27 +211,39 @@
       <h2 class="visually-hidden">Тарифы на подписку</h2>
       <div class="rates__table-wrapper">
         <table class="rates__table">
+          <!--* Если количество колонок увеличиться необходимо менять значение span -->
+          <col span="4" class="rates__col">
           <thead class="rates__thead">
             <tr class="rates__row">
+              <!-- #1 -->
               <th class="rates__empty-cell">&nbsp;</th>
-              <th scope="col" class="rates__head-col">
+              <th class="rates__head-col" scope="col" data-num="1">
                 <dl class="rates__item">
                   <dt class="rates__name">База</dt>
                   <dd class="rates__cost">1,99 USD</dd>
                 </dl>
               </th>
-              <th scope="col" class="rates__head-col">
+              <!-- #2 -->
+              <th class="rates__head-col rates__head-col--active" scope="col" data-num="2">
                 <dl class="rates__item rates__item--best">
                   <dt class="rates__name">Стандарт</dt>
                   <dd class="rates__cost">3,99 USD</dd>
                 </dl>
               </th>
-              <th scope="col" class="rates__head-col">
+              <!-- #3 -->
+              <th class="rates__head-col" scope="col" data-num="3">
                 <dl class="rates__item">
                   <dt class="rates__name">Анлим</dt>
                   <dd class="rates__cost">9,99 USD</dd>
                 </dl>
               </th>
+              <!-- #4 -->
+              <!-- <th class="rates__head-col" scope="col" data-num="3">
+                <dl class="rates__item">
+                  <dt class="rates__name">Анлим</dt>
+                  <dd class="rates__cost">9,99 USD</dd>
+                </dl>
+              </th> -->
             </tr>
           </thead>
           <tbody class="rates__tbody">
@@ -258,9 +270,9 @@
       </div>
       <!-- Кнопки -->
       <ul class="rates__togglers togglers container ">
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#1</span></button></li>
-        <li class="togglers__item"><button class="togglers__btn togglers__btn--active"><span class="visually-hidden">#2</span></button></li>
-        <li class="togglers__item"><button class="togglers__btn"><span class="visually-hidden">#3</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn rates__btn"><span class="visually-hidden">#1</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn togglers__btn--active rates__btn"><span class="visually-hidden">#2</span></button></li>
+        <li class="togglers__item"><button class="togglers__btn rates__btn"><span class="visually-hidden">#3</span></button></li>
       </ul>
     </section>
 
@@ -353,6 +365,7 @@
   </footer>
 
   <script src="./scripts/navmenu.min.js"></script>
+  <script src="./scripts/rates.min.js"></script>
 
 </body>
 
