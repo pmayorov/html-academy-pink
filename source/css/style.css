@@ -982,6 +982,7 @@ img {
   padding-top: 101px;
   padding-bottom: 46px;
   background-color: #f2f2f2;
+  overflow-x: clip;
 }
 .rates::before {
   content: "";
@@ -1010,11 +1011,6 @@ img {
 
 @media (max-width: 659px) {
   .rates__table-wrapper {
-    outline-color: #0f99da;
-    outline-width: 1px;
-    outline-style: dotted;
-    outline-offset: 0;
-    overflow: hidden;
     margin: 0 auto;
     width: 100vw;
   }

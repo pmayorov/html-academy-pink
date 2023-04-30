@@ -3,6 +3,7 @@
   padding-top: 101px;
   padding-bottom: 46px;
   background-color: $color-gray--f2;
+  overflow-x: clip;
 
   @media (min-width: $width-tablet) {
     padding: 98px 0 68px;
@@ -11,8 +12,6 @@
 
 .rates__table-wrapper {
   @media (max-width: $width-max-mobile) {
-    @include outline();
-    overflow: hidden;
     margin: 0 auto;
     width: 100vw;
   }
