@@ -982,7 +982,7 @@ img {
   padding-top: 101px;
   padding-bottom: 46px;
   background-color: #f2f2f2;
-  overflow-x: clip;
+  overflow: clip;
 }
 .rates::before {
   content: "";
@@ -1017,10 +1017,9 @@ img {
 }
 
 .rates__table {
+  margin: 0 auto;
   border-collapse: collapse;
   line-height: 30px;
-  margin: 0 auto;
-  width: 100%;
   --total-columns: 4;
   --index-column: 2;
 }
@@ -1029,6 +1028,9 @@ img {
     width: auto;
     margin-left: calc(-1 * (280px * var(--index-column) - 20px));
     transition: all 0.1s;
+    background-color: #ffffff;
+    outline: 1px solid #f2f2f2;
+    outline-offset: -1px;
   }
 }
 @media (min-width: 660px) {
@@ -1043,6 +1045,7 @@ img {
 }
 
 .rates__tbody {
+  position: relative;
   background-color: #ffffff;
 }
 
@@ -1065,8 +1068,8 @@ img {
 }
 
 .rates__empty-cell {
-  background-color: transparent;
   border: none;
+  background-color: #f2f2f2;
 }
 
 .rates__head-col {

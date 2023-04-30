@@ -2,8 +2,8 @@
   @include slopedTopBorder(19px, 41px, 100px);
   padding-top: 101px;
   padding-bottom: 46px;
-  background-color: $color-gray--f2;
-  overflow-x: clip;
+  background-color: $color-canvas;
+  overflow: clip;
 
   @media (min-width: $width-tablet) {
     padding: 98px 0 68px;
@@ -18,10 +18,9 @@
 }
 
 .rates__table {
+  margin: 0 auto;
   border-collapse: collapse;
   line-height: 30px;
-  margin: 0 auto;
-  width: 100%;
 
   // * Переменные для слайдера
   // Всего (тарифных планов) колонок в таблице
@@ -34,6 +33,10 @@
     // Расчет величины маргина для смещения таблицы в сладйере
     margin-left: calc(-1 * (280px * var(--index-column) - $width-mobile-padding));
     transition: all 0.1s;
+    // Костыль для восстановления заливки крайней левого столбца
+    background-color: $color-white;
+    outline: 1px solid $color-canvas;
+    outline-offset: -1px;
   }
 
   @media (min-width: $width-tablet) {
@@ -48,6 +51,7 @@
 // .rates__thead {}
 
 .rates__tbody {
+  position: relative;
   background-color: $color-white;
 }
 
@@ -71,15 +75,16 @@
 // .rates__row {}
 
 .rates__empty-cell {
-  background-color: transparent;
   border: none;
+  background-color: $color-canvas;
 }
 
+// Столбцы – заголовки
 .rates__head-col {
   position: relative;
   padding: 12px 0 26px;
   background-color: $color-primary;
-  border: 2px solid #283645;
+  border: 2px solid $color-primary;
 
   @media (min-width: $width-tablet) {
     padding: 10px 12px 9px;
@@ -97,10 +102,10 @@
     width: 2px;
     right: -2px;
     z-index: 1;
-    background-color: $color-gray--f2;
+    background-color: $color-canvas;
   }
 
-  // Текущий тариф (колонка) в мобильном слайдере
+  // Текущий тариф (столбец) в мобильном слайдере
   &--active {
     @media (max-width: $width-max-mobile) {
       min-width: calc(100vw - 2 * $width-mobile-padding);
@@ -108,12 +113,14 @@
   }
 }
 
+// Строки – заголовки
 .rates__head-row {
   padding: 0;
   border: 2px solid $color-gray--e5;
   font-weight: 400;
   text-align: left;
 
+  // Размещение (смещение) строчного заголовка в моблильном вьюпорте
   @media (max-width: $width-max-mobile) {
     position: relative;
     left: calc($width-mobile-content * var(--index-column));
@@ -130,6 +137,8 @@
     font-size: 18px;
   }
 }
+
+// DL-cписок - тарифный план
 
 .rates__item {
   margin: 0;
@@ -188,6 +197,8 @@
   }
 }
 
+// Наименование тарифа
+
 .rates__name {
   font-size: 16px;
   text-transform: uppercase;
@@ -196,6 +207,8 @@
     font-size: 18px;
   }
 }
+
+// Стоимость тарифа
 
 .rates__cost {
   font-size: 18px;
@@ -207,6 +220,8 @@
     font-size: 24px;
   }
 }
+
+// Ячейки таблицы
 
 .rates__cell {
   border: 2px solid $color-gray--e5;
@@ -226,6 +241,8 @@
     background-image: url("../img/ico/no.svg");
   }
 }
+
+// Баттоны слайдера
 
 .rates__togglers {
   margin-top: 40px;
