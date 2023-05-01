@@ -3,7 +3,8 @@
   padding-top: 101px;
   padding-bottom: 46px;
   background-color: $color-canvas;
-  overflow: clip;
+  // overflow: clip;
+  overflow: hidden;
 
   @media (min-width: $width-tablet) {
     padding: 98px 0 68px;
@@ -33,10 +34,12 @@
     // Расчет величины маргина для смещения таблицы в сладйере
     margin-left: calc(-1 * (280px * var(--index-column) - $width-mobile-padding));
     transition: all 0.1s;
-    // Костыль для восстановления заливки крайней левого столбца
+    //* Костыль для восстановления заливки крайней левого столбца
+    // Заливаем фоном ВСЮ таблицу, чтобы и левый крайний столбец также стал белым.
+    // и ограничиваем заливку только контентной областью таблицы,
+    // т.е. минус место под бордером, а иначе появляется белая окантовка.
     background-color: $color-white;
-    outline: 1px solid $color-canvas;
-    outline-offset: -1px;
+    background-clip: content-box;
   }
 
   @media (min-width: $width-tablet) {
@@ -51,7 +54,6 @@
 // .rates__thead {}
 
 .rates__tbody {
-  position: relative;
   background-color: $color-white;
 }
 

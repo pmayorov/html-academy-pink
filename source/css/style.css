@@ -977,7 +977,7 @@ img {
   padding-top: 101px;
   padding-bottom: 46px;
   background-color: #f2f2f2;
-  overflow: clip;
+  overflow: hidden;
 }
 .rates::before {
   content: "";
@@ -1024,8 +1024,7 @@ img {
     margin-left: calc(-1 * (280px * var(--index-column) - 20px));
     transition: all 0.1s;
     background-color: #ffffff;
-    outline: 1px solid #f2f2f2;
-    outline-offset: -1px;
+    background-clip: content-box;
   }
 }
 @media (min-width: 660px) {
@@ -1040,7 +1039,6 @@ img {
 }
 
 .rates__tbody {
-  position: relative;
   background-color: #ffffff;
 }
 
@@ -1339,7 +1337,7 @@ img {
     top: 72px;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url("../img/logos/quotes.svg") no-repeat center;
+    background: url("../img/logos/quotes.svg") no-repeat center;
   }
 }
 
