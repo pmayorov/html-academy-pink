@@ -13,6 +13,9 @@
 
 .rates__table-wrapper {
   @media (max-width: $width-max-mobile) {
+    // For Safari
+    position: relative;
+    //
     margin: 0 auto;
     width: 100vw;
     overflow: hidden;
