@@ -22,24 +22,24 @@ reviewsBtn.forEach((button, index) => {
 arrowsBtn.forEach((button, index) => {
   button.addEventListener('click', () => {
     if (index === 0) {
-      console.log('Клик влево');
+      // console.log('Клик влево');
       reviewsCurrent--
     } else {
-      console.log('Клик вправо');
+      // console.log('Клик вправо');
       reviewsCurrent++
     };
 
     if (reviewsCurrent > reviewsTotal) {
-      console.log('Цикл – начало списка');
+      // console.log('Цикл – начало списка');
       reviewsCurrent = 1;
     } else if (reviewsCurrent === 0) {
-      console.log('Цикл – конец списка');
+      // console.log('Цикл – конец списка');
       reviewsCurrent = reviewsTotal;
     };
 
     document.querySelector('.reviews__item--active').classList.remove('reviews__item--active');
     reviewsItem[reviewsCurrent - 1].classList.add('reviews__item--active');
-    console.log('Активный слайд: ' + reviewsCurrent);
+    // console.log('Активный слайд: ' + reviewsCurrent);
   }
   );
 });

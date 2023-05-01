@@ -1008,6 +1008,7 @@ img {
   .rates__table-wrapper {
     margin: 0 auto;
     width: 100vw;
+    overflow: hidden;
   }
 }
 
