@@ -46,20 +46,6 @@ img {
   src: url("../fonts/open-sans-700.woff2") format("woff2"), url("../fonts/open-sans-700.woff") format("woff");
 }
 .container {
-  outline-color: #6c12e0;
-  outline-width: 1px;
-  outline-style: dotted;
-  outline-offset: 0;
-}
-
-.advantages__add::before {
-  outline-color: #0f99da;
-  outline-width: 1px;
-  outline-style: dotted;
-  outline-offset: 0;
-}
-
-.container {
   width: 320px;
   margin: 0 auto;
   padding-right: 20px;
@@ -785,6 +771,19 @@ img {
     padding-top: 50px;
   }
 }
+@media (min-width: 1200px) {
+  .advantages__item::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-image: radial-gradient(closest-side, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    -webkit-clip-path: inset(0 0 50% 0);
+            clip-path: inset(0 0 50% 0);
+  }
+}
 .advantages__item::after {
   content: "";
   position: absolute;
@@ -793,10 +792,6 @@ img {
 }
 @media (min-width: 1200px) {
   .advantages__item::after {
-    outline-color: #0f99da;
-    outline-width: 1px;
-    outline-style: dotted;
-    outline-offset: 0;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);

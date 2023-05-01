@@ -3,9 +3,9 @@
 // }
 
 .container {
-  @include outline(1px, dotted, #6c12e0);
+  // @include outline(1px, dotted, #6c12e0);
 }
 
 .advantages__add::before {
-  @include outline();
+  // @include outline();
 }
