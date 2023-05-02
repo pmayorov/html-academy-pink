@@ -51,24 +51,29 @@
   padding-top: 28px;
   padding-bottom: 31px;
 
+  @media (min-width: $width-tablet) {
+    padding: 31px 0;
+   }
+
   @media (min-width: $width-desktop) {
     // Отступ кнопки от HERO заголовка, который находится в другой секции
-    padding-top: 51px;
+    padding-top: 36px;
   }
 }
 
 .hero-index__title {
   grid-column: 2/3;
-  padding-top: 95px;
+  padding-top: 89px;
   overflow-y: hidden;
 
   @media (min-width: $width-tablet) {
     overflow-y: initial;
     line-height: 48px;
-    padding-top: 200px;
+    padding-top: 203px;
   }
 
   @media (min-width: $width-desktop) {
+    padding-top: 209px;
     line-height: 68px;
   }
 }

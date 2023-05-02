@@ -8,6 +8,10 @@
   @media (min-width: $width-tablet) {
     padding: 98px 0 68px;
   }
+
+  @media (min-width: $width-desktop) {
+    padding: 157px 0 96px;
+  }
 }
 
 .rates__table-wrapper {
@@ -84,16 +88,16 @@
 // Столбцы – заголовки
 .rates__head-col {
   position: relative;
-  padding: 12px 0 26px;
+  padding: 10px 0 26px;
   background-color: $color-primary;
   border: 2px solid $color-primary;
 
   @media (min-width: $width-tablet) {
-    padding: 10px 12px 9px;
+    padding: 10px 12px 7px;
   }
 
   @media (min-width: $width-desktop) {
-    padding: 19px 12px;
+    padding: 14px 12px 20px;
   }
 
   &:not(:last-of-type)::after {
@@ -126,16 +130,16 @@
   @media (max-width: $width-max-mobile) {
     position: relative;
     left: calc($width-mobile-content * var(--index-column));
-    padding: 14px 61px 14px 15px;
+    padding: 14px 61px 14px 21px;
     text-transform: uppercase;
   }
 
   @media (min-width: $width-tablet) {
-    padding: 8px 15px 7px;
+    padding: 8px 17px 7px;
   }
 
   @media (min-width: $width-desktop) {
-    padding: 14px 15px;
+    padding: 14px 21px;
     font-size: 18px;
   }
 }
@@ -168,9 +172,9 @@
     }
 
     @media (min-width: $width-desktop) {
-      width: 111px;
+      width: 107px;
       left: -33px;
-      top: -2px;
+      top: -5px;
     }
   }
 
@@ -193,8 +197,8 @@
     }
 
     @media (min-width: $width-desktop) {
-      left: 16px;
-      top: 15px;
+      left: 15px;
+      top: 11px;
     }
   }
 }
@@ -220,6 +224,7 @@
 
   @media (min-width: $width-desktop) {
     font-size: 24px;
+    margin-top: 0;
   }
 }
 
@@ -232,7 +237,7 @@
   background-position: center;
 
   @media (max-width: $width-max-mobile) {
-    background-position: calc(100% - 15px) center;
+    background-position: calc(100% - 19px) center;
   }
 
   &--yes {
@@ -247,7 +252,7 @@
 // Баттоны слайдера
 
 .rates__togglers {
-  margin-top: 40px;
+  margin-top: 43px;
 
   @media (min-width: $width-tablet) {
     display: none;

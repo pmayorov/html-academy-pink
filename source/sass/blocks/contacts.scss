@@ -6,12 +6,12 @@
   }
 
   @media (min-width: $width-desktop) {
-    padding-top: 59px;
+    padding-top: 62px;
   }
 }
 
 .contacts__title-wrapper {
-  margin-bottom: 31px;
+  margin-bottom: 35px;
 
   @media (min-width: $width-tablet) {
     margin-bottom: 34px;
@@ -33,7 +33,7 @@
     flex-direction: initial;
     justify-content: center;
     column-gap: 20px;
-    row-gap: 42px;
+    row-gap: 40px;
     flex-wrap: wrap;
   }
 
@@ -65,7 +65,7 @@
 
   &--mail {
     @media (max-width: $width-max-mobile) {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     @media (min-width: $width-desktop) {

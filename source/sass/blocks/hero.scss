@@ -51,22 +51,23 @@
     width: 80px;
     height: 80px;
     background-image: url("../img/logos/microsoft.svg");
+    background-position-y: 23px;
   }
 }
 
 .hero__note {
   font-weight: 300;
   // 12px - компенсация нижних паддингов в ссылках верхнего списка маркетов;
-  margin: calc(28px - 12px) 0 0;
+  margin: calc(22px - 12px) 0 0;
   text-align: center;
 
   @media (min-width: $width-tablet) {
-    margin: calc(38px - 12px) 0 0;
+    margin: calc(33px - 12px) 0 0;
     font-size: 18px;
     line-height: 24px;
   }
 
   @media (min-width: $width-desktop) {
-    margin: calc(58px - 12px) 0 0;
+    margin: calc(51px - 12px) 0 0;
   }
 }

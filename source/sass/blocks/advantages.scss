@@ -8,6 +8,11 @@
     padding-top: 46px;
     padding-bottom: 30px;
   }
+
+  @media (min-width: $width-desktop) {
+    padding-top: 63px;
+    padding-bottom: 49px;
+  }
 }
 
 .advantages__title {
@@ -16,19 +21,19 @@
 
   & + & {
     @media (max-width: $width-max-mobile) {
-      margin-top: 25px;
+      margin-top: 30px;
     }
   }
 }
 
 .advantages__list-wrapper {
-  @include slopedTopBorder(32px, 53px, 100px);
-  padding-top: 82px;
+  @include slopedTopBorder(35px, 53px, 100px);
+  padding-top: 85px;
   background-color: $color-gray--f2;
 
   @media (min-width: $width-tablet) {
     padding-top: 76px;
-    padding-bottom: 42px;
+    padding-bottom: 44px;
   }
 
   @media (min-width: $width-desktop) {
@@ -41,14 +46,14 @@
   position: relative;
   display: grid;
   // grid-template-columns: 1fr;
-  row-gap: 31px;
+  row-gap: 32px;
   list-style-type: none;
 
   @media (min-width: $width-tablet) {
     // Фикисирую высоту списка, чтобы при минимальном количестве текста
     // не уменьшался блок и иллюстрация не наезжала на верхний заголовок.
     min-height: 367px;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 310px 1fr;
     row-gap: 35px;
   }
 
@@ -75,7 +80,7 @@
     // для размещения иллюстраций относительно элементов списка.
     position: relative;
     grid-column: initial;
-    padding-top: 50px;
+    padding-top: 56px;
   }
 
   &::before {
@@ -132,9 +137,9 @@
       @media (min-width: $width-tablet) and (max-width: ($width-desktop - 1)) {
         width: 300px;
         height: 481px;
-        // Опускаем иллюстрацию на величину нижнего паддинга вниз
+        // Опускаем иллюстрацию на величину нижнего паддинга вниз в .advantages__list-wrapper
         // и переносим влево (с учетом макетного отступа) к границам блока.
-        bottom: -42px;
+        bottom: -44px;
         left: $width-tablet-padding;
         background-image: url("../img/index/phone-tablet@1x.png");
         background-position: top left;
@@ -180,13 +185,13 @@
     display: block;
     position: relative;
     min-height: 276px;
-    padding-top: 39px;
+    padding-top: 41px;
     padding-left: $width-tablet-padding + 310px;
   }
 
   @media (min-width: $width-desktop) {
     min-height: 345px;
-    padding-top: 89px;
+    padding-top: 95px;
     padding-left: $width-desktop-padding + 370px;
   }
 
@@ -224,6 +229,7 @@
   }
 
   @media (min-width: $width-desktop) {
+    margin-bottom: 23px;
     font-size: 30px;
     line-height: 1;
     text-align: center;
@@ -232,10 +238,10 @@
   &--add {
     font-size: 30px;
     line-height: 36px;
-    margin-bottom: 8px;
+    margin-bottom: 11px;
 
     @media (min-width: $width-desktop) {
-      margin-bottom: 20px;
+      margin-bottom: 26px;
       line-height: 1;
       text-align: left;
     }
@@ -257,9 +263,21 @@
   }
 
   @media (min-width: $width-desktop) {
+    font-size: 18px;
+    line-height: 30px;
     text-align: center;
+  }
 
-    .advantages__name--add + & {
+  // Основным преимуществам делаем (костыльные?) боковые паддинги, чтобы сам текст был уже (по макету).
+  .advantages__item > & {
+    @media (min-width: $width-desktop) {
+      padding: 0 20px;
+    }
+  }
+
+  // Оставляем доп.эффекту левое выравнивание в десктопе
+  .advantages__name--add + & {
+    @media (min-width: $width-desktop) {
       text-align: left;
     }
   }
@@ -277,7 +295,8 @@
   color: $color-secondary;
 
   @media (min-width: $width-desktop) {
-    margin-top: 30px;
+    font-size: 18px;
+    margin-top: 33px;
   }
 
   &:hover {

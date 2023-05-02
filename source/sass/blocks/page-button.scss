@@ -17,6 +17,10 @@
     color: $color-white;
     outline-color: $color-white;
 
+    @media (min-width: $width-desktop) {
+      font-size: 21px;
+    }
+
     &:hover {
       color: $color-secondary;
       background-color: $color-white;

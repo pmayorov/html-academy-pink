@@ -4,7 +4,8 @@
   @media (min-width: $width-desktop) {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // Заменил декларацией в .reviews__arrows {top: 48%}
+    // align-items: center;
   }
 }
 
