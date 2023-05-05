@@ -4,7 +4,8 @@
   min-width: 320px;
   height: 100%;
   font-family: $font-body;
-  font-size: 14px;
+  // todo Пока закоментил, т.к. дублирует установленный в .body
+  // font-size: 14px;
   color: $color-primary;
 }
 

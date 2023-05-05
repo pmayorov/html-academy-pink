@@ -1,4 +1,4 @@
-.hero-other {
+.hero-small {
   display: flex;
   // Пропрциональное увеличение блока высоты с увеличением ширины вьюпорта.
   // height: calc(237px + 100vw - $width-mobile);
@@ -25,7 +25,7 @@
   }
 }
 
-.hero-other__title {
+.hero-small__title {
   margin: 0 auto;
 
   @media (min-width: $width-tablet) {

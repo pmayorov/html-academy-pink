@@ -1,4 +1,4 @@
-.hero-index {
+.hero-large {
   display: grid;
   grid-template-columns: 1fr $width-mobile-content 1fr;
   grid-template-rows: 462px 1fr;
@@ -43,7 +43,7 @@
   }
 }
 
-.hero-index__content {
+.hero-large__content {
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,7 @@
   }
 }
 
-.hero-index__title {
+.hero-large__title {
   grid-column: 2/3;
   padding-top: 89px;
   overflow-y: hidden;

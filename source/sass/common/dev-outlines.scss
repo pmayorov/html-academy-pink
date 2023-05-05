@@ -1,11 +1,17 @@
-// .map {
-//   // @include outline(1px, dotted, #1ac404e5);
-// }
-
 .container {
-  // @include outline(1px, dotted, #6c12e0);
+  @include outline(1px, dotted, blueviolet);
 }
 
-.reviews__item {
-  // @include outline(1px, dotted, crimson);
+.gallery__title {
+  @include outline(1px, dotted, darkorange);
 }
+
+// @include outline(1px, dotted, dodgerblue);
+// @include outline(1px, dotted, hotpink);
+// @include outline(1px, dotted, deeppink);
+// @include outline(1px, dotted, crimson);
+// @include outline(1px, dotted, darkmagenta);
+// @include outline(1px, dotted, olivedrab);
+// @include outline(1px, dotted, forestgreen);
+// @include outline(1px, dotted, limegreen);
+// @include outline(1px, dotted, lime);
