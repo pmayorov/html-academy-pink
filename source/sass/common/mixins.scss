@@ -1,22 +1,31 @@
 // @include outline();
 
-// Смена ширины контентной области в зависимости от ширины вьюпорпта
-@mixin adaptiveframe() {
-  display: grid;
-  grid-template-columns: 1fr $width-mobile-content 1fr;
-  column-gap: $width-mobile-padding;
+@mixin responsiveWidth() {
+  margin: 0 auto;
+  width: calc(100vw - 2 * $width-mobile-padding);
 
   @media (min-width: $width-tablet) {
-    grid-template-columns: 1fr $width-tablet-content 1fr;
-    // grid-template-columns: 1fr $width-tablet-adaptive 1fr;
-    column-gap: $width-tablet-padding;
+    width: calc(100vw - 2 * $width-tablet-padding);
+    max-width: $width-desktop-content;
   }
 
   @media (min-width: $width-desktop) {
-    grid-template-columns: 1fr $width-desktop-content 1fr;
-    column-gap: $width-desktop-padding;
+    width: calc(100vw - 2 * $width-desktop-padding);
   }
 }
+
+@mixin adaptiveWidth() {
+  width: $width-mobile-content;
+
+  @media (min-width: $width-tablet) {
+    width: $width-tablet-content;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop-content;
+  }
+}
+
 
 // Скошеная верхняя граница
 

@@ -6,6 +6,8 @@
 
   @media (min-width: $width-tablet) {
     width: $width-tablet;
+    padding-right: $width-tablet-padding;
+    padding-left: $width-tablet-padding;
   }
 
   @media (min-width: $width-desktop) {

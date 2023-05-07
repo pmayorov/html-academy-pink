@@ -13,6 +13,15 @@
   outline-style: solid;
   outline-offset: -3px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: rgba($color-primary, 0.1);
+    cursor: inherit;
+  }
+
   &--hero {
     color: $color-white;
     outline-color: $color-white;

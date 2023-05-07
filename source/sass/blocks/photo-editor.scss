@@ -1,16 +1,80 @@
 // .photo-editor {}
 
-// .photo-editor__lead {}
+.photo-editor__lead {
+  padding-top: 40px;
+  padding-bottom: 43px;
 
-// .photo-editor__image {}
+  @media (min-width: $width-tablet) {
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
 
-// .photo-editor__form {}
+  @media (min-width: $width-desktop) {
+    padding-top: 59px;
+    padding-bottom: 67px;
+  }
+}
 
-// .photo-editor__fieldset {}
+.photo-editor__image {
+  display: block;
 
-// .photo-editor__list {}
+  @media (min-width: $width-tablet) {
+    width: 300px;
+    height: 400px;
+  }
+}
 
-// .photo-editor__item {}
+.photo-editor__form {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $color-canvas;
+
+  @media (max-width: $width-max-mobile) {
+    padding: 20px calc((100vw - $width-mobile-content) / 2) 41px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding: 57px calc((100vw - $width-tablet-content) / 2) 54px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-template-columns: 300px 410px;
+    justify-content: space-between;
+    max-width: $width-desktop-content;
+    padding: 56px 60px 58px 80px;
+  }
+}
+
+.photo-editor__fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+.photo-editor__controls {
+  @media (min-width: $width-tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.photo-editor__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.photo-editor__item {
+  line-height: 0;
+}
+
+.photo-editor__input {
+  margin: 0;
+}
 
 // .photo-editor__crop-label {}
 
@@ -24,6 +88,24 @@
 
 // .photo-editor__contrast-value {}
 
-// .photo-editor__buttons-wrapper {}
+.photo-editor__buttons-wrapper {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 
-// .photo-editor__button {}
+  @media (min-width: $width-tablet) {
+    margin-top: auto;
+  }
+
+  @media (min-width: $width-desktop) {
+    flex-wrap: nowrap;
+    column-gap: 44px;
+  }
+}
+
+.photo-editor__button {
+  width: 100%;
+  border: 0;
+  color: $color-secondary;
+}

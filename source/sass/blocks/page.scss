@@ -12,7 +12,20 @@
 // Оформляю секцию как грид-сетку [ 1fr $width 1fr ] с адативной центральной ячейкой
 .page__header,
 .page__footer {
-  @include adaptiveframe();
+  display: grid;
+  grid-template-columns: 1fr $width-mobile-content 1fr;
+  column-gap: $width-mobile-padding;
+
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 1fr $width-tablet-content 1fr;
+    // grid-template-columns: 1fr $width-tablet-adaptive 1fr;
+    column-gap: $width-tablet-padding;
+  }
+
+  @media (min-width: $width-desktop) {
+    grid-template-columns: 1fr $width-desktop-content 1fr;
+    column-gap: $width-desktop-padding;
+  }
 }
 
 // По макету меню хедера полупрозрачное и под ним HERO блок
@@ -52,5 +65,15 @@
     max-width: $width-desktop-content;
     font-size: 50px;
     line-height: 68px;
+  }
+}
+
+.page__lead {
+  text-align: center;
+  line-height: 30px;
+  // @include adaptiveWidth();
+
+  @media (min-width: $width-tablet) {
+    font-size: 18px;
   }
 }

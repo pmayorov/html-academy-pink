@@ -6,6 +6,24 @@
   @include outline(1px, dotted, darkorange);
 }
 
+.gallery__list {
+  @include outline(1px, dotted, blueviolet);
+}
+
+.gallery__item {
+  @include outline(1px, dotted, darkorange);
+}
+
+.photo-editor__list {
+  @include outline(1px, dotted, forestgreen);
+}
+
+.photo-editor__item {
+  @include outline(1px, dotted, limegreen);
+}
+
+// @include outline(1px, dotted, blueviolet);
+// @include outline(1px, dotted, darkorange);
 // @include outline(1px, dotted, dodgerblue);
 // @include outline(1px, dotted, hotpink);
 // @include outline(1px, dotted, deeppink);
