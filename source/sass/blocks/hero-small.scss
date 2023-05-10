@@ -27,6 +27,7 @@
 
 .hero-small__title {
   margin: 0 auto;
+  line-height: 33px;
 
   @media (min-width: $width-tablet) {
     font-size: 50px;

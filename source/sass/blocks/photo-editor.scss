@@ -18,9 +18,15 @@
 .photo-editor__image {
   display: block;
 
+  @media (max-width: $width-max-mobile) {
+    margin-bottom: 37px;
+  }
+
   @media (min-width: $width-tablet) {
     width: 300px;
-    height: 400px;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
   }
 }
 
@@ -30,11 +36,11 @@
   background-color: $color-canvas;
 
   @media (max-width: $width-max-mobile) {
-    padding: 20px calc((100vw - $width-mobile-content) / 2) 41px;
+    padding: 21px calc((100vw - $width-mobile-content) / 2) 42px;
   }
 
   @media (min-width: $width-tablet) {
-    padding: 57px calc((100vw - $width-tablet-content) / 2) 54px;
+    padding: 56px calc((100vw - $width-tablet-content) / 2) 54px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
@@ -48,14 +54,58 @@
   }
 }
 
+.photo-editor__toggler-wrapper {
+  display: flex;
+  margin: 0;
+  margin-bottom: 21px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 21px;
+
+
+  @media (min-width: $width-tablet) {
+    display: none;
+  }
+}
+
+.photo-editor__toggler {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 0;
+  color: rgba($color-primary, 0.3);
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    color: rgba($color-primary, 0.5);
+  }
+
+  &--active {
+    color: $color-secondary;
+    pointer-events: none;
+  }
+}
+
 .photo-editor__fieldset {
   margin: 0;
   padding: 0;
+  border: 0;
+
+  @media (min-width: $width-tablet) {
+    padding: 10px 18px 0 80px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-left: 92px;
+    padding-right: 30px;
+  }
 }
 
 .photo-editor__controls {
   @media (min-width: $width-tablet) {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
   }
 }
@@ -63,44 +113,73 @@
 .photo-editor__list {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 .photo-editor__item {
+  position: relative;
   line-height: 0;
+
+  @media (max-width: $width-max-mobile) {
+    display: none;
+    padding: 0 20px 26px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding-bottom: 28px;
+  }
+
+  &:not(:first-of-type) {
+    @media (min-width: $width-tablet) {
+      padding-top: 28px;
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color-primary, 0.1);
+
+    @media (min-width: $width-tablet) {
+      left: -55px;
+      right: -18px;
+    }
+
+    @media (min-width: $width-desktop) {
+      left: -92px;
+      right: -30px;
+    }
+  }
 }
 
-.photo-editor__input {
-  margin: 0;
-}
-
-// .photo-editor__crop-label {}
-
-// .photo-editor__crop-value {}
-
-// .photo-editor__fill-label {}
-
-// .photo-editor__fill-value {}
-
-// .photo-editor__contrast-label {}
-
-// .photo-editor__contrast-value {}
-
-.photo-editor__buttons-wrapper {
-  margin: 0;
+.photo-editor__button-wrapper {
   display: flex;
+  margin: 0;
+  margin-top: 39px;
   flex-wrap: wrap;
   gap: 12px;
 
   @media (min-width: $width-tablet) {
-    margin-top: auto;
+    gap: 27px;
+    padding-left: 27px;
+    padding-right: 13px;
   }
 
   @media (min-width: $width-desktop) {
     flex-wrap: nowrap;
     column-gap: 44px;
+    padding: 0;
   }
 }
 
@@ -108,4 +187,149 @@
   width: 100%;
   border: 0;
   color: $color-secondary;
+}
+
+.photo-editor__label {
+  @media (min-width: $width-tablet) {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: -52px;
+    top: 26px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: 48px;
+    height: 48px;
+    left: -92px;
+    top: 13px;
+  }
+
+  .photo-editor__item:nth-of-type(1) & {
+    @media (min-width: $width-tablet) {
+      top: -3px;
+      background-image: url("../../img/ico/crop.svg");
+      background-size: 22px;
+    }
+
+    @media (min-width: $width-desktop) {
+      top: -13px;
+      background-size: 44px;
+    }
+  }
+
+  .photo-editor__item:nth-of-type(2) & {
+    @media (min-width: $width-tablet) {
+      background-image: url("../../img/ico/fill.svg");
+      background-size: 24px 22px;
+    }
+
+    @media (min-width: $width-desktop) {
+      background-size: 48px 43px;
+    }
+  }
+
+  .photo-editor__item:nth-of-type(3) & {
+    @media (min-width: $width-tablet) {
+      background-image: url("../../img/ico/contrast.svg");
+      background-size: 16px;
+    }
+
+    @media (min-width: $width-desktop) {
+      background-size: 32px;
+    }
+  }
+}
+
+// СТИЛИЗАЦИЯ ПОЛЗУНКА RANGE
+
+// Для браузеров webkit (google chrome, chromium) используются псевдоселекторы
+
+// ::-webkit-slider-runnable-track
+// ::-webkit-slider-thumb
+
+// а для mozilla firefox
+
+// ::-moz-range-track
+// ::-moz-range-thumb
+
+// Где:
+// -track - полоса ползунка
+// -thumb – элемент ползунка
+
+.photo-editor__input {
+  margin: 0;
+  appearance: none;
+  width: 100%;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//* Стилизация ползунка
+// Firefox
+.photo-editor__input::-moz-range-track {
+  position: relative;
+  height: 2px;
+  background-color: $color-primary;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+// Chrome - Edge - Opera
+// Если объединить два селектора через "," то правило для -webkit не срабатывает.
+.photo-editor__input::-webkit-slider-runnable-track {
+  height: 2px;
+  background-color: $color-primary;
+  // В данных браузерах в высоте инпута-поля не учитывается высота кнопки.
+  // Она как бы абсолютно позиционирована. Поэтому компенсируем недостающее маргинами.
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+//* Стилизация кнопки
+// Chrome - Edge - Opera
+.photo-editor__input::-webkit-slider-thumb {
+  appearance: none;
+  margin-top: -6px;
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background-color: $color-white;
+  outline: 2px solid $color-secondary;
+  outline-offset: -2px;
+
+  &:hover {
+    // background-color: rgba($color-white, 0.6);
+  }
+
+  &:active {
+    // background-color: $color-btn-active;
+  }
+}
+
+// Firefox
+.photo-editor__input::-moz-range-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: none;
+  border-radius: 50%;
+  background-color: $color-white;
+  outline-offset: -2px;
+  outline: 2px solid $color-secondary;
+
+  &:hover {
+    // background-color: rgba($color-white, 0.6);
+  }
+
+  &:active {
+    // background-color: $color-btn-active;
+  }
 }

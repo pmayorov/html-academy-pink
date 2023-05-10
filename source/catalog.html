@@ -26,9 +26,9 @@
   <!-- <link rel="stylesheet" href="./css/markup.css"> -->
 
   <!--* DEV - PixelGlass -->
-  <!-- <link rel="stylesheet" href="./css/pixel-index.css">
-      <link href="./pixelglass/styles.css" rel="stylesheet">
-      <script src="./pixelglass/script.js"></script> -->
+  <link rel="stylesheet" href="./pixelglass/pixel-catalog.css">
+  <link href="./pixelglass/styles.css" rel="stylesheet">
+  <script src="./pixelglass/script.js"></script>
   <!-- DEV - END -->
 </head>
 
@@ -42,7 +42,7 @@
     <nav class="page__nav nav">
       <!-- #1 Логотип & Кнопка-->
       <div class="nav__top-bar">
-        <a class="nav__logo logo logo--header">
+        <a class="nav__logo logo logo--header" href="./index.html">
           <picture>
             <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-white.svg">
             <source media="(min-width: 660px)" srcset="./img/logos/pink-tablet-white.svg">
@@ -98,7 +98,7 @@
               </footer>
               <!-- Отзыв -->
               <blockquote class="gallery__card-describe">
-                Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!
+                Прыгать или нет? Напишите в комментарии свой совет и смотрите прямую трансляцию в перископе, задайте свои вопросы!
               </blockquote>
               <!-- Лайки -->
               <p class="gallery__card-likes">
@@ -277,32 +277,64 @@
         <h3 class="visually-hidden">Форма редактирования и загрузки фото</h3>
 
         <!-- Фотоиллюстрация -->
-        <picture>
-          <img class="photo-editor__image" width="280" height="374" src="./img/catalog/photo-8-tablet@1x.jpg" srcset="./img/catalog/photo-8-tablet@2x.jpg 2x" alt="Зимняя дорога">
-        </picture>
+        <a class="photo-editor__link" href="##">
+          <picture>
+            <img class="photo-editor__image" width="280" height="374" src="./img/catalog/photo-8-tablet@1x.jpg" srcset="./img/catalog/photo-8-tablet@2x.jpg 2x" alt="Зимняя дорога">
+          </picture>
+        </a>
 
         <!-- Форма редактирования -->
         <form class="photo-editor__controls" id="photo-controls" action="https://echo.htmlacademy.ru" name="photo-form" method="post">
-          <!-- Поля редактирования -->
+
+          <!-- Кнопки выбора фильтра -->
+          <p class="photo-editor__toggler-wrapper">
+            <!-- Кадрирование -->
+            <button class="photo-editor__toggler photo-editor__toggler--active" type="button" aria-label="Кадрирование" id="crop-btn">
+              <span class="visually-hidden">Кадрирование</span>
+              <svg width="44" height="44" aria-hidden="true">
+                <use xlink:href="./img/sprite.svg#ico-crop"></use>
+              </svg>
+            </button>
+            <!-- Оттенок -->
+            <button class="photo-editor__toggler" type="button" aria-label="Оттенок" id="fill-btn">
+              <span class="visually-hidden">Оттенок</span>
+              <svg width="48" height="43" aria-hidden="true">
+                <use xlink:href="./img/sprite.svg#ico-fill"></use>
+              </svg>
+            </button>
+            <!-- Контраст -->
+            <button class="photo-editor__toggler" type="button" aria-label="Контраст" id="contrast-btn">
+              <span class="visually-hidden">Контраст</span>
+              <svg width="32" height="32" aria-hidden="true">
+                <use xlink:href="./img/sprite.svg#ico-contrast"></use>
+              </svg>
+            </button>
+          </p>
+
+          <!-- Фильтры редактирования -->
+          <fieldset class="photo-editor__fieldset">
+            <legend class="visually-hidden">Список фильтров</legend>
             <ul class="photo-editor__list">
               <!-- Кадрирование -->
-              <li class="photo-editor__item">
-                <label class="photo-editor__crop-label" for="crop-value"><span class="visually-hidden">Кадрирование</span></label>
+              <li class="photo-editor__item photo-editor__item--active">
+                <label class="photo-editor__label" for="crop-value"><span class="visually-hidden">Кадрирование</span></label>
                 <input class="photo-editor__input" type="range" id="crop-value" name="edit-img">
               </li>
-              <!-- Заливка -->
+              <!-- Оттенок -->
               <li class="photo-editor__item">
-                <label class="photo-editor__fill-label" for="fill-value"><span class="visually-hidden">Заливка</span></label>
+                <label class="photo-editor__label" for="fill-value"><span class="visually-hidden">Оттенок</span></label>
                 <input class="photo-editor__input" type="range" id="fill-value" name="edit-img">
               </li>
               <!-- Контраст -->
               <li class="photo-editor__item">
-                <label class="photo-editor__contrast-label" for="contrast-value"><span class="visually-hidden">Контраст</span></label>
+                <label class="photo-editor__label" for="contrast-value"><span class="visually-hidden">Контраст</span></label>
                 <input class="photo-editor__input" type="range" id="contrast-value" name="edit-img">
               </li>
             </ul>
-          <!-- Кнопки -->
-          <p class="photo-editor__buttons-wrapper">
+          </fieldset>
+
+          <!-- Отправить фото / отменить  -->
+          <p class="photo-editor__button-wrapper">
             <button class="photo-editor__button page-button" type="submit" id="photo-send">Запостить</button>
             <button class="photo-editor__button page-button" type="submit" id="photo-cancel" disabled>Отмена</button>
           </p>
@@ -318,7 +350,7 @@
     <div class="page__footer-content footer__content">
 
       <!-- #1 Логотип Пинк -->
-      <a class="footer__logo logo logo--footer" href="#">
+      <a class="footer__logo logo logo--footer" href="./index.html">
         <picture>
           <source media="(min-width: 1200px)" srcset="./img/logos/pink-desktop-color.svg">
           <img class="logo__image" width="145" height="40" src="./img/logos/pink-tablet-color.svg" alt="Мобильное приложение &laquo;Pink&raquo;">
@@ -355,7 +387,7 @@
 
       <!-- #3 Логотип академии -->
       <a class="footer__copyright copyright" href="https://htmlacademy.org/">
-        Разработано<span class="visually-hidden">в HTML Academy</span>
+        Разработано<span class="visually-hidden"> в HTML Academy</span>
         <svg class="copyright__logo" width="27" height="34" role="img" aria-hidden="true">
           <use xlink:href="./img/sprite.svg#ico-htmlacademy"></use>
         </svg>

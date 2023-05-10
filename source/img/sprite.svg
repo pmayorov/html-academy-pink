@@ -29,4 +29,20 @@
 <path fill="currentColor" d="M1.834 12.809a1.257 1.257 0 0 1-1.285.03 1.097 1.097 0 0 1-.443-.457.97.97 0 0 1-.092-.603V1.221A.97.97 0 0 1 .106.618C.2.429.355.27.549.16a1.256 1.256 0 0 1 1.285.031l12.4 5.502c1.022.445 1.022 1.169 0 1.614l-12.4 5.502Z"/>
 </symbol>
 
+<!-- crop -->
+<symbol viewBox="0 0 44 44" id="ico-crop">
+<path fill="currentColor" d="M32 28h4V12a4 4 0 0 0-4-4H16v4h16v16Zm-20 4V0H8v8H0v4h8v20a4 4 0 0 0 4 4h20v8h4v-8h8v-4H12Z"/>
+</symbol>
+
+<!-- fill -->
+<symbol viewBox="0 0 48 43" id="ico-fill">
+<path fill="currentColor" d="M33.12 17.88 15.24 0l-2.83 2.83 4.76 4.76L6.88 17.88a3 3 0 0 0 0 4.24l11 11a3 3 0 0 0 4.24 0l11-11a3 3 0 0 0 0-4.24ZM10.41 20 20 10.42 29.59 20H10.41ZM38 23s-4 4.33-4 7a4 4 0 1 0 8 0c0-2.67-4-7-4-7ZM48 40H0v3h48v-3Z"/>
+</symbol>
+
+<!-- contrast -->
+<symbol viewBox="0 0 32 32" id="ico-contrast">
+<path fill="currentColor" d="M16 4a12 12 0 1 1 0 24 12 12 0 0 1 0-24Zm0-4a16 16 0 1 0 0 32 16 16 0 0 0 0-32Z"/><path fill="currentColor" d="M16 24.29a8.52 8.52 0 0 0 0-17"/>
+</symbol>
+
+
 </svg>
