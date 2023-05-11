@@ -57,6 +57,42 @@
       margin-bottom: 0;
     }
   }
+
+  // #region Позиционирование лейбла-псевдоэлемента
+  // Поскольку широкая (первая) иллюстрация уже абсолютно спозиционирована относительно обертки,
+  // мы уже не можем данный лейбл спозиционировать относительно илюстрации, поэтому позиционируем его
+  // также относительно всей обертки, а правый отступ расчитывается по формуле.
+  // #endregion
+
+  &--large::before {
+    content: "ПАНОРАМА ДНЯ";
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 700;
+    color: $color-white;
+    background-color: $color-secondary;
+
+    @media (max-width: $width-max-mobile) {
+      right: calc((100vw - $width-mobile) / 2 + $width-mobile-padding);
+    }
+
+    @media (min-width: $width-tablet) {
+      top: 57px;
+      right: calc((100vw - $width-tablet) / 2 + $width-tablet-padding);
+    }
+
+    @media (min-width: $width-desktop) {
+      top: 54px;
+      right: calc((100vw - $width-desktop) / 2 + $width-desktop-padding);
+    }
+  }
 }
 
 .gallery__card {
@@ -87,7 +123,7 @@
       // 137px + 18px (высота фото + нижний маргин от фото)
       // (100vw - $width-mobile) / 2.336 - величина на которую увеличиваем верхний отступ под пропорционально увеличиваемом абсолютно спозиционированным фото
 
-      padding-top: calc((100vw - $width-mobile) / 2.34 + 137px + 18px);
+      padding-top: max(155px, calc((100vw - $width-mobile) / 2.34 + 137px + 18px));
     }
 
     @media (min-width: $width-tablet) {
@@ -187,6 +223,11 @@
   column-gap: 18px;
   margin: 0;
   margin-top: auto;
+
+  @media (min-width: $width-tablet) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 
   // Лайки под фото #1
   .gallery__item--large & {

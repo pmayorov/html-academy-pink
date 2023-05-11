@@ -185,8 +185,22 @@
 
 .photo-editor__button {
   width: 100%;
-  border: 0;
+  border: none;
   color: $color-secondary;
+
+  &:hover {
+    color: $color-white;
+    outline: none;
+    background-color: $color-secondary;
+  }
+
+  &:active {
+    color: rgba($color-white, 0.3);
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
 }
 
 .photo-editor__label {
@@ -305,12 +319,8 @@
   outline: 2px solid $color-secondary;
   outline-offset: -2px;
 
-  &:hover {
-    // background-color: rgba($color-white, 0.6);
-  }
-
   &:active {
-    // background-color: $color-btn-active;
+    background-color: $color-secondary;
   }
 }
 
@@ -325,11 +335,7 @@
   outline-offset: -2px;
   outline: 2px solid $color-secondary;
 
-  &:hover {
-    // background-color: rgba($color-white, 0.6);
-  }
-
   &:active {
-    // background-color: $color-btn-active;
+    background-color: $color-secondary;
   }
 }

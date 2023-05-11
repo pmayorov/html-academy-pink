@@ -1586,6 +1586,17 @@ img {
     order: 3;
   }
 }
+.contacts__item--mail > a {
+  text-decoration: none;
+}
+.contacts__item--mail > a:hover {
+  color: #283645;
+  text-decoration: underline;
+}
+.contacts__item--mail > a:active {
+  color: rgba(40, 54, 69, 0.3);
+  text-decoration: none;
+}
 
 .contacts__name {
   font-size: 18px;
@@ -1687,6 +1698,38 @@ img {
     margin-bottom: 0;
   }
 }
+.gallery__item--large::before {
+  content: "ПАНОРАМА ДНЯ";
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 36px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #d22856;
+}
+@media (max-width: 659px) {
+  .gallery__item--large::before {
+    right: calc((100vw - 320px) / 2 + 20px);
+  }
+}
+@media (min-width: 660px) {
+  .gallery__item--large::before {
+    top: 57px;
+    right: calc((100vw - 660px) / 2 + 20px);
+  }
+}
+@media (min-width: 1200px) {
+  .gallery__item--large::before {
+    top: 54px;
+    right: calc((100vw - 1200px) / 2 + 130px);
+  }
+}
 
 .gallery__card {
   display: flex;
@@ -1709,7 +1752,7 @@ img {
 }
 @media (max-width: 659px) {
   .gallery__item--large .gallery__card {
-    padding-top: calc((100vw - 320px) / 2.34 + 137px + 18px);
+    padding-top: max(155px, (100vw - 320px) / 2.34 + 137px + 18px);
   }
 }
 @media (min-width: 660px) {
@@ -1815,6 +1858,12 @@ img {
   column-gap: 18px;
   margin: 0;
   margin-top: auto;
+}
+@media (min-width: 660px) {
+  .gallery__card-likes {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }
 @media (min-width: 660px) {
   .gallery__item--large .gallery__card-likes {
@@ -2038,8 +2087,19 @@ img {
 
 .photo-editor__button {
   width: 100%;
-  border: 0;
+  border: none;
   color: #d22856;
+}
+.photo-editor__button:hover {
+  color: #ffffff;
+  outline: none;
+  background-color: #d22856;
+}
+.photo-editor__button:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+.photo-editor__button:disabled {
+  pointer-events: none;
 }
 
 @media (min-width: 660px) {
@@ -2136,6 +2196,10 @@ img {
   outline: 2px solid #d22856;
   outline-offset: -2px;
 }
+.photo-editor__input::-webkit-slider-thumb:active {
+  background-color: #d22856;
+}
+
 .photo-editor__input::-moz-range-thumb {
   appearance: none;
   width: 14px;
@@ -2146,6 +2210,10 @@ img {
   outline-offset: -2px;
   outline: 2px solid #d22856;
 }
+.photo-editor__input::-moz-range-thumb:active {
+  background-color: #d22856;
+}
+
 .social-networks {
   display: flex;
   justify-content: center;
