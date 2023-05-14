@@ -188,6 +188,18 @@
   border: none;
   color: $color-secondary;
 
+  @media (max-width: $width-max-mobile) {
+    max-width: $width-mobile-content;
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: 260px;
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: 183px;
+  }
+
   &:hover {
     color: $color-white;
     outline: none;

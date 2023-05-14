@@ -1,0 +1,56 @@
+.form-body {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $width-tablet) {
+    width: $width-tablet-content;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop-content;
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // column-gap: 70px;
+  }
+}
+
+.form-body__fieldset {
+  margin: 0;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      order: $i;
+    }
+  }
+
+  @media (min-width: $width-tablet) {
+
+    &:nth-child(2) {
+      order: 4;
+    }
+
+    &:nth-child(4) {
+      order: 2;
+    }
+  }
+}
+
+.form-body__submit {
+  display: flex;
+  order: 99;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+
+  @media (max-width: $width-max-mobile) {
+    width: $width-mobile-content;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: 100%;
+    flex-direction: initial;
+    justify-content: space-between;
+  }
+}

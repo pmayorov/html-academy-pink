@@ -1,0 +1,30 @@
+.form-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 17px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 30px;
+  color: $color-white;
+  background-color: $color-form_button;
+  border-radius: 4px;
+  outline: 2px solid $color-form_button;
+  outline-offset: -2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &--sendform {
+    max-width: 300px;
+  }
+
+  & + span {
+    text-transform: uppercase;
+  }
+
+  & + span > span {
+    color: $color-secondary;
+  }
+}

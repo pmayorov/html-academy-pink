@@ -1,0 +1,58 @@
+.field {
+  line-height: 30px;
+
+  &--input {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.field--select {}
+
+.field__radio {}
+
+.field__checkbox {}
+
+.field__name {
+
+  .field--select & {
+    font-size: 18px;
+  }
+
+  .field--input & {
+    color: $color-secondary;
+    text-transform: uppercase;
+  }
+}
+
+.field__input {
+  font-size: 18px;
+  font-family: inherit;
+  border: none;
+  outline: 2px solid $color-gray--e5;
+  border-radius: 2px;
+  padding: 20px 14px 20px 15px;
+
+  &::placeholder {
+    color: $color-primary;
+    opacity: 1;
+  }
+}
+
+.field__textarea {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  outline: 2px solid $color-gray--e5;
+  border-radius: 1px;
+  resize: none;
+
+  @media (max-width: $width-max-mobile) {
+    width: $width-mobile-content;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: 100%;
+  }
+}

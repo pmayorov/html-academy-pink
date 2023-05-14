@@ -37,10 +37,12 @@
 @import "./blocks/contacts.scss";
 
 // Форма
-// @import "./blocks/form-section.scss";
-// @import "./blocks/form-body.scss";
-// @import "./blocks/fieldset.scss";
-// @import "./blocks/field.scss";
+
+@import "./blocks/feedback.scss";
+@import "./blocks/form-body.scss";
+@import "./blocks/fieldset.scss";
+@import "./blocks/field.scss";
+@import "./blocks/form-button.scss";
 
 // Каталог
 @import "./blocks/catalog.scss";

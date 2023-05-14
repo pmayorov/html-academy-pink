@@ -45,6 +45,20 @@ img {
   font-weight: 700;
   src: url("../fonts/open-sans-700.woff2") format("woff2"), url("../fonts/open-sans-700.woff") format("woff");
 }
+.fieldset__topic {
+  outline-color: darkorange;
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-offset: 0;
+}
+
+.fieldset {
+  outline-color: blueviolet;
+  outline-width: 1px;
+  outline-style: dotted;
+  outline-offset: 0;
+}
+
 .container {
   width: 320px;
   margin: 0 auto;
@@ -1327,19 +1341,21 @@ img {
 }
 
 .page-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   padding: 18px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
+  text-align: center;
   text-decoration: none;
   background-color: transparent;
   border-radius: 30px;
   outline-width: 3px;
   outline-style: solid;
   outline-offset: -3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .page-button:hover {
   cursor: pointer;
@@ -1623,6 +1639,283 @@ img {
   .contacts__map {
     margin-top: 18px;
   }
+}
+
+.feedback__form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feedback__lead {
+  margin: 0 auto;
+}
+@media (max-width: 659px) {
+  .feedback__lead {
+    width: 320px;
+    padding: 45px 20px 34px 20px;
+  }
+}
+@media (min-width: 660px) {
+  .feedback__lead {
+    width: 660px;
+    padding: 92px 85px 72px;
+  }
+}
+@media (min-width: 1200px) {
+  .feedback__lead {
+    width: 1200px;
+    padding: 92px 222px 65px;
+  }
+}
+@media (max-width: 659px) {
+  .feedback__lead span {
+    display: none;
+  }
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 660px) {
+  .form-body {
+    width: 620px;
+  }
+}
+@media (min-width: 1200px) {
+  .form-body {
+    width: 940px;
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.form-body__fieldset {
+  margin: 0;
+}
+.form-body__fieldset:nth-child(1) {
+  order: 1;
+}
+.form-body__fieldset:nth-child(2) {
+  order: 2;
+}
+.form-body__fieldset:nth-child(3) {
+  order: 3;
+}
+.form-body__fieldset:nth-child(4) {
+  order: 4;
+}
+.form-body__fieldset:nth-child(5) {
+  order: 5;
+}
+@media (min-width: 660px) {
+  .form-body__fieldset:nth-child(2) {
+    order: 4;
+  }
+  .form-body__fieldset:nth-child(4) {
+    order: 2;
+  }
+}
+
+.form-body__submit {
+  display: flex;
+  order: 99;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+@media (max-width: 659px) {
+  .form-body__submit {
+    width: 280px;
+  }
+}
+@media (min-width: 660px) {
+  .form-body__submit {
+    width: 100%;
+    flex-direction: initial;
+    justify-content: space-between;
+  }
+}
+
+.fieldset {
+  padding: 0;
+  border: none;
+}
+@media (min-width: 1200px) {
+  .fieldset {
+    width: 435px;
+  }
+}
+@media (min-width: 660px) {
+  .fieldset:not(.fieldset--name) {
+    outline: 2px solid #e5e5e5;
+    border-radius: 2px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (min-width: 1200px) {
+  .fieldset:not(.fieldset--name) {
+    padding-left: 62px;
+    padding-right: 62px;
+  }
+}
+@media (max-width: 659px) {
+  .fieldset--achievement {
+    background-color: #f2f2f2;
+  }
+}
+@media (max-width: 659px) {
+  .fieldset--application {
+    background-color: #f2f2f2;
+  }
+}
+@media (min-width: 1200px) {
+  .fieldset--fullwidth {
+    width: 100%;
+  }
+}
+
+.fieldset__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+@media (max-width: 659px) {
+  .fieldset__list {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .fieldset--achievement .fieldset__list {
+    display: grid;
+    column-gap: 54px;
+    row-gap: 43px;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+  }
+}
+
+.fieldset__topic {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  color: #d22856;
+  text-transform: uppercase;
+}
+@media (max-width: 659px) {
+  .fieldset__topic {
+    width: 100%;
+  }
+}
+@media (min-width: 660px) {
+  .fieldset__topic {
+    position: relative;
+    background-color: #ffffff;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 35px;
+    margin-left: auto;
+    margin-right: auto;
+    top: -10px;
+  }
+}
+@media (max-width: 659px) {
+  .fieldset--contacts .fieldset__topic {
+    display: none;
+  }
+}
+@media (min-width: 660px) {
+  .fieldset__topic br {
+    display: none;
+  }
+}
+
+.field {
+  line-height: 30px;
+}
+.field--input {
+  display: flex;
+  flex-direction: column;
+}
+
+.field--select .field__name {
+  font-size: 18px;
+}
+.field--input .field__name {
+  color: #d22856;
+  text-transform: uppercase;
+}
+
+.field__input {
+  font-size: 18px;
+  font-family: inherit;
+  border: none;
+  outline: 2px solid #e5e5e5;
+  border-radius: 2px;
+  padding: 20px 14px 20px 15px;
+}
+.field__input::placeholder {
+  color: #283645;
+  opacity: 1;
+}
+
+.field__textarea {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  outline: 2px solid #e5e5e5;
+  border-radius: 1px;
+  resize: none;
+}
+@media (max-width: 659px) {
+  .field__textarea {
+    width: 280px;
+  }
+}
+@media (min-width: 660px) {
+  .field__textarea {
+    width: 100%;
+  }
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 17px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 30px;
+  color: #ffffff;
+  background-color: #2aab6d;
+  border-radius: 4px;
+  outline: 2px solid #2aab6d;
+  outline-offset: -2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.form-button--sendform {
+  max-width: 300px;
+}
+.form-button + span {
+  text-transform: uppercase;
+}
+.form-button + span > span {
+  color: #d22856;
 }
 
 @media (min-width: 1200px) {
@@ -2089,6 +2382,21 @@ img {
   width: 100%;
   border: none;
   color: #d22856;
+}
+@media (max-width: 659px) {
+  .photo-editor__button {
+    max-width: 280px;
+  }
+}
+@media (min-width: 660px) {
+  .photo-editor__button {
+    max-width: 260px;
+  }
+}
+@media (min-width: 1200px) {
+  .photo-editor__button {
+    max-width: 183px;
+  }
 }
 .photo-editor__button:hover {
   color: #ffffff;
