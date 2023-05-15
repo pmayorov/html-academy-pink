@@ -174,7 +174,7 @@
 
     // Выделение активного пункта меню мобилке-планшете.
     @media (max-width: ($width-desktop - 1)) {
-      color: rgba($color-white, 0.3);
+      color: rgba($color-white, $opacity);
     }
 
     // Выделение активного пункта меню в десктопе.

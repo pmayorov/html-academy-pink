@@ -16,8 +16,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  &--sendform {
-    max-width: 300px;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-form_button--hover;
+  }
+
+  &:active {
+    color: rgba($color-white, $opacity);
   }
 
   & + span {
@@ -26,5 +31,9 @@
 
   & + span > span {
     color: $color-secondary;
+  }
+
+  &--sendform {
+    max-width: 300px;
   }
 }

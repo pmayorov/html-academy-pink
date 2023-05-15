@@ -83,18 +83,18 @@
       <form class="feedback__form form-body" id="feedback-form" action="https://echo.htmlacademy.ru" name="feedback-form" method="post">
 
         <!-- Ф.И.О. -->
-        <fieldset class="form-body__fieldset fieldset fieldset--name">
+        <fieldset class="form-body__fieldset fieldset fieldset--fio">
           <legend class="visually-hidden">Представьтесь</legend>
           <ul class="fieldset__list">
-            <li class="fieldset__item field field--input">
+            <li class="fieldset__item field field--onerow field--input">
               <label class="field__name" for="surname">Фамилия:</label>
               <input class="field__input" type="text" name="surname" placeholder="Укажите фамилию *" id="surname" required>
             </li>
-            <li class="fieldset__item field field--input">
+            <li class="fieldset__item field field--onerow field--input">
               <label class="field__name" for="name">Имя:</label>
               <input class="field__input" type="text" name="name" placeholder="Введите ваше имя *" id="name" required>
             </li>
-            <li class="fieldset__item field field--input">
+            <li class="fieldset__item field field--onerow field--input">
               <label class="field__name" for="patronymic">Отчество:</label>
               <input class="field__input" type="text" name="patronymic" placeholder="Ну и отчество тоже" id="patronymic">
             </li>
@@ -136,11 +136,11 @@
         <fieldset class="form-body__fieldset fieldset fieldset--fullwidth fieldset--contacts">
           <legend class="fieldset__topic">Контактная информация</legend>
           <ul class="fieldset__list">
-            <li class="fieldset__item field field--input">
+            <li class="fieldset__item field field--reverse field--input">
               <label class="field__name" for="phone">Номер телефона</label>
               <input class="field__input" type="tel" placeholder="Номер, пожалуйста" name="phone" id="phone">
             </li>
-            <li class="fieldset__item field field--input">
+            <li class="fieldset__item field field--reverse field--input">
               <label class="field__name" for="email">Адрес почты</label>
               <input class="field__input" type="email" placeholder="Введите почту *" name="email" id="email">
             </li>
@@ -150,6 +150,7 @@
         <!-- Выбор приложения -->
         <fieldset class="form-body__fieldset fieldset fieldset--application">
           <legend class="fieldset__topic">С каким приложением<br> путешествовали?</legend>
+          <!-- <legend class="fieldset__topic">С каким приложением<br> путешествовали?</legend> -->
           <ul class="fieldset__list">
             <li class="fieldset__item field field--select">
               <input class="field__radio" type="radio" name="app" value="app-apple" id="radio01">

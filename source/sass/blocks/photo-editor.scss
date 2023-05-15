@@ -73,7 +73,7 @@
   height: 60px;
   padding: 0;
   border: 0;
-  color: rgba($color-primary, 0.3);
+  color: rgba($color-primary, $opacity);
   background-color: transparent;
 
   &:hover {
@@ -207,7 +207,7 @@
   }
 
   &:active {
-    color: rgba($color-white, 0.3);
+    color: rgba($color-white, $opacity);
   }
 
   &:disabled {

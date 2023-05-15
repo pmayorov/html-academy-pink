@@ -41,7 +41,7 @@
     }
 
     &:active {
-      color: rgba($color-secondary, 0.3);
+      color: rgba($color-secondary, $opacity);
     }
   }
 }

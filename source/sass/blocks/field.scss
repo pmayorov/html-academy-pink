@@ -1,43 +1,169 @@
 .field {
+  display: flex;
   line-height: 30px;
 
   &--input {
-    display: flex;
     flex-direction: column;
+  }
+
+  // &--select {}
+
+  // Модифицирует поле в 1-строчное при tablet+ вьюпорте
+  &--onerow {
+    @media (min-width: $width-tablet) {
+      flex-direction: inherit;
+      align-items: center;
+      column-gap: 20px;
+    }
+  }
+
+  // Меняет местами label и input в 2-строчном поле при tablet+ вьюпорте
+  &--reverse {
+    @media (min-width: $width-tablet) {
+      flex-direction: column-reverse;
+    }
   }
 }
 
-.field--select {}
-
-.field__radio {}
-
-.field__checkbox {}
+// LABEL FOR INPUT
 
 .field__name {
 
-  .field--select & {
-    font-size: 18px;
-  }
-
+  // Label для текстовых полей
   .field--input & {
     color: $color-secondary;
     text-transform: uppercase;
   }
+
+  // Label для селектов
+  .field--select & {
+    display: grid;
+    width: 100%;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 20px;
+    font-size: 18px;
+
+    // Общие стили для селектов всех вариантов
+    &::before {
+      content: "";
+      grid-column: 1/2;
+      grid-row: 1/2;
+      outline: 2px solid $color-gray--e5;
+      outline-offset: -2px;
+    }
+  }
+
+  //* SCSS: Пробуем множественную директиву @each и условный оператор @if
+  // Задаем размеры грид-сетки для селектов (__radio, __checkbox)
+  // Формируем элементы селект-полей через псевдоэлементы
+
+  $fields: __radio 41px, __checkbox 39px;
+
+  @each $type,
+  $value in $fields {
+    .field#{$type} + & {
+      grid-template-columns: $value 1fr;
+
+      &::before {
+        width: $value;
+        height: $value;
+
+        @if $type ==__radio {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  // #region *** native CSS ***
+
+  // .field__radio + & {
+  //   grid-template-columns: 41px 1fr;
+
+  //   &::before {
+  //     width: 41px;
+  //     height: 41px;
+  //     border-radius: 50%;
+  //   }
+  // }
+
+  // .field__checkbox + & {
+  //   grid-template-columns: 39px 1fr;
+
+  //   &::before {
+  //     width: 39px;
+  //     height: 39px;
+  //   }
+  // }
+
+  // #endregion
+
+  .field__radio:checked + &::after {
+    content: "";
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $color-secondary;
+  }
+
+  .field__checkbox:checked + &::after {
+    content: "";
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: center;
+    width: 22px;
+    height: 22px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='16' fill='none'%3E%3Cpath fill='%23D22856' d='M21.7.28a1.02 1.02 0 0 0-1.42 0L6.7 13.6 1.73 8.73a1.02 1.02 0 0 0-1.1-.22.99.99 0 0 0-.33 1.62l5.68 5.58a1.02 1.02 0 0 0 .72.29c.27 0 .52-.1.71-.29L21.7 1.7A1 1 0 0 0 22 1a.98.98 0 0 0-.3-.72Z'/%3E%3C/svg%3E") no-repeat center;
+  }
 }
 
+// Общие правила: Input: radio & checkbox
+
+.field__radio,
+.field__checkbox {
+  position: absolute;
+  margin: 0;
+  // opacity: 0.2;
+  opacity: 0;
+}
+
+// Input - radio
+
+.field__radio {
+  width: 41px;
+  height: 41px;
+}
+
+// Input - checkbox
+
+.field__checkbox {
+  width: 39px;
+  height: 39px;
+}
+
+// Input – text
+
 .field__input {
+  width: 100%;
   font-size: 18px;
+  line-height: 30px;
   font-family: inherit;
   border: none;
   outline: 2px solid $color-gray--e5;
   border-radius: 2px;
-  padding: 20px 14px 20px 15px;
+  padding: 14px 20px 15px 20px;
 
   &::placeholder {
     color: $color-primary;
     opacity: 1;
   }
 }
+
+// Textarea
 
 .field__textarea {
   display: block;
@@ -50,9 +176,5 @@
 
   @media (max-width: $width-max-mobile) {
     width: $width-mobile-content;
-  }
-
-  @media (min-width: $width-tablet) {
-    width: 100%;
   }
 }

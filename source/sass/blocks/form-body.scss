@@ -11,12 +11,14 @@
     flex-direction: initial;
     flex-wrap: wrap;
     justify-content: space-between;
-    // column-gap: 70px;
   }
 }
 
 .form-body__fieldset {
   margin: 0;
+
+  //* SCSS: формирование правил для каждого элемента в списке
+  //* и присвоением ему соответствующего порядку в списке flex-order-а
 
   @for $i from 1 through 5 {
     &:nth-child(#{$i}) {
@@ -25,7 +27,6 @@
   }
 
   @media (min-width: $width-tablet) {
-
     &:nth-child(2) {
       order: 4;
     }
