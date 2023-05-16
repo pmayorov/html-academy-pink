@@ -11,22 +11,64 @@
     width: math.div($width-desktop-content, 2) - 35px;
   }
 
-  // &--fio {}
-  // &--contacts {}
-  // &--comments {}
+  // Фелдсет – ФИО
+  &--fio {
+    @media (max-width: $width-max-mobile) {
+      padding-bottom: 44px;
+    }
+  }
 
+  // Фелдсет – Контакты
+  &--contacts {
+    @media (max-width: $width-max-mobile) {
+      padding-top: 32px;
+      padding-bottom: 44px;
+    }
+
+    @media (min-width: $width-tablet) {
+      padding-bottom: 27px;
+    }
+  }
+
+  // Фелдсет – Отзыв
+  &--comments {
+    @media (max-width: $width-max-mobile) {
+      padding-top: 37px;
+      padding-bottom: 48px;
+    }
+
+    @media (min-width: $width-tablet) {
+      position: relative;
+      padding-top: 46px;
+      padding-bottom: 54px;
+    }
+  }
+
+  // Фелдсет – Достижения
   &--achievement {
     @media (max-width: $width-max-mobile) {
       background-color: $color-canvas;
+      padding-bottom: 44px;
+    }
+
+    @media (min-width: $width-tablet) {
+      padding-bottom: 50px;
     }
   }
 
+  // Фелдсет – Используемое приложение
   &--application {
     @media (max-width: $width-max-mobile) {
       background-color: $color-canvas;
+      padding-bottom: 42px;
+    }
+
+    @media (min-width: $width-tablet) {
+      padding-bottom: 54px;
     }
   }
 
+  // Фелдсет – на весь экран
   &--fullwidth {
     @media (min-width: $width-desktop) {
       width: 100%;
@@ -73,6 +115,41 @@
   }
 }
 
+.fieldset__item {
+  // Отступы между текстовыми полями
+  // *** SCSS ***
+  $array: --fio 20px 57px,
+  --contacts 20px 32px,
+  --application 34px 34px,
+  --achievement 43px 43px;
+
+  @each $postfix,
+  $val01,
+  $val02 in $array {
+
+    .fieldset#{$postfix} &:not(:last-of-type) {
+      margin-bottom: $val01;
+
+      @media (min-width: $width-tablet) {
+        margin-bottom: $val02;
+      }
+    }
+  }
+
+  //#region *** native CSS ***
+  // :where(.fieldset--fio, .fieldset--contacts) &:not(:last-of-type) {
+  //   margin-bottom: 20px;
+  // }
+
+  // .fieldset--application &:not(:last-of-type) {
+  //   margin-bottom: 34px;
+  // }
+
+  // .fieldset--achievement &:not(:last-of-type) {
+  //   margin-bottom: 43px;
+  // }
+}
+
 .fieldset__topic {
   margin: 0;
   padding: 0;
@@ -82,42 +159,6 @@
   text-align: center;
   color: $color-secondary;
   text-transform: uppercase;
-
-  //* SCSS: Устанавливаю падинги для заголовков некоторых фиелдсетов.
-  // Тех, которые по макету должны находиться в его пределах (под верхней границей).
-  // А поскольку <legend> так себе позиционируется, а по умолчанию он НА границе фиелдсета
-  // я ему добавляю необходимые по макету падинги и наследую фон родителя <fieldset>.
-  // Т.о. имитирую цельность блока фиелдсета.
-
-  @each $postfix,
-  $val01,
-  $val02 in (--achievement, 38px, 38px),
-  (--application, 38px, 34px) {
-    .fieldset#{$postfix} & {
-      @media (max-width: $width-max-mobile) {
-        background-color: inherit;
-        padding: $val01 calc((100vw - $width-mobile-content) / 2) $val02;
-      }
-    }
-  }
-
-  // #region *** native CSS ***
-
-  // .fieldset--achievement & {
-  //   @media (max-width: $width-max-mobile) {
-  //     background-color: inherit;
-  //     padding: 38px calc((100vw - $width-mobile-content) / 2);
-  //   }
-  // }
-
-  // .fieldset--application & {
-  //   @media (max-width: $width-max-mobile) {
-  //     background-color: inherit;
-  //     padding: 38px calc((100vw - $width-mobile-content) / 2) 34px;
-  //   }
-  // }
-
-  // #endregion
 
   @media (max-width: $width-max-mobile) {
     width: 100%;
@@ -130,12 +171,78 @@
     padding: 0 35px;
     margin-left: auto;
     margin-right: auto;
-    top: -10px;
+    top: -7px;
   }
+
+  //* Устанавливаю падинги для заголовков некоторых фиелдсетов.
+  // Тех, которые по макету должны находиться в его пределах (под верхней границей).
+  // А поскольку <legend> так себе позиционируется, а по умолчанию он НА границе фиелдсета
+  // я ему добавляю необходимые по макету падинги и наследую фон родителя <fieldset>.
+  // Т.о. имитирую цельность блока фиелдсета.
+
+  // .fieldset--achievement & {
+  //   @media (max-width: $width-max-mobile) {
+  //     background-color: inherit;
+  //     padding: 38px calc((100vw - $width-mobile-content) / 2);
+  //   }
+
+  //   @media (min-width: $width-tablet) {
+  //     padding-bottom: 37px;
+  //   }
+  // }
+
+  // .fieldset--application & {
+  //   @media (max-width: $width-max-mobile) {
+  //     background-color: inherit;
+  //     padding: 38px calc((100vw - $width-mobile-content) / 2) 34px;
+  //   }
+
+  //   @media (min-width: $width-tablet) {
+  //     padding-bottom: 37px;
+  //   }
+  // }
+
+  //#region *** SCSS ***
+
+  @each $postfix,
+  $val01,
+  $val02,
+  $val03 in (--achievement, 38px, 38px, 37px),
+  (--application, 38px, 34px, 37px) {
+    .fieldset#{$postfix} & {
+      @media (max-width: $width-max-mobile) {
+        background-color: inherit;
+        padding: $val01 calc((100vw - $width-mobile-content) / 2) $val02;
+      }
+
+      @media (min-width: $width-tablet) {
+        padding-bottom: $val03;
+      }
+    }
+  }
+
+  //#endregion
 
   .fieldset--contacts & {
     @media (max-width: $width-max-mobile) {
       display: none;
+    }
+
+    @media (min-width: $width-tablet) {
+      padding-bottom: 29px;
+    }
+  }
+
+  .fieldset--comments & {
+    @media (max-width: $width-max-mobile) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $width-tablet) {
+      position: absolute;
+      left: 50%;
+      top: -10px;
+      transform: translateX(-50%);
     }
   }
 

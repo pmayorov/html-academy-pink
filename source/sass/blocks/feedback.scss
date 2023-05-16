@@ -1,6 +1,11 @@
 .feedback__form {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 21px;
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: 48px;
+  }
 }
 
 .feedback__lead {

@@ -4,6 +4,11 @@
 
   &--input {
     flex-direction: column;
+    row-gap: 6px;
+
+    @media (min-width: $width-tablet) {
+      row-gap: 12px;
+    }
   }
 
   // &--select {}
@@ -31,8 +36,13 @@
 
   // Label для текстовых полей
   .field--input & {
+    padding-left: 21px;
     color: $color-secondary;
     text-transform: uppercase;
+
+    @media (min-width: $width-tablet) {
+      padding-left: 0;
+    }
   }
 
   // Label для селектов
@@ -41,7 +51,6 @@
     width: 100%;
     grid-auto-flow: column;
     align-items: center;
-    column-gap: 20px;
     font-size: 18px;
 
     // Общие стили для селектов всех вариантов
@@ -58,20 +67,22 @@
   // Задаем размеры грид-сетки для селектов (__radio, __checkbox)
   // Формируем элементы селект-полей через псевдоэлементы
 
-  $fields: __radio 41px, __checkbox 39px;
+  $fields: __radio 41px 29px, __checkbox 39px 20px;
 
   @each $type,
-  $value in $fields {
+  $value,
+  $gap in $fields {
     .field#{$type} + & {
       grid-template-columns: $value 1fr;
+      column-gap: $gap;
+    }
 
-      &::before {
-        width: $value;
-        height: $value;
+    .field#{$type} + &::before {
+      width: $value;
+      height: $value;
 
-        @if $type ==__radio {
-          border-radius: 50%;
-        }
+      @if $type ==__radio {
+        border-radius: 50%;
       }
     }
   }
@@ -127,7 +138,6 @@
 .field__checkbox {
   position: absolute;
   margin: 0;
-  // opacity: 0.2;
   opacity: 0;
 }
 
@@ -168,7 +178,6 @@
 .field__textarea {
   display: block;
   margin: 0 auto;
-  padding: 0;
   border: none;
   outline: 2px solid $color-gray--e5;
   border-radius: 1px;
@@ -176,5 +185,11 @@
 
   @media (max-width: $width-max-mobile) {
     width: $width-mobile-content;
+    height: 197px;
+    padding: 11px 20px;
+  }
+
+  @media (min-width: $width-tablet) {
+    height: 189px;
   }
 }

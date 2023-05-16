@@ -35,7 +35,7 @@
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "lint": "stylelint \"source/sass/**/*.scss\" --config .stylelintrc.json --custom-syntax postcss-scss",
+    "lint": "stylelint \"source/sass/**/*.scss\" --custom-syntax postcss-scss",
     "test": "npm run editorconfig && npm run lint",
     "start": "gulp",
     "dev": "gulp dev",
