@@ -25,12 +25,8 @@
     color: rgba($color-white, $opacity);
   }
 
-  & + span {
-    text-transform: uppercase;
-  }
-
-  & + span > span {
-    color: $color-secondary;
+  &:focus {
+    outline: 2px solid $color-primary;
   }
 
   &--sendform {

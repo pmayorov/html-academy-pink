@@ -6,6 +6,10 @@
   @media (min-width: $width-tablet) {
     margin-bottom: 48px;
   }
+
+  @media (min-width: $width-desktop) {
+    margin-bottom: 0;
+  }
 }
 
 .feedback__lead {
@@ -23,11 +27,17 @@
 
   @media (min-width: $width-desktop) {
     width: $width-desktop;
-    padding: 92px (92px + $width-desktop-padding) 65px;
+    padding: 92px (92px + $width-desktop-padding) 80px;
   }
 
   & span {
     @media (max-width: $width-max-mobile) {
+      display: none;
+    }
+  }
+
+  & br {
+    @media (min-width: $width-desktop) {
       display: none;
     }
   }

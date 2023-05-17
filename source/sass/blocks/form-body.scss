@@ -38,6 +38,7 @@
   }
 }
 
+// Обертка для кнопки и нотации формы
 .form-body__submit {
   display: flex;
   order: 99;
@@ -54,5 +55,22 @@
     width: 100%;
     flex-direction: initial;
     justify-content: space-between;
+  }
+}
+
+// Нотация для кнопки формы
+.form-body__notice {
+  text-transform: uppercase;
+
+  & span:nth-child(1) {
+    color: $color-secondary;
+  }
+
+  & span:nth-child(2) {
+    display: none;
+
+    @media (min-width: $width-desktop) {
+      display: initial;
+    }
   }
 }

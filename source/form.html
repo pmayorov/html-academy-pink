@@ -26,9 +26,9 @@
   <!-- <link rel="stylesheet" href="./css/markup.css"> -->
 
   <!--* DEV - PixelGlass -->
-  <link rel="stylesheet" href="./pixelglass/pixel-form.css">
+  <!-- <link rel="stylesheet" href="./pixelglass/pixel-form.css">
   <link href="./pixelglass/styles.css" rel="stylesheet">
-  <script src="./pixelglass/script.js"></script>
+  <script src="./pixelglass/script.js"></script> -->
   <!-- DEV - END -->
 </head>
 
@@ -77,7 +77,7 @@
     <section class="feedback">
 
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <p class="feedback__lead page__lead">Поделитесь своей историей и получите шанс выиграть ценный приз – 1000 миль на вашу бонусную карту!<span><br>Пожалуйста, заполните форму ниже:</span></p>
+      <p class="feedback__lead page__lead">Поделитесь своей историей и получите шанс выиграть ценный приз – 1000 миль на вашу бонусную карту!<span><br> Пожалуйста, заполните форму ниже:</span></p>
 
       <!-- Тело формы -->
       <form class="feedback__form form-body" id="feedback-form" action="https://echo.htmlacademy.ru" name="feedback-form" method="post">
@@ -136,11 +136,11 @@
         <fieldset class="form-body__fieldset fieldset fieldset--fullwidth fieldset--contacts">
           <legend class="fieldset__topic">Контактная информация</legend>
           <ul class="fieldset__list">
-            <li class="fieldset__item field field--reverse field--input">
+            <li class="fieldset__item field field--reverse field--input field__ico field__ico--phone">
               <label class="field__name" for="phone">Номер телефона</label>
               <input class="field__input" type="tel" placeholder="Номер, пожалуйста" name="phone" id="phone">
             </li>
-            <li class="fieldset__item field field--reverse field--input">
+            <li class="fieldset__item field field--reverse field--input field__ico field__ico--email">
               <label class="field__name" for="email">Адрес почты</label>
               <input class="field__input" type="email" placeholder="Введите почту *" name="email" id="email">
             </li>
@@ -153,7 +153,7 @@
           <!-- <legend class="fieldset__topic">С каким приложением<br> путешествовали?</legend> -->
           <ul class="fieldset__list">
             <li class="fieldset__item field field--select">
-              <input class="field__radio" type="radio" name="app" value="app-apple" id="radio01">
+              <input class="field__radio" type="radio" name="app" value="app-apple" id="radio01" checked>
               <label class="field__name" for="radio01">Pink для iOS</label>
             </li>
             <li class="fieldset__item field field--select">
@@ -179,7 +179,7 @@
         <!-- Отправить отзыв -->
         <p class="form-body__submit">
           <button class="form-body__button form-button form-button--sendform" id="feedback-form-btn" type="submit">Отправить форму</button>
-          <span><span>*</span> — обязательные поля</span>
+          <span class="form-body__notice"><span>*</span> — обязательные <span>для заполнения </span>поля</span>
         </p>
       </form>
     </section>

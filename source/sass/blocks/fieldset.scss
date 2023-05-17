@@ -16,6 +16,30 @@
     @media (max-width: $width-max-mobile) {
       padding-bottom: 44px;
     }
+
+    @media (min-width: $width-desktop) {
+      padding-top: 5px;
+    }
+  }
+
+  // Общее оформление для фиелдсетов, кроме секции &--fio
+  // Не использую :not(&--fio), т.к. высокая специфичность правила,
+  // в дальнейшем не дает обнулить паддинги для секции &--achievement
+  &--contacts,
+  &--comments,
+  &--achievement,
+  &--application {
+    @media (min-width: $width-tablet) {
+      outline: 2px solid $color-gray--e5;
+      border-radius: 2px;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (min-width: $width-desktop) {
+      padding-left: 62px;
+      padding-right: 62px;
+    }
   }
 
   // Фелдсет – Контакты
@@ -28,19 +52,28 @@
     @media (min-width: $width-tablet) {
       padding-bottom: 27px;
     }
+
+    @media (min-width: $width-desktop) {
+      padding-bottom: 15px;
+    }
   }
 
   // Фелдсет – Отзыв
   &--comments {
     @media (max-width: $width-max-mobile) {
       padding-top: 37px;
-      padding-bottom: 48px;
+      padding-bottom: 51px;
     }
 
     @media (min-width: $width-tablet) {
       position: relative;
-      padding-top: 46px;
+      padding-top: 48px;
       padding-bottom: 54px;
+    }
+
+    @media (min-width: $width-desktop) {
+      padding-top: 46px;
+      padding-bottom: 45px;
     }
   }
 
@@ -54,6 +87,10 @@
     @media (min-width: $width-tablet) {
       padding-bottom: 50px;
     }
+
+    @media (min-width: $width-desktop) {
+      padding-bottom: 55px;
+    }
   }
 
   // Фелдсет – Используемое приложение
@@ -66,6 +103,11 @@
     @media (min-width: $width-tablet) {
       padding-bottom: 54px;
     }
+
+    @media (min-width: $width-desktop) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   // Фелдсет – на весь экран
@@ -73,20 +115,6 @@
     @media (min-width: $width-desktop) {
       width: 100%;
     }
-  }
-}
-
-:not(.fieldset--fio).fieldset {
-  @media (min-width: $width-tablet) {
-    outline: 2px solid $color-gray--e5;
-    border-radius: 2px;
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  @media (min-width: $width-desktop) {
-    padding-left: 62px;
-    padding-right: 62px;
   }
 }
 
@@ -113,25 +141,38 @@
       grid-auto-flow: column;
     }
   }
+
+  .fieldset--application & {
+    @media (min-width: $width-desktop) {
+      margin-left: 74px;
+      margin-right: 62px;
+    }
+  }
+
+  .fieldset--contacts & {
+    @media (min-width: $width-desktop) {
+      display: grid;
+      grid-template-columns: 373px 373px;
+      justify-content: space-between;
+    }
+  }
 }
 
 .fieldset__item {
   // Отступы между текстовыми полями
   // *** SCSS ***
-  $array: --fio 20px 57px,
-  --contacts 20px 32px,
-  --application 34px 34px,
-  --achievement 43px 43px;
+  $array: --fio 20px 57px, --contacts 20px 32px 0, --application 34px, --achievement 43px 43px 0;
 
-  @each $postfix,
-  $val01,
-  $val02 in $array {
-
+  @each $postfix, $val01, $val02, $val03 in $array {
     .fieldset#{$postfix} &:not(:last-of-type) {
       margin-bottom: $val01;
 
       @media (min-width: $width-tablet) {
         margin-bottom: $val02;
+      }
+
+      @media (min-width: $width-desktop) {
+        margin-bottom: $val03;
       }
     }
   }
@@ -174,6 +215,10 @@
     top: -7px;
   }
 
+  @media (min-width: $width-desktop) {
+    top: -10px;
+  }
+
   //* Устанавливаю падинги для заголовков некоторых фиелдсетов.
   // Тех, которые по макету должны находиться в его пределах (под верхней границей).
   // А поскольку <legend> так себе позиционируется, а по умолчанию он НА границе фиелдсета
@@ -204,11 +249,9 @@
 
   //#region *** SCSS ***
 
-  @each $postfix,
-  $val01,
-  $val02,
-  $val03 in (--achievement, 38px, 38px, 37px),
-  (--application, 38px, 34px, 37px) {
+  @each $postfix, $val01, $val02, $val03, $val04 in (--achievement, 38px, 38px, 35px),
+    (--application, 39px, 35px, 37px, 34px)
+  {
     .fieldset#{$postfix} & {
       @media (max-width: $width-max-mobile) {
         background-color: inherit;
@@ -217,6 +260,10 @@
 
       @media (min-width: $width-tablet) {
         padding-bottom: $val03;
+      }
+
+      @media (min-width: $width-desktop) {
+        padding-bottom: $val04;
       }
     }
   }
@@ -231,11 +278,15 @@
     @media (min-width: $width-tablet) {
       padding-bottom: 29px;
     }
+
+    @media (min-width: $width-desktop) {
+      padding-bottom: 27px;
+    }
   }
 
   .fieldset--comments & {
     @media (max-width: $width-max-mobile) {
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     @media (min-width: $width-tablet) {
