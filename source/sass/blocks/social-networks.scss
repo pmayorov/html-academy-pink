@@ -33,7 +33,7 @@
     outline-color: rgba($color-primary, 0.1);
 
     & svg {
-      color: rgba($color-secondary, 0.3);
+      color: rgba($color-secondary, $opacity);
     }
   }
 }

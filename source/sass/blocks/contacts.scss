@@ -86,7 +86,7 @@
     }
 
     &:active {
-      color: rgba($color-primary, 0.3);
+      color: rgba($color-primary, $opacity);
       text-decoration: none;
     }
   }

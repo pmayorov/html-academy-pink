@@ -2,17 +2,17 @@
   // @include outline(1px, dotted, blueviolet);
 }
 
-.gallery__title {
+.fieldset__list {
   // @include outline(1px, dotted, darkorange);
 }
 
-.gallery__list {
+.field {
   // @include outline(1px, dotted, blueviolet);
 }
 
-.gallery__item,
-.photo-editor__toggler {
-  // @include outline(1px, dotted, darkorange);
+.field__radio,
+.field__checkbox {
+  // @include outline(1px, dotted, deeppink);
 }
 
 .photo-editor__list,

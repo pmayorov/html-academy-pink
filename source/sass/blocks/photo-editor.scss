@@ -73,7 +73,7 @@
   height: 60px;
   padding: 0;
   border: 0;
-  color: rgba($color-primary, 0.3);
+  color: rgba($color-primary, $opacity);
   background-color: transparent;
 
   &:hover {
@@ -188,6 +188,18 @@
   border: none;
   color: $color-secondary;
 
+  @media (max-width: $width-max-mobile) {
+    max-width: $width-mobile-content;
+  }
+
+  @media (min-width: $width-tablet) {
+    max-width: 260px;
+  }
+
+  @media (min-width: $width-desktop) {
+    max-width: 183px;
+  }
+
   &:hover {
     color: $color-white;
     outline: none;
@@ -195,7 +207,7 @@
   }
 
   &:active {
-    color: rgba($color-white, 0.3);
+    color: rgba($color-white, $opacity);
   }
 
   &:disabled {

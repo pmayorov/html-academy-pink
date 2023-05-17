@@ -1,0 +1,76 @@
+.form-body {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $width-tablet) {
+    width: $width-tablet-content;
+    row-gap: 67px;
+  }
+
+  @media (min-width: $width-desktop) {
+    width: $width-desktop-content;
+    flex-direction: initial;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.form-body__fieldset {
+  margin: 0;
+
+  //* SCSS: формирование правил для каждого элемента в списке
+  //* и присвоением ему соответствующего порядку в списке flex-order-а
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      order: $i;
+    }
+  }
+
+  @media (min-width: $width-tablet) {
+    &:nth-child(2) {
+      order: 4;
+    }
+
+    &:nth-child(4) {
+      order: 2;
+    }
+  }
+}
+
+// Обертка для кнопки и нотации формы
+.form-body__submit {
+  display: flex;
+  order: 99;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+
+  @media (max-width: $width-max-mobile) {
+    width: $width-mobile-content;
+    row-gap: 34px;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: 100%;
+    flex-direction: initial;
+    justify-content: space-between;
+  }
+}
+
+// Нотация для кнопки формы
+.form-body__notice {
+  text-transform: uppercase;
+
+  & span:nth-child(1) {
+    color: $color-secondary;
+  }
+
+  & span:nth-child(2) {
+    display: none;
+
+    @media (min-width: $width-desktop) {
+      display: initial;
+    }
+  }
+}

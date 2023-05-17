@@ -1,17 +1,22 @@
 .page-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  display: block;
   padding: 18px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1;
+  text-align: center;
   text-decoration: none;
   background-color: transparent;
   border-radius: 30px;
   outline-width: 3px;
   outline-style: solid;
   outline-offset: -3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
     cursor: pointer;
@@ -36,7 +41,7 @@
     }
 
     &:active {
-      color: rgba($color-secondary, 0.3);
+      color: rgba($color-secondary, $opacity);
     }
   }
 }

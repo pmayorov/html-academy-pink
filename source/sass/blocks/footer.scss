@@ -1,4 +1,8 @@
-// .footer {}
+.footer {
+  & a:focus {
+    outline: 2px solid $color-primary;
+  }
+}
 
 .footer__content {
   display: grid;
@@ -6,7 +10,6 @@
   align-items: center;
   padding: 40px 0;
   grid-template-rows: repeat(3, min-content);
-
 
   @media (min-width: $width-tablet) {
     display: grid;
@@ -28,7 +31,6 @@
 }
 
 .footer__logo {
-
   //
   @media (max-width: $width-max-mobile) {
     margin-bottom: 38px;
