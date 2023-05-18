@@ -19,13 +19,14 @@
   &:hover {
     cursor: pointer;
     background-color: $color-form_button--hover;
+    outline-color: $color-form_button--hover;
   }
 
   &:active {
     color: rgba($color-white, $opacity);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid $color-primary;
   }
 

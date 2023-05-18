@@ -223,12 +223,13 @@
     outline-color: $color-primary;
   }
 
+  &:active,
   &:focus {
-    outline: 2px solid $color-primary;
-  }
-
-  &:active {
     outline-color: $color-secondary;
+
+    &::placeholder {
+      opacity: 0.5;
+    }
   }
 }
 

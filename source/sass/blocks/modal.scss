@@ -1,0 +1,182 @@
+//* ФОН МОДАЛЬНОГО ОКНА
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color-white, 0.5);
+  backdrop-filter: grayscale(20%) blur(2px);
+
+  // !DEV
+  row-gap: 150px;
+
+  &--off {
+    display: none;
+  }
+}
+
+//* МОДАЛЬНОЕ ОКНО
+.modal__popup {
+  display: none;
+  // display: flex;
+  flex-direction: column;
+  min-width: $width-mobile;
+  background: $color-white;
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+  border-radius: 1px;
+  text-align: center;
+  padding-top: 40px;
+
+  @media (min-width: $width-desktop) {
+    min-height: 377px;
+  }
+}
+
+// Окно - ОШИБКА!
+.modal__popup--error {
+  @media (max-width: $width-max-mobile) {
+    max-width: 460px;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: calc(100vw - 200px);
+    max-width: 780px;
+  }
+}
+
+// Окно - OK!
+.modal__popup--success {
+  @media (max-width: $width-max-mobile) {
+    max-width: 444px;
+  }
+
+  @media (min-width: $width-tablet) {
+    width: calc(100vw - 216px);
+    max-width: 780px;
+  }
+}
+
+//* ОБЕРТКА КНОПКИ
+.modal__inner {
+  background-color: $color-canvas;
+  padding-left: $width-mobile-padding;
+  padding-right: $width-mobile-padding;
+  margin-top: auto;
+
+  // Обертка кнопки - ОШИБКА!
+  .modal__popup--error & {
+    background-color: transparent;
+    padding-top: 41px;
+    padding-bottom: 50px;
+
+    @media (min-width: $width-tablet) {
+      padding-top: 32px;
+      padding-bottom: 52px;
+    }
+
+    @media (min-width: $width-desktop) {
+      // margin-top: 62px;
+      background-color: $color-canvas;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
+  // Обертка кнопки - ОК!
+  .modal__popup--success & {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+//* ЗАГОЛОВОК МОДАЛКИ
+.modal__title {
+  margin: 0;
+  margin-bottom: 23px;
+  font-size: 18px;
+  padding-left: $width-mobile-padding;
+  padding-right: $width-mobile-padding;
+
+  @media (min-width: $width-tablet) {
+    padding-left: 65px;
+    padding-right: 65px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @media (min-width: $width-desktop) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+//* ТЕКСТ МОДАЛКИ
+.modal__lead {
+  margin: 0;
+  padding-left: $width-mobile-padding;
+  padding-right: $width-mobile-padding;
+
+  @media (min-width: $width-tablet) {
+    padding-left: 65px;
+    padding-right: 65px;
+    font-size: 18px;
+  }
+
+  // В десктопе обертка проявляется в обоих модалках - отступ от лида общий.
+  @media (min-width: $width-desktop) {
+    margin-bottom: 38px;
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  // Текст модалки - ОК!
+  .modal__popup--success & {
+    margin-bottom: 34px;
+
+    @media (min-width: $width-tablet) {
+      margin-bottom: 29px;
+    }
+  }
+}
+
+// КНОПКА
+.modal__button {
+  margin-left: auto;
+  margin-right: auto;
+
+  // Кнопка - ОШИБКА
+  .modal__popup--error & {
+    max-width: 296px;
+  }
+
+  // Кнопка - ОК!
+  .modal__popup--success & {
+    @media (max-width: $width-max-mobile) {
+      max-width: 285px;
+    }
+
+    @media (min-width: $width-tablet) {
+      width: calc(100vw - 375px);
+      max-width: 456px;
+    }
+  }
+}
+
+// <br>-ка
+.modal__br {
+  display: none;
+
+  @media (min-width: $width-tablet) {
+    display: initial;
+  }
+
+  @media (min-width: $width-desktop) {
+    display: none;
+  }
+}
