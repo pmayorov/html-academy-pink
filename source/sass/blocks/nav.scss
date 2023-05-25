@@ -30,7 +30,6 @@
 }
 
 .nav__logo {
-
   // #region -- DEVNOTE
   // Поскольку размеры планшетного и десктопного логотипов отличаются
   // от мобильного, то при установленном вертикальном центрировании
@@ -63,7 +62,6 @@
   background-color: $color-primary;
   list-style-type: none;
 
-
   @media (min-width: $width-tablet) {
     // 110px - планшетная высота nav__top (верхний навбар)
     top: 110px;
@@ -74,6 +72,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-end;
     margin-right: -40px;
     padding: 18px 0 16px;
@@ -110,7 +109,6 @@
   align-items: flex-start;
 
   @media (max-width: ($width-desktop - 1)) {
-
     // #region - DEVNOTE
     //* Двойную линию над пунктами меню оформляем 2-мя псевдоэлементами
     //* 3-ю линию, подчеркивающую последний пункт, оформляем свойством "box-shadow"
@@ -136,6 +134,15 @@
 
     &:last-of-type {
       box-shadow: 0 1px 0 $color-black;
+    }
+  }
+
+  &--lang {
+    justify-content: center;
+
+    @media (min-width: $width-desktop) {
+      position: absolute;
+      right: 20px;
     }
   }
 }
@@ -189,6 +196,28 @@
         background-color: $color-white;
       }
     }
+  }
+
+  .nav__item--lang & {
+    @media (max-width: $width-max-mobile) {
+      width: 100px;
+    }
+
+    @media (min-width: $width-tablet) {
+      width: 125px;
+    }
+
+    @media (min-width: $width-desktop) {
+      width: 50px;
+      padding: 10px;
+    }
+  }
+
+  html[lang="uk"] &--uk,
+  html[lang="ru"] &--ru {
+    pointer-events: none;
+    text-decoration: underline;
+    text-underline-offset: 10px;
   }
 }
 

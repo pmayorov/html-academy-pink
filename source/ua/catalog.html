@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="page" lang="uk">
+
+<head>
+
+  <!-- #region Метатеги -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- #endregion -->
+  <title>&laquo;ПІНК&raquo; | Фотокаталог </title>
+  <!-- #region Подключения ресурсов -->
+  <!-- Стили -->
+  <link rel="stylesheet" href="../css/style.min.css">
+  <!-- Фавиконки -->
+  <link rel="icon" href="../favicon.ico">
+  <link rel="icon" href="../img/favicon/favicon-32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../img/favicon/favicon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <!-- Шрифты -->
+  <link rel="preload" href="../fonts/open-sans-300.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/open-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!--* DEV - Визуализация разметки -->
+  <!-- <link rel="stylesheet" href="../css/outline.css"> -->
+  <!-- <link rel="stylesheet" href="../css/markup.css"> -->
+
+  <!--* DEV - PixelGlass -->
+  <!-- <link rel="stylesheet" href="../pixelglass/pixel-catalog.css">
+  <link href="../pixelglass/styles.css" rel="stylesheet">
+  <script src="../pixelglass/script.js"></script> -->
+  <!-- DEV - END -->
+</head>
+
+<body class="page__body body">
+
+  <!--* CATALOG - HEADER -->
+  <header class="page__header header header--nojs">
+    <!-- <header class="page__header header"> -->
+
+    <!-- Навигация -->
+    <nav class="page__nav nav">
+      <!-- #1 Логотип & Кнопка-->
+      <div class="nav__top-bar">
+        <a class="nav__logo logo logo--header" href="../index.html">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="../img/logos/pink-desktop-white.svg">
+            <source media="(min-width: 660px)" srcset="../img/logos/pink-tablet-white.svg">
+            <img class="logo__image" width="74" height="23" src="../img/logos/pink-mobile-white.svg" alt="Мобильний додаток &laquo;Pink&raquo;">
+          </picture>
+        </a>
+        <button class="nav__toggler" type="button" id="nav-toggler">
+          <span class="visually-hidden">Відкрити меню</span>
+        </button>
+      </div>
+      <!-- #2 Главное меню -->
+      <ul class="nav__list nav__list--nojs">
+        <!-- <ul class="nav__list"> -->
+        <li class="nav__item"><a class="nav__link" href="../ua/index.html">Головна</a></li>
+        <li class="nav__item"><a class="nav__link nav__link--current" href="../ua/catalog.html">Фотографії</a></li>
+        <li class="nav__item"><a class="nav__link" href="../ua/form.html">Конкурс</a></li>
+        <li class="nav__item"><a class="nav__link" href="#">HTML Academy</a></li>
+        <li class="nav__item nav__item--lang"><a class="nav__link nav__link--uk" href="../ua/index.html">UA</a><a class="nav__link nav__link--ru" href="../index.html">RU</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!--* CATALOG - MAIN -->
+  <main class="page__main main catalog">
+
+    <!-- СЕКЦИЯ HERO -->
+    <header class="hero hero-small">
+      <h1 class="hero-small__title page__title">Фотографії<br> користувачів</h1>
+    </header>
+
+
+    <!-- ФОТОГАЛЕРЕЯ -->
+    <section class="catalog__gallery gallery">
+      <h2 class="visually-hidden">Оцініть фото!</h2>
+      <p class="gallery__lead page__lead container">Подивіться на фотографію, яку викладають користувачі!<br> Бачите, що не вистачає ваших?</p>
+
+      <div class="gallery__list-wrapper">
+        <ul class="gallery__list">
+          <li class="gallery__item gallery__item--large">
+            <!-- Карточка № 1-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №1</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-1-desktop@1x.jpg 1x, ./img/catalog/photo-1-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-1-tablet@1x.jpg 1x, ./img/catalog/photo-1-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="320" height="137" src="../img/catalog/photo-1-mobile@1x.jpg" srcset="../img/catalog/photo-1-mobile@2x.jpg 2x" alt="Фото з высоти">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Анна</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-09T10:15">(5 хвилин тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                Стрибати чи ні? Напишіть у коментарі свою пораду та дивіться пряму трансляцію в перископі, задайте свої питання!
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 215</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+          <li class="gallery__item">
+            <!-- Карточка № 2-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №2</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-2-desktop@1x.jpg 1x, ./img/catalog/photo-2-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-2-tablet@1x.jpg 1x, ./img/catalog/photo-2-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="280" height="180" src="../img/catalog/photo-2-mobile@1x.jpg" srcset="../img/catalog/photo-2-mobile@2x.jpg 2x" alt="Машина вдалині та штатив на передньому плані">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Левон</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-08T10:55">(5 годин тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                Учора він на місяць літав, сьогодні до нас у руки потрапив.
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 365</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+          <li class="gallery__item">
+            <!-- Карточка № 3-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №3</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-3-desktop@1x.jpg 1x, ./img/catalog/photo-3-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-3-tablet@1x.jpg 1x, ./img/catalog/photo-3-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="280" height="180" src="../img/catalog/photo-3-mobile@1x.jpg" srcset="../img/catalog/photo-3-mobile@2x.jpg 2x" alt="Ударна музична установка">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Антон</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-06T10:25">(12 годин тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                Сусіди будуть задоволені!
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 667</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+          <li class="gallery__item">
+            <!-- Карточка № 4-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №4</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-4-desktop@1x.jpg 1x, ./img/catalog/photo-4-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-4-tablet@1x.jpg 1x, ./img/catalog/photo-4-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="280" height="180" src="../img/catalog/photo-4-mobile@1x.jpg" srcset="../img/catalog/photo-4-mobile@2x.jpg 2x" alt="Хмарочоси на тлі неба">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Борис</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-05T01:00">(20 часов тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                Тут має бути ваша цитата про високе та вічне.
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 215</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+          <li class="gallery__item">
+            <!-- Карточка № 5-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №5</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-5-desktop@1x.jpg 1x, ./img/catalog/photo-5-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-5-tablet@1x.jpg 1x, ./img/catalog/photo-5-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="280" height="180" src="../img/catalog/photo-5-mobile@1x.jpg" srcset="../img/catalog/photo-5-mobile@2x.jpg 2x" alt="Баштанний ринок">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Сергій</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-04T16:00">(25 годин тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                Найкращий баштан у світі!
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 745</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+          <li class="gallery__item">
+            <!-- Карточка № 6-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №6</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-6-desktop@1x.jpg 1x, ./img/catalog/photo-6-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-6-tablet@1x.jpg 1x, ./img/catalog/photo-6-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="280" height="180" src="../img/catalog/photo-6-mobile@1x.jpg" srcset="../img/catalog/photo-6-mobile@2x.jpg 2x" alt="Ноги в шортах та сандалях на тлі гір">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Максим</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-02T18:55">(40 годин тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                А де сніг!?
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 150</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+          <li class="gallery__item">
+            <!-- Карточка № 7-->
+            <article class="gallery__card">
+              <h3 class="visually-hidden">Фото №7</h3>
+              <!-- Фото -->
+              <picture>
+                <source media="(min-width: 1200px)" srcset="../img/catalog/photo-7-desktop@1x.jpg 1x, ./img/catalog/photo-7-desktop@2x.jpg 2x">
+                <source media="(min-width: 660px)" srcset="../img/catalog/photo-7-tablet@1x.jpg 1x, ./img/catalog/photo-7-tablet@2x.jpg 2x">
+                <img class="gallery__card-image" width="280" height="180" src="../img/catalog/photo-7-mobile@1x.jpg" srcset="../img/catalog/photo-7-mobile@2x.jpg 2x" alt="Вид з ілюмінатора на крило літака, небо й схід сонця">
+              </picture>
+              <!-- Автор -->
+              <footer class="gallery__card-footer" itemscope>
+                <span class="gallery__card-name" itemprop="name">Надія</span>
+                <time class="gallery__card-date" itemprop="published" datetime="2023-03-01T20:55">(45 годин тому)</time>
+              </footer>
+              <!-- Отзыв -->
+              <blockquote class="gallery__card-describe">
+                Всім GM й вподобайки навзаєм!
+              </blockquote>
+              <!-- Лайки -->
+              <p class="gallery__card-likes">
+                <b class="gallery__card-likes-info">Подобається: 2560</b>
+                <button class="gallery__card-likes-button" type="button"><span class="visually-hidden">Вподобати</span></button>
+              </p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ОТПРАВИТЬ ФОТО -->
+    <section class="catalog__photo-editor photo-editor">
+      <h2 class="visually-hidden">Відправте свою світлину!</h2>
+      <p class="photo-editor__lead page__lead container">Затьмарте їх усіх!<br> Викладайте все, що маєте в телефоні!</p>
+
+      <!-- Фото и форма с полями редактирования -->
+      <article class="photo-editor__form">
+        <h3 class="visually-hidden">Форма редагування й завантаження фото</h3>
+
+        <!-- Фотоиллюстрация -->
+        <a class="photo-editor__link" href="##">
+          <picture>
+            <img class="photo-editor__image" width="280" height="374" src="../img/catalog/photo-8-tablet@1x.jpg" srcset="../img/catalog/photo-8-tablet@2x.jpg 2x" alt="Зимова дорога">
+          </picture>
+        </a>
+
+        <!-- Форма редактирования -->
+        <form class="photo-editor__controls" id="photo-controls" action="https://echo.htmlacademy.ru" name="photo-form" method="post">
+
+          <!-- Кнопки выбора фильтра -->
+          <p class="photo-editor__toggler-wrapper">
+            <!-- Кадрирование -->
+            <button class="photo-editor__toggler photo-editor__toggler--active" type="button" aria-label="Кадрування" id="crop-btn">
+              <span class="visually-hidden">Кадрування</span>
+              <svg width="44" height="44" aria-hidden="true">
+                <use xlink:href="../img/sprite.svg#ico-crop"></use>
+              </svg>
+            </button>
+            <!-- Оттенок -->
+            <button class="photo-editor__toggler" type="button" aria-label="Відтінок" id="fill-btn">
+              <span class="visually-hidden">Відтінок</span>
+              <svg width="48" height="43" aria-hidden="true">
+                <use xlink:href="../img/sprite.svg#ico-fill"></use>
+              </svg>
+            </button>
+            <!-- Контраст -->
+            <button class="photo-editor__toggler" type="button" aria-label="Відтінок" id="contrast-btn">
+              <span class="visually-hidden">Відтінок</span>
+              <svg width="32" height="32" aria-hidden="true">
+                <use xlink:href="../img/sprite.svg#ico-contrast"></use>
+              </svg>
+            </button>
+          </p>
+
+          <!-- Фильтры редактирования -->
+          <fieldset class="photo-editor__fieldset">
+            <legend class="visually-hidden">Список фільтрів</legend>
+            <ul class="photo-editor__list">
+              <!-- Кадрирование -->
+              <li class="photo-editor__item photo-editor__item--active">
+                <label class="photo-editor__label" for="crop-value"><span class="visually-hidden">Кадрування</span></label>
+                <input class="photo-editor__input" type="range" id="crop-value" name="edit-img">
+              </li>
+              <!-- Оттенок -->
+              <li class="photo-editor__item">
+                <label class="photo-editor__label" for="fill-value"><span class="visually-hidden">Відтінок</span></label>
+                <input class="photo-editor__input" type="range" id="fill-value" name="edit-img">
+              </li>
+              <!-- Контраст -->
+              <li class="photo-editor__item">
+                <label class="photo-editor__label" for="contrast-value"><span class="visually-hidden">Контраст</span></label>
+                <input class="photo-editor__input" type="range" id="contrast-value" name="edit-img">
+              </li>
+            </ul>
+          </fieldset>
+
+          <!-- Отправить фото / отменить  -->
+          <p class="photo-editor__button-wrapper">
+            <button class="photo-editor__button page-button" type="submit" id="photo-send">Надіслати</button>
+            <button class="photo-editor__button page-button" type="submit" id="photo-cancel" disabled>Відмінити</button>
+          </p>
+        </form>
+      </article>
+    </section>
+
+  </main>
+
+  <!--* CATALOG - FOOTER -->
+  <footer class="page__footer footer">
+
+    <div class="page__footer-content footer__content">
+
+      <!-- #1 Логотип Пинк -->
+      <a class="footer__logo logo logo--footer" href="../index.html">
+        <picture>
+          <source media="(min-width: 1200px)" srcset="../img/logos/pink-desktop-color.svg">
+          <img class="logo__image" width="145" height="40" src="../img/logos/pink-tablet-color.svg" alt="Мобильний додаток &laquo;Pink&raquo;">
+        </picture>
+      </a>
+
+      <!-- #2 Ссылки на социальные сети -->
+      <ul class="footer__list social-networks">
+        <li class="social-networks__item">
+          <a class="social-networks__link" href="#">
+            <span class="visually-hidden">Twitter</span>
+            <svg width="18" height="15" role="img" aria-hidden="true">
+              <use xlink:href="../img/sprite.svg#ico-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-networks__item">
+          <a class="social-networks__link" href="#">
+            <span class="visually-hidden">Facebook</span>
+            <svg width="9" height="18" role="img" aria-hidden="true">
+              <use xlink:href="../img/sprite.svg#ico-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-networks__item">
+          <a class="social-networks__link" href="#">
+            <span class="visually-hidden">Youtube</span>
+            <svg width="15" height="13" role="img" aria-hidden="true">
+              <use xlink:href="../img/sprite.svg#ico-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- #3 Логотип академии -->
+      <a class="footer__copyright copyright" href="https://htmlacademy.org/">
+        Розроблено<span class="visually-hidden"> в HTML Academy</span>
+        <svg class="copyright__logo" width="27" height="34" role="img" aria-hidden="true">
+          <use xlink:href="../img/sprite.svg#ico-htmlacademy"></use>
+        </svg>
+      </a>
+
+    </div>
+
+  </footer>
+  <script src="../scripts/navmenu.min.js"></script>
+
+</body>
+
+</html>
