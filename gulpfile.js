@@ -26,7 +26,7 @@ import { deleteAsync } from 'del';
 
 const paths = {
   html: {
-    src: 'source/*.html',
+    src: 'source/**/*.html',
     dest: 'build'
   },
   styles: {
@@ -240,7 +240,8 @@ export const build = gulp.series(
     minsvg,
     optimizeimages,
     createwebp
-  )
+  ),
+  server
 );
 
 // Default mode (without image optimization)
@@ -253,5 +254,6 @@ export default gulp.series(
     minhtml,
     minjs,
     minsvg
-  )
+  ),
+  server
 );
